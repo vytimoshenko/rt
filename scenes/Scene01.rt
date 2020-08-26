@@ -1,0 +1,157 @@
+
+scene
+{
+	name:		"Shapes";
+	author:		"Meowth Perseus";
+}
+
+camera
+{
+	position:	[0, 0, -10];
+	direction:	[0, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	1;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	5;
+	position:	[-20, 20, 30];
+}
+
+light
+{
+	type:		<point>;
+	intensity:	4;
+	position:	[20, 9, 0];
+}
+
+light
+{
+	type:		<directional>;
+	intensity:	1;
+	position:	[10, 40, 40];
+}
+
+material
+{
+	name:		"Shiny red";
+	color:		[255, 0, 0];
+	specular:	500;
+	reflective:	3;
+}
+
+material
+{
+	name:		"Matte green";
+	color:		[0, 255, 0];
+	specular:	100;
+	reflective:	1;
+}
+
+material
+{
+	name:		"Super blue";
+	color:		[0, 0, 255];
+	specular:	1000;
+	reflective:	5;
+}
+
+material
+{
+	name:		"Glossy white";
+	color:		[255, 255, 255];
+	specular:	1000;
+	reflective:	0;
+}
+
+material
+{
+	name:		"Deep magenta";
+	color:		[255, 0, 255];
+	specular:	0;
+	reflective:	1;
+}
+
+material
+{
+	name:		"Sunny yellow";
+	color:		[255, 255, 0];
+	specular:	1000;
+	reflective:	3;
+}
+
+material
+{
+	name:		"Light gray";
+	color:		[153, 153, 153];
+	specular:	50;
+	reflective:	0;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Shiny red";
+	position:	[0, -10, 30];
+	orientation:[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Matte green";
+	position:	[20, 0, 40];
+	orientation:	[0, 0, 0];
+	radius:		12;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Super blue";
+	position:	[-20, 0, 40];
+	orientation:	[0, 0, 0];
+	radius:		8;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Glossy white";
+	position:	[-10, 15, 80];
+	orientation:[0, 0, 0];
+	radius:		2;
+}
+
+object
+{
+	type:		<cylinder>;
+	material:	"Sunny yellow";
+	position:	[10, 0, 120];
+	orientation:[0, 1, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<cone>;
+	material:	"Deep magenta";
+	position:	[-20, -30, 70];
+	orientation:[0, -1, 0.5];
+	radius:		10;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[0, -10, 0];
+	orientation:	[0, 0, 0];
+}

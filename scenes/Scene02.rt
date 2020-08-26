@@ -1,0 +1,220 @@
+
+scene
+{
+	name:		"The Room";
+	author:		"Meowth Perseus";
+}
+
+camera
+{
+	position:	[0, 0, -100];
+	direction:	[0, 0, 0];
+}
+
+camera
+{
+	position:	[0, 0, 50];
+	direction:	[0, -180, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	1;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	3;
+	position:	[-20, 0, -30];
+}
+
+light
+{
+	type:		<point>;
+	intensity:	2;
+	position:	[20, 9, 0];
+}
+
+light
+{
+	type:		<point>;
+	intensity:	1;
+	position:	[-20, 20, -30];
+}
+
+material
+{
+	name:		"Shiny red";
+	color:		[255, 0, 0];
+	specular:	500;
+	reflective:	0.5;
+}
+
+material
+{
+	name:		"Matte green";
+	color:		[0, 255, 0];
+	specular:	100;
+	reflective:	0.1;
+}
+
+material
+{
+	name:		"Super blue";
+	color:		[0, 0, 255];
+	specular:	1000;
+	reflective:	5;
+}
+
+material
+{
+	name:		"Deep magenta";
+	color:		[255, 0, 255];
+	specular:	0;
+	reflective:	1;
+}
+
+material
+{
+	name:		"Mirror";
+	color:		[0, 0, 0];
+	specular:	1000;
+	reflective:	10;
+}
+
+material
+{
+	name:		"Glossy white";
+	color:		[255, 255, 255];
+	specular:	10;
+	reflective:	0;
+}
+
+material
+{
+	name:		"Sunny yellow";
+	color:		[255, 255, 0];
+	specular:	1000;
+	reflective:	3;
+}
+
+material
+{
+	name:		"Test";
+	color:		[255, 255, 0];
+	specular:	1000;
+	reflective:	3;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Shiny red";
+	position:	[-10, -30, -20];
+	orientation:[0, 0, 0];
+	radius:		15;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Matte green";
+	position:	[20, -20, 10];
+	orientation:[0, 0, 0];
+	radius:		12;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Deep magenta";
+	position:	[20, 10, -30];
+	orientation:[0, 0, 0];
+	radius:		7;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Mirror";
+	position:	[-10, 30, 10];
+	orientation:[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<cylinder>;
+	material:	"Super blue";
+	position:	[-50, 0, 50];
+	orientation:[0, 1, 0];
+	radius:		20;
+}
+
+object
+{
+	type:		<cylinder>;
+	material:	"Sunny yellow";
+	position:	[-25, -25, -120];
+	orientation:[1, 1, 0];
+	radius:		1;
+}
+
+object
+{
+	type:		<cylinder>;
+	material:	"Sunny yellow";
+	position:	[25, -25, -120];
+	orientation:[1, -1, 0];
+	radius:		1;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[0, -50, 0];
+	orientation:[0, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[0, 50, 0];
+	orientation:[0, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[0, 0, 50];
+	orientation:[0, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[0, 0, -150];
+	orientation:[0, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[50, 0, 0];
+	orientation:[0, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Glossy white";
+	position:	[-50, 0, 0];
+	orientation:[0, 0, 0];
+}
