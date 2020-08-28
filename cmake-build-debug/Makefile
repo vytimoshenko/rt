@@ -3275,6 +3275,33 @@ src_start/rt_start_scene_init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.s
 .PHONY : src_start/rt_start_scene_init.c.s
 
+src_texture/texture_main.o: src_texture/texture_main.c.o
+
+.PHONY : src_texture/texture_main.o
+
+# target to build an object file
+src_texture/texture_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/src_texture/texture_main.c.o
+.PHONY : src_texture/texture_main.c.o
+
+src_texture/texture_main.i: src_texture/texture_main.c.i
+
+.PHONY : src_texture/texture_main.i
+
+# target to preprocess a source file
+src_texture/texture_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/src_texture/texture_main.c.i
+.PHONY : src_texture/texture_main.c.i
+
+src_texture/texture_main.s: src_texture/texture_main.c.s
+
+.PHONY : src_texture/texture_main.s
+
+# target to generate assembly for a file
+src_texture/texture_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/src_texture/texture_main.c.s
+.PHONY : src_texture/texture_main.c.s
+
 src_trace/rt_trace_core.o: src_trace/rt_trace_core.c.o
 
 .PHONY : src_trace/rt_trace_core.o
@@ -3848,6 +3875,9 @@ help:
 	@echo "... src_start/rt_start_scene_init.o"
 	@echo "... src_start/rt_start_scene_init.i"
 	@echo "... src_start/rt_start_scene_init.s"
+	@echo "... src_texture/texture_main.o"
+	@echo "... src_texture/texture_main.i"
+	@echo "... src_texture/texture_main.s"
 	@echo "... src_trace/rt_trace_core.o"
 	@echo "... src_trace/rt_trace_core.i"
 	@echo "... src_trace/rt_trace_core.s"

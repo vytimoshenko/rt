@@ -6,7 +6,7 @@
 #    By: vitaly <vitaly@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/08/26 11:50:03 by vitaly           ###   ########.fr        #
+#    Updated: 2020/08/28 17:17:53 by wquirrel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,12 @@ ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
 			-L ./mlx	-l mlx
+#			-L ./minilibx_mms_20200219	-l mlx
 
-ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
+MLX				= libmlx.dylib
+
+ADD_FMW =	-Lmlx -lmlx -framework OpenGL -framework AppKit -lm
+#ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
 
 all:		$(NAME)
 

@@ -120,6 +120,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/wquirrel/Desktop/rt/src_start/rt_start_draw.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_start/rt_start_draw.c.o"
   "/Users/wquirrel/Desktop/rt/src_start/rt_start_mlx_init.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o"
   "/Users/wquirrel/Desktop/rt/src_start/rt_start_scene_init.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o"
+  "/Users/wquirrel/Desktop/rt/src_texture/texture_main.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_texture/texture_main.c.o"
   "/Users/wquirrel/Desktop/rt/src_trace/rt_trace_core.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o"
   "/Users/wquirrel/Desktop/rt/src_trace/rt_trace_intersect_1.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o"
   "/Users/wquirrel/Desktop/rt/src_trace/rt_trace_intersect_2.c" "/Users/wquirrel/Desktop/rt/cmake-build-debug/CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o"

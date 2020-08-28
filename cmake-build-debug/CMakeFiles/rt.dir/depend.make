@@ -217,6 +217,7 @@ CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_camera.c.o: ../mlx/mlx.h
@@ -229,6 +230,7 @@ CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_effect.c.o: ../mlx/mlx.h
@@ -241,6 +243,7 @@ CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o: ../mlx/mlx.h
@@ -253,6 +256,7 @@ CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_interface.c.o: ../mlx/mlx.h
@@ -265,6 +269,7 @@ CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o: ../mlx/mlx.h
@@ -277,6 +282,7 @@ CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o: ../mlx/mlx.h
@@ -289,6 +295,7 @@ CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_light.c.o: ../mlx/mlx.h
@@ -301,6 +308,7 @@ CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_main.c.o: ../mlx/mlx.h
@@ -313,6 +321,7 @@ CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_material.c.o: ../mlx/mlx.h
@@ -325,6 +334,7 @@ CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_object.c.o: ../mlx/mlx.h
@@ -337,6 +347,7 @@ CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_control/rt_control_reset.c.o: ../mlx/mlx.h
@@ -349,6 +360,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o: ../mlx/mlx.h
@@ -361,6 +373,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o: ../mlx/mlx.h
@@ -373,6 +386,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o: ../mlx/mlx.h
@@ -385,6 +399,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o: ../mlx/mlx.h
@@ -397,6 +412,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o: ../mlx/mlx.h
@@ -409,6 +425,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o: ../mlx/mlx.h
@@ -421,6 +438,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o: ../mlx/mlx.h
@@ -433,6 +451,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o: ../mlx/mlx.h
@@ -445,6 +464,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o: ../mlx/mlx.h
@@ -457,6 +477,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o: ../mlx/mlx.h
@@ -469,6 +490,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o: ../mlx/mlx.h
@@ -481,6 +503,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o: ../mlx/mlx.h
@@ -493,6 +516,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o: ../mlx/mlx.h
@@ -505,6 +529,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o: ../mlx/mlx.h
@@ -517,6 +542,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o: ../mlx/mlx.h
@@ -529,6 +555,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_interface.
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o: ../mlx/mlx.h
@@ -541,6 +568,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o: ../mlx/mlx.h
@@ -553,6 +581,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o: ../mlx/mlx.h
@@ -565,6 +594,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o: ../mlx/mlx.h
@@ -577,6 +607,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o: ../mlx/mlx.h
@@ -589,6 +620,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o: ../mlx/mlx.h
@@ -601,6 +633,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o: ../mlx/mlx.h
@@ -613,6 +646,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o: ../mlx/mlx.h
@@ -625,6 +659,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o: ../mlx/mlx.h
@@ -637,6 +672,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o: ../mlx/mlx.h
@@ -649,6 +685,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o: ../mlx/mlx.h
@@ -661,6 +698,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o: ../mlx/mlx.h
@@ -673,6 +711,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o: ../mlx/mlx.h
@@ -685,6 +724,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o: ../mlx/mlx.h
@@ -697,6 +737,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o: ../mlx/mlx.h
@@ -709,6 +750,7 @@ CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o: ../mlx/mlx.h
@@ -721,6 +763,7 @@ CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_start/rt_main.c.o: ../mlx/mlx.h
@@ -733,6 +776,7 @@ CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_start/rt_start_draw.c.o: ../mlx/mlx.h
@@ -745,6 +789,7 @@ CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o: ../mlx/mlx.h
@@ -757,10 +802,24 @@ CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../mlx/mlx.h
 CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o: ../src_start/rt_start_scene_init.c
+
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_control.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_effect.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_interface.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_read_save.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_start.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_textures.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../incl/rt_trace.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../libft/libft.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../mlx/mlx.h
+CMakeFiles/RT.dir/src_texture/texture_main.c.o: ../src_texture/texture_main.c
 
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_control.h
@@ -769,6 +828,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o: ../mlx/mlx.h
@@ -781,6 +841,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o: ../mlx/mlx.h
@@ -793,6 +854,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o: ../mlx/mlx.h
@@ -805,6 +867,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o: ../mlx/mlx.h
@@ -817,6 +880,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o: ../mlx/mlx.h
@@ -829,6 +893,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o: ../mlx/mlx.h
@@ -841,6 +906,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o: ../mlx/mlx.h
@@ -853,6 +919,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_interface.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_read_save.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_start.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_structures.h
+CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_textures.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../incl/rt_trace.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../libft/libft.h
 CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o: ../mlx/mlx.h

@@ -1,13 +1,26 @@
 cmake_minimum_required(VERSION 3.17)
 project(RT C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 99)
+
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+
+#set(CMAKE_MACOSX_RPATH ON)
+
+#set(HALIDE_DISTRIB_USE_STATIC_LIBRARY TRUE)
+
+#set(CMAKE_INSTALL_RPATH "/Users/wquirrel/Desktop/rt/minilibx_mms_20200219")
 
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lmlx -framework OpenGL -framework AppKit")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -I /usr/local/include -L ${CMAKE_CURRENT_SOURCE_DIR}/minilibx_mms_20200219 -lmlx -framework OpenGl -framework AppKit")
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -L ${CMAKE_CURRENT_SOURCE_DIR}/minilibx_mms_20200219 -lmlx -framework OpenGL -framework AppKit")
 
+#include_directories(.)
 include_directories(incl)
 include_directories(libft)
 include_directories(mlx)
+#include_directories(mlx)
 
 add_executable(RT
     libft/ft_arrdel.c
@@ -81,17 +94,6 @@ add_executable(RT
     libft/ft_wrdcnt.c
     libft/get_next_line.c
     libft/libft.h
-#    mlx/font.c
-#    mlx/mlx.h
-#    mlx/mlx_init_loop.m
-#    mlx/mlx_int.h
-#    mlx/mlx_int_str_to_wordtab.c
-#    mlx/mlx_new_image.m
-#    mlx/mlx_new_window.h
-#    mlx/mlx_new_window.m
-#    mlx/mlx_rgb.c
-#    mlx/mlx_shaders.c
-#    mlx/mlx_xpm.c
     src_control/rt_control_camera.c
     src_control/rt_control_effect.c
     src_control/rt_control_hooks.c
@@ -145,8 +147,10 @@ add_executable(RT
     src_trace/rt_trace_main.c
     src_trace/rt_trace_normals.c
     src_trace/rt_trace_vector_1.c
-    src_trace/rt_trace_vector_2.c)
+    src_trace/rt_trace_vector_2.c
+        src_texture/texture_main.c)
 
-target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
-target_link_libraries(RT "-framework AppKit")
-target_link_libraries(RT "-framework OpenGL")
+#target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
+#target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)
+target_link_libraries(RT ${CMAKE_SOURCE_DIR}/mlx/libmlx.dylib)
+target_link_libraries(RT "-framework OpenGL -framework AppKit")

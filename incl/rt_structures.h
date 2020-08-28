@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:04:33 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/08/28 20:59:14 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 # define rt_STRUCTURES_H
 
 # include "rt.h"
+
+typedef struct s_texture
+{
+	void	*data;
+	int		*addr;
+	int		t_w;
+	int 	t_h;
+}				t_texture;
 
 typedef struct			s_vec
 {
@@ -158,6 +166,8 @@ typedef struct			s_scene
 	t_lights			lights;
 	t_objs				objs;
 	t_mats				mats;
+
+	t_texture			*texture;
 
 	int					act_mod;
 	int					act_cam;

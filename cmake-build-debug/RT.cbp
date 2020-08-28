@@ -435,6 +435,9 @@
 		<Unit filename="/Users/wquirrel/Desktop/rt/src_start/rt_start_scene_init.c">
 			<Option target="RT"/>
 		</Unit>
+		<Unit filename="/Users/wquirrel/Desktop/rt/src_texture/texture_main.c">
+			<Option target="RT"/>
+		</Unit>
 		<Unit filename="/Users/wquirrel/Desktop/rt/src_trace/rt_trace_core.c">
 			<Option target="RT"/>
 		</Unit>

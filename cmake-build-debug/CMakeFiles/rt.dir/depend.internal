@@ -218,6 +218,7 @@ CMakeFiles/RT.dir/src_control/rt_control_camera.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -230,6 +231,7 @@ CMakeFiles/RT.dir/src_control/rt_control_effect.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -242,6 +244,7 @@ CMakeFiles/RT.dir/src_control/rt_control_hooks.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -254,6 +257,7 @@ CMakeFiles/RT.dir/src_control/rt_control_interface.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -266,6 +270,7 @@ CMakeFiles/RT.dir/src_control/rt_control_keyboard_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -278,6 +283,7 @@ CMakeFiles/RT.dir/src_control/rt_control_keyboard_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -290,6 +296,7 @@ CMakeFiles/RT.dir/src_control/rt_control_light.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -302,6 +309,7 @@ CMakeFiles/RT.dir/src_control/rt_control_main.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -314,6 +322,7 @@ CMakeFiles/RT.dir/src_control/rt_control_material.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -326,6 +335,7 @@ CMakeFiles/RT.dir/src_control/rt_control_object.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -338,6 +348,7 @@ CMakeFiles/RT.dir/src_control/rt_control_reset.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -350,6 +361,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_antialias_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -362,6 +374,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_antialias_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -374,6 +387,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -386,6 +400,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -398,6 +413,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_color_3.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -410,6 +426,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_main.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -422,6 +439,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_other.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -434,6 +452,7 @@ CMakeFiles/RT.dir/src_effect/rt_effect_pixelation.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -446,6 +465,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_bottom.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -458,6 +478,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_camera.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -470,6 +491,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_effect.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -482,6 +504,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_help_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -494,6 +517,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_help_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -506,6 +530,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_light.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -518,6 +543,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_main.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -530,6 +556,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_material.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -542,6 +569,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_object.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -554,6 +582,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_other.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -566,6 +595,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_render.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -578,6 +608,7 @@ CMakeFiles/RT.dir/src_interface/rt_interface_scene.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -590,6 +621,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -602,6 +634,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -614,6 +647,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_3.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -626,6 +660,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_4.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -638,6 +673,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_5.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -650,6 +686,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_6.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -662,6 +699,7 @@ CMakeFiles/RT.dir/src_read_save/rt_read_scene_7.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -674,6 +712,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -686,6 +725,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -698,6 +738,7 @@ CMakeFiles/RT.dir/src_read_save/rt_save_scene_3.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -710,6 +751,7 @@ CMakeFiles/RT.dir/src_start/rt_clean_pix_buffer.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -722,6 +764,7 @@ CMakeFiles/RT.dir/src_start/rt_main.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -734,6 +777,7 @@ CMakeFiles/RT.dir/src_start/rt_start_draw.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -746,6 +790,7 @@ CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -758,10 +803,24 @@ CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
  /Users/wquirrel/Desktop/rt/src_start/rt_start_scene_init.c
+CMakeFiles/RT.dir/src_texture/texture_main.c.o
+ ../incl/rt.h
+ ../incl/rt_control.h
+ ../incl/rt_effect.h
+ ../incl/rt_interface.h
+ ../incl/rt_read_save.h
+ ../incl/rt_start.h
+ ../incl/rt_structures.h
+ ../incl/rt_textures.h
+ ../incl/rt_trace.h
+ ../libft/libft.h
+ ../mlx/mlx.h
+ /Users/wquirrel/Desktop/rt/src_texture/texture_main.c
 CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o
  /Users/wquirrel/Desktop/rt/incl/rt.h
  /Users/wquirrel/Desktop/rt/incl/rt_control.h
@@ -770,6 +829,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -782,6 +842,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -794,6 +855,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -806,6 +868,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_light.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -818,6 +881,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_main.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -830,6 +894,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_normals.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -842,6 +907,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_vector_1.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h
@@ -854,6 +920,7 @@ CMakeFiles/RT.dir/src_trace/rt_trace_vector_2.c.o
  /Users/wquirrel/Desktop/rt/incl/rt_read_save.h
  /Users/wquirrel/Desktop/rt/incl/rt_start.h
  /Users/wquirrel/Desktop/rt/incl/rt_structures.h
+ /Users/wquirrel/Desktop/rt/incl/rt_textures.h
  /Users/wquirrel/Desktop/rt/incl/rt_trace.h
  /Users/wquirrel/Desktop/rt/libft/libft.h
  /Users/wquirrel/Desktop/rt/mlx/mlx.h

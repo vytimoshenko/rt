@@ -115,6 +115,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RT.dir/src_start/rt_start_draw.c.o"
   "CMakeFiles/RT.dir/src_start/rt_start_mlx_init.c.o"
   "CMakeFiles/RT.dir/src_start/rt_start_scene_init.c.o"
+  "CMakeFiles/RT.dir/src_texture/texture_main.c.o"
   "CMakeFiles/RT.dir/src_trace/rt_trace_core.c.o"
   "CMakeFiles/RT.dir/src_trace/rt_trace_intersect_1.c.o"
   "CMakeFiles/RT.dir/src_trace/rt_trace_intersect_2.c.o"

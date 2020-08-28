@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_main.c                                          :+:      :+:    :+:   */
+/*   rt_textures.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 12:10:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/28 19:48:38 by wquirrel         ###   ########.fr       */
+/*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
+/*   Updated: 2020/08/28 19:13:05 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/rt.h"
 
-int	main(int argc, char **argv)
-{
-	t_global	global;
+#ifndef RT_RT_TEXTURES_H
+#define RT_RT_TEXTURES_H
 
-	global.scene = init_scene(argc, argv);
-	global.mlx = init_mlx();
-	texture(&global);
-	draw(&global);
-	loop(&global);
-	exit(0);
-}
+# include "rt_structures.h"
+
+int		texture(t_global *g);
+
+#endif //RT_RT_TEXTURES_H
