@@ -16,10 +16,11 @@
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
+# include <time.h>
 
 # include <math.h>
-# include <sys/time.h>
 # include <stdbool.h>
+# include <sys/time.h>
 
 # include "rt_structures.h"
 # include "rt_trace.h"

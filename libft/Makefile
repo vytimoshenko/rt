@@ -94,7 +94,7 @@ $(NAME): $(SRCS_O)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc -Wall -Wextra -Werror -I $(INCL_H) $< -c -o $@
+	gcc -Wall -Wextra -Werror $< -c -o $@
 
 clean:
 	/bin/rm -f $(SRCS_O)
