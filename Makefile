@@ -29,8 +29,8 @@ MK_FT	=	make			-C libft
 CL_FT	=	make clean		-C libft
 FCL_FT	=	make fclean		-C libft
 
-MK_MLX	=	make			-C minilibx-linux
-CL_MLX	=	make clean		-C minilibx-linux
+MK_MLX	=	make			-C mlx-linux
+CL_MLX	=	make clean		-C mlx-linux
 
 MK_DIR	=	@/bin/mkdir saves
 
@@ -40,7 +40,7 @@ ADD_DEP =	-Wno-deprecated-declarations
 ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
-			-L ./minilibx-linux	-l mlx -lXext -lX11
+			-L ./mlx-linux	-l mlx -lXext -lX11
 
 # ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
 
