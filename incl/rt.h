@@ -14,8 +14,12 @@
 
 # define rt_H
 
+# define WIDTH 500
+# define HEIGHT 500
+
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include "SDL.h"
+# include <stdio.h> // kill me
 
 # include <math.h>
 # include <sys/time.h>

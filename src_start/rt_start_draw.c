@@ -18,14 +18,13 @@ void	draw(t_global *global)
 	struct timeval	end;
 
 	gettimeofday(&start, NULL);
-	mlx_clear_window(global->mlx->mlx, global->mlx->win);
+	SDL_RenderClear(global->sdl.render);
 	trace_rays(global->scene);
-	final_processing(global->mlx, global->scene);
-	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
-	global->mlx->img, IMG_INDT_W, IMG_INDT_H);
+	final_processing(&(*global).sdl, global->scene);
+	SDL_RenderPresent(global->sdl.render);
 	gettimeofday(&end, NULL);
-	count_frames(global->mlx, start, end);
-	show_interface(global);
+	// count_frames(global->mlx, start, end);
+	// show_interface(global);
 }
 
 void	count_frames(t_mlx *mlx, struct timeval start, struct timeval end)
@@ -37,19 +36,17 @@ void	count_frames(t_mlx *mlx, struct timeval start, struct timeval end)
 
 void	update_interface_only(t_global *global)
 {
-	mlx_clear_window(global->mlx->mlx, global->mlx->win);
-	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
-	global->mlx->img, IMG_INDT_W, IMG_INDT_H);
-	show_interface(global);
+	SDL_RenderClear(global->sdl.render);
+	SDL_RenderPresent(global->sdl.render);
+	// show_interface(global);
 }
 
 void	update_interface_and_frame(t_global *global)
 {
-	mlx_clear_window(global->mlx->mlx, global->mlx->win);
-	final_processing(global->mlx, global->scene);
-	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
-	global->mlx->img, IMG_INDT_W, IMG_INDT_H);
-	show_interface(global);
+	SDL_RenderClear(global->sdl.render);
+	final_processing(&(*global).sdl, global->scene);
+	SDL_RenderPresent(global->sdl.render);
+	// show_interface(global);
 }
 
 void	put_error_pn(char *str)

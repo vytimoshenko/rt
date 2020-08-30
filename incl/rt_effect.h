@@ -46,7 +46,7 @@
 # define ANTIALIASING_OUTLINE_WIDTH		6
 # define MULTI_SAMPLING_RATE			16
 
-void		final_processing(t_mlx *mlx, t_scene *scene);
+void		final_processing(t_sdl *sdl, t_scene *scene);
 t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color);
 
 void		fill_aliasing_buffer(t_scene *scene);

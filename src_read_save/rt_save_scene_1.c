@@ -14,6 +14,7 @@
 
 void	save_scene(t_scene *scene, t_mlx *mlx)
 {
+	(void)mlx;
 	int		fd;
 	char	*file_name;
 
@@ -24,7 +25,7 @@ void	save_scene(t_scene *scene, t_mlx *mlx)
 		ft_put_errno(PROGRAM_NAME);
 	write_all_info(scene, fd);
 	close(fd);
-	info_message_box(mlx, SAVE_MESSAGE_TITLE, file_name);
+	// info_message_box(mlx, SAVE_MESSAGE_TITLE, file_name);
 	free(file_name);
 }
 

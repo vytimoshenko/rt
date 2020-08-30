@@ -17,8 +17,12 @@ int	main(int argc, char **argv)
 	t_global	global;
 
 	global.scene = init_scene(argc, argv);
-	global.mlx = init_mlx();
+	init_sdl(&(global.sdl));
 	draw(&global);
 	loop(&global);
-	exit(0);
+	SDL_DestroyRenderer(global.sdl.render);
+	SDL_DestroyWindow(global.sdl.window);
+	SDL_QuitSubSystem(SDL_INIT_EVERYTHING);
+	SDL_Quit();
+	return (0);
 }

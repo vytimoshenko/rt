@@ -202,10 +202,17 @@ typedef struct			s_mlx
 	float				frame_time;
 }						t_mlx;
 
+typedef	struct	s_sdl
+{
+	SDL_Renderer	*render;
+	SDL_Window		*window;
+}				t_sdl;
+
 typedef struct			s_global
 {
 	t_scene				*scene;
 	t_mlx				*mlx;
+	t_sdl				sdl;
 }						t_global;
 
 #endif

@@ -14,10 +14,22 @@
 
 void	loop(t_global *global)
 {
-	mlx_hook(global->mlx->win, 2, 0, keyboard_key_press, global);
-	mlx_hook(global->mlx->win, 4, 0, mouse_key_press, global);
-	mlx_hook(global->mlx->win, 5, 0, mouse_key_release, global);
-	mlx_hook(global->mlx->win, 6, 0, mouse_move, global);
-	mlx_hook(global->mlx->win, 17, 0, close_window, global);
-	mlx_loop(global->mlx->mlx);
+	int run;
+	SDL_Event	event;
+
+	(void)global;
+	run = 1;
+	while (run)
+	{
+		while (SDL_WaitEvent(&event) && run)
+		{
+			if (event.type == SDL_QUIT)
+				run = 0;
+			if (event.type == SDL_KEYDOWN)
+			{
+				if (event.key.keysym.sym == SDLK_ESCAPE)
+					run = 0;
+			}
+		}
+	}
 }

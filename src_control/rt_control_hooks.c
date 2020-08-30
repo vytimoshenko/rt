@@ -72,6 +72,8 @@ int	keyboard_key_press(int key, t_global *global)
 
 int	close_window(t_global *global)
 {
-	clean_mlx(global->mlx);
+	SDL_DestroyRenderer(global->sdl.render);
+	SDL_DestroyWindow(global->sdl.window);
+	SDL_Quit();
 	exit(0);
 }

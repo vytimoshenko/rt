@@ -27,6 +27,7 @@ void		get_objects_statistics(t_scene *scene);
 void		set_initial_angles(t_scene *scene);
 
 t_mlx		*init_mlx(void);
+void		init_sdl(t_sdl *sdl);
 void		clean_mlx(t_mlx *mlx);
 void		put_mlx_error(t_mlx *mlx, char *str);
 

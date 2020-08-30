@@ -12,14 +12,16 @@
 
 NAME	= 	RT
 
-HDR		= 	./incl
+HDR		= 	-I ./incl \
+			-I ./incl \
+			-I ./src/getnextline \
+			-I./frameworks/SDL2.framework/Versions/A/Headers \
 
 SRC		= 	$(wildcard src_start/*.c)		\
 			$(wildcard src_read_save/*.c)	\
 			$(wildcard src_trace/*.c)		\
 			$(wildcard src_effect/*.c)		\
 			$(wildcard src_control/*.c)		\
-			$(wildcard src_interface/*.c)	\
 			
 OBJ		= 	$(SRC:.c=.o)
 
@@ -40,20 +42,24 @@ ADD_DEP =	-Wno-deprecated-declarations
 ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
-			-L ./mlx	-l mlx
-
-ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
+			-framework SDL2 \
+			-rpath ./frameworks \
+			-framework SDL2_ttf \
+			-framework SDL2_image \
+			-framework SDL2_mixer \
+			-framework OpenGL \
+			-framework AppKit \
+			-F./frameworks
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			$(MK_FT)
-			$(MK_MLX)
-			$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_FMW) $(ADD_DEP)
-			$(MK_DIR)
+			@$(CMPLR) -o $(NAME) $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_DEP)
+			@echo "\033[32m- RT compiled\033[0m"
 
 %.o:		%.c
-			$(CMPLR) $< -c -o $@
+			$(CMPLR) $(HDR) $< -c -o $@
 
 clean:
 			@/bin/rm -f $(OBJ)

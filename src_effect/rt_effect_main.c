@@ -12,7 +12,7 @@
 
 #include "../incl/rt.h"
 
-void		final_processing(t_mlx *mlx, t_scene *scene)
+void		final_processing(t_sdl *sdl, t_scene *scene)
 {
 	int	i;
 
@@ -33,7 +33,12 @@ void		final_processing(t_mlx *mlx, t_scene *scene)
 	}
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
-		mlx->data[i] = unite_color_channels(scene->pix_buff[i].frame);
+	{
+		SDL_SetRenderDrawColor(sdl->render, scene->pix_buff[i].frame.r,
+				scene->pix_buff[i].frame.g, scene->pix_buff[i].frame.b, 1);
+		SDL_RenderDrawPoint(sdl->render, (i / IMG_SIZE_W), (i % (int)IMG_SIZE_W));
+	}
+		// mlx->data[i] = unite_color_channels(scene->pix_buff[i].frame);
 }
 
 t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color)
