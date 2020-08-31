@@ -6,7 +6,7 @@
 #    By: vitaly <vitaly@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/08/26 11:50:03 by vitaly           ###   ########.fr        #
+#    Updated: 2020/08/31 11:35:37 by wquirrel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ ADD_DEP =	-Wno-deprecated-declarations
 ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
-			-L ./mlx-linux	-l mlx -lXext -lX11
+			-L ./mlx-linux	-l mlx -lXext -lX11 -lm
 
 # ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
 
