@@ -48,6 +48,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			$(MK_FT)
+			$(MK_MLX)
 			$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_DEP)
 			$(MK_DIR)
 
