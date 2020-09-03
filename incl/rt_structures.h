@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/28 20:59:14 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/03 14:08:01 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,24 @@
 
 typedef struct s_texture
 {
-	void	*data;
-	int		*addr;
-	int		t_w;
-	int 	t_h;
+	void 				*data;
+	char 				*name;
+	int 				*addr;
+	int					t_w;
+	int 				t_h;
+
+	int					bits_per_pixel;
+	int					size_line;
+	int					endian;
+	float  				t_x;
+	float 				t_y;
 }				t_texture;
+
+typedef struct	s_textures
+{
+	int			quantity;
+	t_texture	*tex;
+}				t_textures;
 
 typedef struct			s_vec
 {
@@ -98,6 +111,8 @@ typedef struct			s_obj
 	t_vec				sin;
 	t_vec				cos;
 	double				k;
+
+	t_texture			*t;
 
 	double				t1;
 	double				t2;
