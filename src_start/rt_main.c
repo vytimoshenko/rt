@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/03 14:05:03 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:38:55 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ int	main(int argc, char **argv)
 	global.mlx = init_mlx();
 	global.scene->texture = (t_texture [1]){{0}};
 	texture(&global);
+/*
 	t_obj 		o = {global.scene->objs.quant, OBJECT_TYPE_SPHERE, 0, {255, 0 , 0}
-			, 0, 0, 0, 0, 10, {10, 3, 30}
+			, 0, 0, 0, 0, 10, {5, 4, 29}
 			, {0, 1, 0}, {0, 0, 0}, {0, 0, 0}
 			, 0, global.scene->texture, 0, 0, 0, 0};
 	global.scene->objs.arr[global.scene->objs.quant - 1] = &o;
 	global.scene->objs.quant_spheres++;
+*/
 //	my_draw(global.mlx);
 //	draw_texture(&global);
 	draw(&global);

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_textures.h                                      :+:      :+:    :+:   */
+/*   texture_procedural.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/06 19:15:34 by wquirrel         ###   ########.fr       */
+/*   Created: 2020/09/06 18:48:06 by wquirrel          #+#    #+#             */
+/*   Updated: 2020/09/06 19:17:58 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "rt.h"
 
-#ifndef RT_RT_TEXTURES_H
-#define RT_RT_TEXTURES_H
-
-# define T_WIDTH 16
-# define T_HEIGHT 8
-# define T_COLOR_R 0xFF0000
-# define T_COLOR_G 0xFF00
-# define T_COLOR_B 0xFF
-# define T_COLOR_BL 0x0
-# define T_COLOR_W 0xFFFFFF
-
-
-# include "rt_structures.h"
-
-typedef enum e_patterns
+int		stripe_pattern(t_vec p)
 {
-	STRIPE = 1
-}			t_patterns;
+	if ((int )floor(p.x) % 2 == 0)
+		return T_COLOR_W;
+	else
+		return T_COLOR_BL;
+}
 
-int		texture(t_global *g);
-int		choose_pattern(int p, t_vec pnt);
-
-#endif //RT_RT_TEXTURES_H
+int		choose_pattern(int p, t_vec pnt)
+{
+	if (p == STRIPE)
+		return stripe_pattern(pnt);
+	return (0);
+}

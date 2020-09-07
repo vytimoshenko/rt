@@ -6,11 +6,26 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:38 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/09/07 12:30:45 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
+
+int 	identify_pattern(int pat)
+{
+	if (pat == STRIPE)
+		return (1);
+	return (0);
+}
+
+void 	identify_textures(char *texture, t_obj *obj)
+{
+	if (ft_isdigit(*texture))
+		obj->pattern = identify_pattern(ft_atoi(texture));
+//	else
+//		identify_texture();
+}
 
 void	parse_material_description(t_scene *scene, char *property, char *value)
 {
@@ -45,6 +60,8 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 		scene->objs.arr[i]->dir = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
+	else if (!(ft_strcmp(property, FILE_OBJECT_TEXTURE)))
+		identify_textures(value, scene->objs.arr[i]);
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }

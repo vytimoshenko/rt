@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/03 14:08:01 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/07 12:05:58 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct			s_obj
 	int					id;
 	int					type;
 	int					mat;
+	int					pattern;
 	t_clr				color;
 	double				spec;
 	double				refl;

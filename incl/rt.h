@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:05 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/28 17:19:27 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/05 16:49:52 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define rt_H
 
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include "../lib/mlx.h"
 //# include "../minilibx_mms_20200219/mlx.h"
 
 # include <math.h>
