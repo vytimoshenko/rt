@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/06 19:15:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/09 12:48:57 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,21 @@
 
 # include "rt_structures.h"
 
+enum e_coord
+{
+	P_X,
+	P_Y,
+	P_Z
+};
+
 typedef enum e_patterns
 {
-	STRIPE = 1
+	STRIPE_X = 1,
+	STRIPE_Y,
+	STRIPE_Z
 }			t_patterns;
 
 int		texture(t_global *g);
-int		choose_pattern(int p, t_vec pnt);
+int		choose_pattern(t_pnt *pnt, t_obj *obj);
 
 #endif //RT_RT_TEXTURES_H

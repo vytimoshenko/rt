@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/06 19:15:51 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/10 17:11:48 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 
 void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 {
+
 	if (obj->type == OBJECT_TYPE_PLANE)
 		plane_n(pnt, pix->pos, obj);
 	else if (obj->type == OBJECT_TYPE_SPHERE)
@@ -64,9 +65,13 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 		cylinder_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	else if (obj->type == OBJECT_TYPE_CONE)
 		cone_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
-	pnt->color = scene->mats.arr[obj->mat]->color;
-	if (obj->pattern)
-		pnt->color = integer_to_rgb(choose_pattern(obj->pattern, pnt->xyz));
+	double scaleS = 5;
+	double scaleT = 5;
+	double pattern = (cos(pnt->n.y * 2 * M_PI * scaleT) * sin(pnt->n.x * 2 * M_PI * scaleS) + 1) * 0.5;;
+	pnt->color = multiply_color(pattern, scene->mats.arr[obj->mat]->color);
+
+//	if (obj->pattern)
+//		pnt->color = integer_to_rgb(choose_pattern(pnt, obj));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->trns = scene->mats.arr[obj->mat]->transp;

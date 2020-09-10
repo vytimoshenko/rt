@@ -98,10 +98,10 @@ object
 {
 	type:		<sphere>;
 	material:	"Shiny red";
-	position:	[0, -10, 30];
+	position:	[0, 0, 40];
 	orientation:[0, 0, 0];
 	radius:		10;
-	texture:    1;
+	texture:    2;
 }
 
 object
@@ -121,17 +121,17 @@ object
 	position:	[-20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		8;
-	texture:    1;
+	texture:    3;
 }
 
 object
 {
 	type:		<sphere>;
 	material:	"Glossy white";
-	position:	[-10, 15, 80];
-	orientation:[0, 0, 0];
+	position:	[-10, 10, 40];
+	orientation:[0, 20, 40];
 	radius:		2;
-	texture:    1;
+	texture:    2;
 }
 
 object
@@ -141,7 +141,7 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 0];
 	radius:		10;
-	texture:    1;
+	texture:    2;
 }
 
 object
@@ -151,7 +151,7 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 0.5];
 	radius:		10;
-	texture:    1;
+	texture:    3;
 }
 
 object
@@ -159,6 +159,6 @@ object
 	type:		<plane>;
 	material:	"Glossy white";
 	position:	[0, -10, 0];
-	orientation:	[0, 0, 0];
-	texture:    1;
+	orientation:    [0, 0, 0];
+	texture:    3;
 }

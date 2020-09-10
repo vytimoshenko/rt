@@ -14,8 +14,12 @@
 
 int 	identify_pattern(int pat)
 {
-	if (pat == STRIPE)
+	if (pat == STRIPE_X)
 		return (1);
+	else if (pat == STRIPE_Y)
+		return (2);
+	else if (pat == STRIPE_Z)
+		return (3);
 	return (0);
 }
 
