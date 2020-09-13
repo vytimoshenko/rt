@@ -40,9 +40,8 @@ ADD_DEP =	-Wno-deprecated-declarations
 ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
-			-L ./mlx-linux	-l mlx -lXext -lX11 -lm
-
-# ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
+			-L ./mlx-linux	-l mlx \
+			-lXext -lX11 -lm -pthread
 
 all:		$(NAME)
 

@@ -35,7 +35,7 @@
 
 # define PI								3.14159265
 
-void		trace_rays(t_scene *scene);
+void	    *trace_rays(void *peace);
 void		prepare_pixs(t_scene *scene);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
@@ -73,5 +73,7 @@ t_vec		nrm(t_vec v);
 t_vec		add(t_vec v1, t_vec v2);
 t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
+
+void	    peaces(t_scene *scene);
 
 #endif

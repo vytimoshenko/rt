@@ -208,4 +208,12 @@ typedef struct			s_global
 	t_mlx				*mlx;
 }						t_global;
 
+typedef struct		s_peace
+{
+	t_scene				*scene;
+	pthread_t			p;
+	int					i;
+}					t_peace;
+
+
 #endif
