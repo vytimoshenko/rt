@@ -17,23 +17,16 @@ void	peaces(t_scene *scene)
 	int i;
 	t_peace peace[PEACES];
 
-	i = 0;
-	clean_pix_buffer(scene);
-	prepare_pixs(scene);
-	while (i < PEACES)
+	i = -1;
+	while (++i < PEACES)
 	{
 		peace[i].i = i;
 		peace[i].scene = scene;
 		pthread_create(&(peace[i].p), NULL, trace_rays, &(peace[i]));
-		i++;
 	}
-	i = 0;
-	while (i < PEACES)
-	{
+	i = -1;
+	while (++i < PEACES)
 		pthread_join(peace[i].p, NULL);
-		i++;
-	}
-	fill_aliasing_buffer(scene);
 }
 
 void	*trace_rays(void *peace)
@@ -41,27 +34,27 @@ void	*trace_rays(void *peace)
 	int	i;
 	t_peace *p;
 
-	// clean_pix_buffer(scene);
-	// prepare_pixs(scene);
 	p = (t_peace *)peace;
-	i = 0;
-	i = p->i - 1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i)
+	clean_pix_buffer(p);
+	prepare_pixs(p);
+	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
 		trace_pixel(p->scene, p->scene->cams.arr[p->scene->act_cam]->
 		pos, &p->scene->pix_buff[i], 1);
+	fill_aliasing_buffer(p);
 	return (0);
 }
 
-void	prepare_pixs(t_scene *scene)
+void	prepare_pixs(t_peace *p)
 {
 	int	i;
 
-	i = -1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H)
+	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
 	{
-		scene->pix_buff[i].i = i;
-		get_centered_coordinates(&scene->pix_buff[i]);
-		get_pix_viewport_coordinates(scene, &scene->pix_buff[i]);
+		p->scene->pix_buff[i].i = i;
+		get_centered_coordinates(&p->scene->pix_buff[i]);
+		get_pix_viewport_coordinates(p->scene, &p->scene->pix_buff[i]);
 	}
 }
 

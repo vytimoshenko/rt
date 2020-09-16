@@ -49,7 +49,7 @@
 void		final_processing(t_mlx *mlx, t_scene *scene);
 t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color);
 
-void		fill_aliasing_buffer(t_scene *scene);
+void		fill_aliasing_buffer(t_peace *p);
 int			need_to_smooth(t_scene *scene, int i);
 void		add_adjacent_pixels(t_scene *scene, int i);
 t_clr		effect_outline(t_scene *scene, int i);

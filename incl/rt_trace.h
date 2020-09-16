@@ -36,7 +36,7 @@
 # define PI								3.14159265
 
 void	    *trace_rays(void *peace);
-void		prepare_pixs(t_scene *scene);
+void		prepare_pixs(t_peace *p);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
 void		rotate_pix(t_pix *pix, t_cam *cam);

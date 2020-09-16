@@ -12,21 +12,21 @@
 
 #include "../incl/rt.h"
 
-void	fill_aliasing_buffer(t_scene *scene)
+void	fill_aliasing_buffer(t_peace *p)
 {
 	int	i;
 
-	i = -1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H)
+	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
 	{
-		scene->pix_buff[i].aliasing = need_to_smooth(scene, i);
+		p->scene->pix_buff[i].aliasing = need_to_smooth(p->scene, i);
 		if (!((i + 1) % ((int)IMG_SIZE_W)) || !((i + 2) % ((int)IMG_SIZE_W)))
 		{
 			i++;
 			continue;
 		}
-		if (scene->pix_buff[i].aliasing)
-			add_adjacent_pixels(scene, i);
+		if (p->scene->pix_buff[i].aliasing)
+			add_adjacent_pixels(p->scene, i);
 	}
 }
 

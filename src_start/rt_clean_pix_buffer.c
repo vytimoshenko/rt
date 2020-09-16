@@ -12,14 +12,14 @@
 
 #include "../incl/rt.h"
 
-void	clean_pix_buffer(t_scene *scene)
+void	clean_pix_buffer(t_peace *p)
 {
 	int	i;
 
-	i = -1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H)
+	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
 	{
-		scene->pix_buff[i].obj_id = EMPTY;
-		ft_memset(&scene->pix_buff[i].color, 0, sizeof(t_clr));
+		p->scene->pix_buff[i].obj_id = EMPTY;
+		ft_memset(&p->scene->pix_buff[i].color, 0, sizeof(t_clr));
 	}
 }

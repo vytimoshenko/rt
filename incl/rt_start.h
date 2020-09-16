@@ -30,7 +30,7 @@ t_mlx		*init_mlx(void);
 void		clean_mlx(t_mlx *mlx);
 void		put_mlx_error(t_mlx *mlx, char *str);
 
-void		clean_pix_buffer(t_scene *scene);
+void		clean_pix_buffer(t_peace *p);
 
 void		draw(t_global *global);
 void		count_frames(t_mlx *mlx, struct timeval start, struct timeval end);
