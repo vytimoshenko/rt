@@ -75,7 +75,7 @@ material
 	name:		"Deep magenta";
 	color:		[255, 0, 255];
 	specular:	0;
-	reflective:	1;
+	reflective:	0;
 }
 
 material
@@ -101,7 +101,7 @@ object
 	position:	[0, 0, 40];
 	orientation:[0, 0, 0];
 	radius:		10;
-	texture:    2;
+	texture:    4;
 }
 
 object
@@ -111,7 +111,7 @@ object
 	position:	[20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		12;
-	texture:    1;
+	texture:    4;
 }
 
 object
@@ -121,7 +121,7 @@ object
 	position:	[-20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		8;
-	texture:    3;
+	texture:    4;
 }
 
 object
@@ -131,7 +131,7 @@ object
 	position:	[-10, 10, 40];
 	orientation:[0, 20, 40];
 	radius:		2;
-	texture:    2;
+	texture:    4;
 }
 
 object
@@ -141,7 +141,7 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 0];
 	radius:		10;
-	texture:    2;
+	texture:    4;
 }
 
 object
@@ -151,14 +151,14 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 0.5];
 	radius:		10;
-	texture:    3;
+	texture:    4;
 }
 
 object
 {
 	type:		<plane>;
-	material:	"Glossy white";
+	material:	"Deep magenta";
 	position:	[0, -10, 0];
 	orientation:    [0, 0, 0];
-	texture:    3;
+	texture:    4;
 }

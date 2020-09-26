@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/07 12:05:58 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/24 21:25:29 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 # define rt_STRUCTURES_H
 
 # include "rt.h"
+
+typedef struct 			s_uv
+{
+	double u;
+	double v;
+}						t_uv;
+
+typedef struct			s_clr
+{
+	unsigned char		r;
+	unsigned char		g;
+	unsigned char		b;
+}						t_clr;
 
 typedef struct s_texture
 {
@@ -29,6 +42,7 @@ typedef struct s_texture
 	int					endian;
 	float  				t_x;
 	float 				t_y;
+	t_clr				clr;
 }				t_texture;
 
 typedef struct	s_textures
@@ -43,13 +57,6 @@ typedef struct			s_vec
 	double				y;
 	double				z;
 }						t_vec;
-
-typedef struct			s_clr
-{
-	unsigned char		r;
-	unsigned char		g;
-	unsigned char		b;
-}						t_clr;
 
 typedef struct			s_pix
 {
@@ -114,6 +121,7 @@ typedef struct			s_obj
 	double				k;
 
 	t_texture			*t;
+	t_uv				uv;
 
 	double				t1;
 	double				t2;

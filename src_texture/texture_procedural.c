@@ -6,11 +6,42 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 18:48:06 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/10 16:31:33 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/25 19:18:50 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "rt.h"
+
+/*
+int		checker_pattern(t_pnt *pnt, t_obj *obj)
+{
+
+	t_vec tmp = mult(3 ,pnt->xyz);
+	double sins = sin(tmp.x) * sin(tmp.y) * sin(tmp.z);
+	int color;
+
+	if (obj)
+		color = 0;
+
+	if (sins < 0)
+		color = T_COLOR_W;
+	else
+		color = T_COLOR_BL;
+	return (color);
+}
+*/
+int		checker_pattern(t_uv uv)
+{
+	int u2 = floor(uv.u * CHECKER_W);
+	int v2 = floor(uv.v * CHECKER_H);
+	int color = 0;
+
+	if ((u2 + v2) % 2  == 0)
+		color = T_COLOR_W;
+	else
+		color = T_COLOR_BL;
+	return (color);
+}
 
 int		stripe_pattern(t_pnt *pnt, t_obj *obj)
 {
@@ -33,9 +64,11 @@ int		stripe_pattern(t_pnt *pnt, t_obj *obj)
 		return T_COLOR_BL;
 }
 
-int		choose_pattern(t_pnt *pnt, t_obj *obj)
+int		choose_pattern(t_pnt *pnt, t_obj *obj, t_uv uv)
 {
 	if (obj->pattern >= STRIPE_X && obj->pattern <= STRIPE_Z)
 		return stripe_pattern(pnt, obj);
+	else if (obj->pattern == CHECKER)
+		return checker_pattern(uv);
 	return (0);
 }

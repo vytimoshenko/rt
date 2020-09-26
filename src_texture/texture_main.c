@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/06 18:40:37 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/25 16:38:20 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ double uv_pattern_at(checkers, u, v)
 		return T_COLOR_G;
 }
 */
+
 
 int		texture(t_global *g)
 {

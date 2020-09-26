@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/10 17:11:48 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/26 17:26:01 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,29 +56,37 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 
 void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 {
-
+	pnt->color = scene->mats.arr[obj->mat]->color;
 	if (obj->type == OBJECT_TYPE_PLANE)
 		plane_n(pnt, pix->pos, obj);
 	else if (obj->type == OBJECT_TYPE_SPHERE)
+	{
 		sphere_n(pnt, pix->pos, obj);
+//		get_sphere_uv(mult(1 / obj->radius, sub(pnt->xyz, obj->pos)), &obj->u, &obj->v);
+//		get_sphere_uv(pnt, obj, &obj->uv);
+//		pnt->color = multiply_color(obj->v, pnt->color);
+	}
 	else if (obj->type == OBJECT_TYPE_CYLINDER)
 		cylinder_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	else if (obj->type == OBJECT_TYPE_CONE)
 		cone_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
+/*
 	double scaleS = 5;
 	double scaleT = 5;
-	double pattern = (cos(pnt->n.y * 2 * M_PI * scaleT) * sin(pnt->n.x * 2 * M_PI * scaleS) + 1) * 0.5;;
+	double pattern = (cos(pnt->n.y * 2 * M_PI * scaleT) * sin(pnt->n.x * 2 * M_PI * scaleS) + 1) * 0.5;
 	pnt->color = multiply_color(pattern, scene->mats.arr[obj->mat]->color);
-
-//	if (obj->pattern)
-//		pnt->color = integer_to_rgb(choose_pattern(pnt, obj));
+*/
+//	Main func
+//  pnt->color = scene->mats.arr[obj->mat]->color;
+	get_uv(pnt, obj, &obj->uv);
+	if (obj->pattern)
+		pnt->color = integer_to_rgb(choose_pattern(pnt, obj, obj->uv));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->trns = scene->mats.arr[obj->mat]->transp;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;
 	pnt->light = get_light(scene, *pnt, mult(-1.0, pix->pos));
-/*
-	if (obj->t)
+/*	if (obj->t)
 	{
 		double phi = 0, theta = 0;
 		double v = 0, u = 0;
@@ -113,7 +121,6 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 		printf("%d\n", texel);
 		if (texel < (obj->t->t_h * obj->t->t_w))
 			pnt->color = integer_to_rgb(obj->t->addr[abs(texel)]);
-	}
-*/
+	}*/
 	pnt->final_clr = multiply_color(pnt->light, pnt->color);
 }
