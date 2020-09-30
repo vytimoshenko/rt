@@ -13,14 +13,6 @@
 #include "../incl/rt.h"
 
 
-t_vec	cross_product(t_vec a, t_vec b)
-{
-	int i = a.y * b.z - a.z * b.y;
-	int j = a.z * b.x - a.x * b.z;
-	int k = a.x * b.y - a.y * b.x;
-	return (t_vec){i, j , k};
-}
-
 t_clr	integer_to_rgb(int clr)
 {
 	return (t_clr){(clr >> 16) & 255, (clr >> 8) & 255, clr & 255};

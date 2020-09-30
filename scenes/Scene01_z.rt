@@ -139,7 +139,7 @@ object
 	type:		<cylinder>;
 	material:	"Sunny yellow";
 	position:	[10, 0, 120];
-	orientation:[0, 1, 0];
+	orientation:[1, 1, 2];
 	radius:		10;
 	texture:    4;
 }

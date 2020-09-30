@@ -16,11 +16,11 @@
 
 # include "rt.h"
 
-typedef struct 			s_uv
+typedef struct 			s_double2
 {
 	double u;
 	double v;
-}						t_uv;
+}						t_double2;
 
 typedef struct			s_clr
 {
@@ -121,7 +121,7 @@ typedef struct			s_obj
 	double				k;
 
 	t_texture			*t;
-	t_uv				uv;
+	t_double2				uv;
 
 	double				t1;
 	double				t2;

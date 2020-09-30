@@ -6,18 +6,19 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 18:48:06 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/25 19:18:50 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/09/30 17:18:15 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "rt.h"
 
-/*
-int		checker_pattern(t_pnt *pnt, t_obj *obj)
+int		plane_checker_pattern(t_pnt *pnt, t_obj *obj)
 {
-
-	t_vec tmp = mult(3 ,pnt->xyz);
-	double sins = sin(tmp.x) * sin(tmp.y) * sin(tmp.z);
+//	t_vec tmp = mult(3 ,pnt->xyz);
+//	t_vec tmp = sub(pnt->xyz, obj->pos);
+//	double sins = sin(10 * tmp.x) * sin(10 * tmp.y) * sin(10 * tmp.z);
+	t_double2 uv = get_plane_texel(obj, pnt);
+	double sins = sin(uv.u) * sin(uv.v);
 	int color;
 
 	if (obj)
@@ -29,8 +30,8 @@ int		checker_pattern(t_pnt *pnt, t_obj *obj)
 		color = T_COLOR_BL;
 	return (color);
 }
-*/
-int		checker_pattern(t_uv uv)
+
+int		checker_pattern(t_double2 uv)
 {
 	int u2 = floor(uv.u * CHECKER_W);
 	int v2 = floor(uv.v * CHECKER_H);
@@ -64,11 +65,15 @@ int		stripe_pattern(t_pnt *pnt, t_obj *obj)
 		return T_COLOR_BL;
 }
 
-int		choose_pattern(t_pnt *pnt, t_obj *obj, t_uv uv)
+int		choose_pattern(t_pnt *pnt, t_obj *obj, t_double2 uv)
 {
 	if (obj->pattern >= STRIPE_X && obj->pattern <= STRIPE_Z)
 		return stripe_pattern(pnt, obj);
 	else if (obj->pattern == CHECKER)
+	{
+		if (obj->type == OBJECT_TYPE_PLANE)
+			return plane_checker_pattern(pnt, obj);
 		return checker_pattern(uv);
+	}
 	return (0);
 }
