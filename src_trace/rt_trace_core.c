@@ -12,7 +12,28 @@
 
 #include "../incl/rt.h"
 
-void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
+t_clr	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, int k)
+{
+	if (pnt.refl > 0)
+	{
+		pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
+		return (add_color(multiply_color(1.0 - pnt.refl, pnt.final_clr),
+		multiply_color(pnt.refl, trace_pixel(scene, pnt.xyz, pix, k - 1))));
+		// pix->color = add_color(multiply_color(1.0 - pnt.refl,
+		// pnt.final_clr), multiply_color(pnt.refl, pix->color));
+	}
+	if (pnt.trns > 0)
+	{
+		pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, k);
+		return (add_color(multiply_color(1.0 - pnt.trns, pnt.final_clr),
+		multiply_color(pnt.trns, trace_pixel(scene, pnt.xyz, pix, k - 1))));
+		// pix->color = add_color(multiply_color(1.0 - pnt.trns,
+		// pnt.final_clr), multiply_color(pnt.trns, pix->color));
+	}
+	return (pnt.final_clr);
+}
+
+t_clr	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 {
 	t_pnt	pnt;
 
@@ -21,23 +42,14 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 	if (scene->obj.closest == MAX && pix->obj_id == EMPTY)
 		pix->obj_id = NOTHING_SELECTED;
 	if (scene->obj.closest == MAX)
-		return ;
+		return (init_clr());
 	if (pix->obj_id == EMPTY)
 		pix->obj_id = scene->obj.id;
 	pnt.xyz = add(cam, mult(scene->obj.closest, pix->pos));
 	get_prop(scene, pix, &pnt, &scene->obj);
 	if (k == 0 || (pnt.refl <= 0 && pnt.trns <= 0))
-	{
-		pix->color = pnt.final_clr;
-		return ;
-	}
-	if (pnt.refl > 0)
-	{
-		pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
-		trace_pixel(scene, pnt.xyz, pix, k - 1);
-		pix->color = add_color(multiply_color(1.0 - pnt.refl,
-		pnt.final_clr), multiply_color(pnt.refl, pix->color));
-	}
+		return (pnt.final_clr);
+	return (recursion(scene, pnt, pix, k));
 }
 
 void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
@@ -54,6 +66,7 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->trns = scene->mats.arr[obj->mat]->transp;
+	pnt->trns = 0.5;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;
 	pnt->light = get_light(scene, *pnt, mult(-1.0, pix->pos));
 	pnt->final_clr = multiply_color(pnt->light, pnt->color);

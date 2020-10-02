@@ -49,7 +49,7 @@
 void		final_processing(t_mlx *mlx, t_scene *scene);
 t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color);
 
-void		fill_aliasing_buffer(t_peace *p);
+void		fill_aliasing_buffer(t_scene *scene);
 int			need_to_smooth(t_scene *scene, int i);
 void		add_adjacent_pixels(t_scene *scene, int i);
 t_clr		effect_outline(t_scene *scene, int i);
@@ -74,6 +74,7 @@ t_clr		get_channel_diff(t_clr c1, t_clr c2);
 t_clr		add_color(t_clr c1, t_clr c2);
 t_clr		multiply_color(double k, t_clr c);
 t_clr		mix_color(t_clr c1, t_clr c2);
+t_clr		init_clr(); // new
 
 t_clr		to_grayscale(t_clr color);
 t_clr		to_negative(t_clr color);

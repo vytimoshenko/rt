@@ -38,7 +38,7 @@
 # define MESSAGE_BOX_H					80
 # define MESSAGE_BOX_INDENTATION		10
 
-# define PEACES                         8
+// # define PEACES                         8
 
 
 void		show_interface(t_global *global);

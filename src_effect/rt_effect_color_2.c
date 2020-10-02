@@ -43,3 +43,13 @@ t_clr	mix_color(t_clr c1, t_clr c2)
 	result.b = (c1.b + c2.b) / 2;
 	return (result);
 }
+
+t_clr	init_clr()
+{
+	t_clr c;
+
+	c.r = 0;
+	c.g = 0;
+	c.b = 0;
+	return (c);
+} 

@@ -12,49 +12,30 @@
 
 #include "../incl/rt.h"
 
-void	peaces(t_scene *scene)
-{
-	int i;
-	t_peace peace[PEACES];
-
-	i = -1;
-	while (++i < PEACES)
-	{
-		peace[i].i = i;
-		peace[i].scene = scene;
-		pthread_create(&(peace[i].p), NULL, trace_rays, &(peace[i]));
-	}
-	i = -1;
-	while (++i < PEACES)
-		pthread_join(peace[i].p, NULL);
-}
-
-void	*trace_rays(void *peace)
-{
-	int	i;
-	t_peace *p;
-
-	p = (t_peace *)peace;
-	clean_pix_buffer(p);
-	prepare_pixs(p);
-	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
-		trace_pixel(p->scene, p->scene->cams.arr[p->scene->act_cam]->
-		pos, &p->scene->pix_buff[i], 1);
-	fill_aliasing_buffer(p);
-	return (0);
-}
-
-void	prepare_pixs(t_peace *p)
+void	trace_rays(t_scene *scene)
 {
 	int	i;
 
-	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
+	clean_pix_buffer(scene);
+	prepare_pixs(scene);
+	i = -1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H)
+		scene->pix_buff[i].color = add_color(init_clr(), 
+		trace_pixel(scene, scene->cams.arr[scene->act_cam]->
+		pos, &scene->pix_buff[i], REFLECTION_DEPTH));
+	fill_aliasing_buffer(scene);
+}
+
+void	prepare_pixs(t_scene *scene)
+{
+	int	i;
+
+	i = -1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 	{
-		p->scene->pix_buff[i].i = i;
-		get_centered_coordinates(&p->scene->pix_buff[i]);
-		get_pix_viewport_coordinates(p->scene, &p->scene->pix_buff[i]);
+		scene->pix_buff[i].i = i;
+		get_centered_coordinates(&scene->pix_buff[i]);
+		get_pix_viewport_coordinates(scene, &scene->pix_buff[i]);
 	}
 }
 

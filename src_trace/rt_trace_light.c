@@ -91,3 +91,18 @@ t_vec	reflect_ray(t_vec r, t_vec n)
 {
 	return (sub(mult(2.0 * dot(r, n), n), r));
 }
+
+t_vec	refract_ray(t_vec r, t_vec n, int d)
+{
+	double cos;
+	double sq;
+	double angl;
+
+	angl = (d % 2) ? 0.67 : 1.5;
+	r = nrm(r);
+	cos = dot(r, n);
+	sq = sqrt(pow(angl, 2) - 1 * pow((1 - cos), 2));
+	n = mult((angl * cos - sq), n);
+	r = mult(angl, r);
+	return (sub(n, r));
+}

@@ -35,13 +35,13 @@
 
 # define PI								3.14159265
 
-void	    *trace_rays(void *peace);
-void		prepare_pixs(t_peace *p);
+void		trace_rays(t_scene *scene);
+void		prepare_pixs(t_scene *scene);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
 void		rotate_pix(t_pix *pix, t_cam *cam);
 
-void		trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int refl_depth);
+t_clr		trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int refl_depth);
 void		get_prop(t_scene *scene, t_pix *pix, t_pnt *point, t_obj *obj);
 void		get_normal(t_pnt *point, t_vec pix, t_obj *obj, t_vec cam);
 
@@ -64,6 +64,7 @@ double		diffuse_and_specular(t_scene *scene, t_pnt point, t_vec pix, int i);
 double		diffuse(t_vec normal, t_vec light);
 double		specular(t_vec normal, t_vec light, t_vec pix, double specular);
 t_vec		reflect_ray(t_vec ray, t_vec normal);
+t_vec       refract_ray(t_vec ray, t_vec normal, int d);
 
 double		deg_to_rad(int degrees);
 double		dot(t_vec v1, t_vec v2);
@@ -73,7 +74,5 @@ t_vec		nrm(t_vec v);
 t_vec		add(t_vec v1, t_vec v2);
 t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
-
-void	    peaces(t_scene *scene);
 
 #endif

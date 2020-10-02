@@ -19,7 +19,7 @@ void	draw(t_global *global)
 
 	gettimeofday(&start, NULL);
 	mlx_clear_window(global->mlx->mlx, global->mlx->win);
-	peaces(global->scene);
+	trace_rays(global->scene);
 	final_processing(global->mlx, global->scene);
 	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
 	global->mlx->img, IMG_INDT_W, IMG_INDT_H);
