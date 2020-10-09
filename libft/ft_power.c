@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_power(int nb, int power)
+double	ft_power(double nb, int power)
 {
-	int a;
+	double a;
 
 	if (power < 0)
 		return (0);

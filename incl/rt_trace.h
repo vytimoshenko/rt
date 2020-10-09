@@ -29,7 +29,7 @@
 # define OBJECT_TYPE_CYLINDER			2
 # define OBJECT_TYPE_CONE				3
 
-# define REFLECTION_DEPTH				3
+# define REFLECTION_DEPTH				2
 # define MIN							0.0001
 # define MAX							100000
 

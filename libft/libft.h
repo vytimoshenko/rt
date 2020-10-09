@@ -98,7 +98,7 @@ void			ft_arrfill(char const *s, char c, char **arr);
 void			ft_lstdelmy(t_list *lst);
 int				ft_find_eol(char *buff);
 int				get_next_line(const int fd, char **line);
-int				ft_power(int nb, int power);
+double			ft_power(double nb, int power);
 void			ft_put_error(char *str);
 void			ft_put_errno(char *str);
 int				ft_strindex(char c, char *str);

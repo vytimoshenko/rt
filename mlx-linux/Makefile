@@ -30,18 +30,20 @@ SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \
 	mlx_int_param_event.c mlx_int_set_win_event_mask.c mlx_hook.c \
 	mlx_rgb.c mlx_destroy_image.c mlx_mouse.c mlx_screen_size.c
 
-OBJ	=$(SRC:.c=.o)
-CFLAGS	= -O3 -I$(INC)
+OBJ	= $(SRC:.c=.o)
 
 all	: $(NAME)
 
-$(NAME)	: $(OBJ)
-	ar -r $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ)
+	@ar -r $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
-do_cp	:
+%.o: %.c
+	@gcc $< -c -o $@
+
+do_cp:
 	cp $(NAME) libmlx_$(HT).a
 
 
 clean	:
-	rm -f $(OBJ) $(NAME) libmlx_$(HT).a *~ core *.core
+	@rm -f $(OBJ) $(NAME) libmlx_$(HT).a *~ core *.core

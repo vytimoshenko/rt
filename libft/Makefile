@@ -90,17 +90,17 @@ SRCS_O	= $(SRCS_C:.c=.o)
 all: $(NAME)
 
 $(NAME): $(SRCS_O)
-	ar rc $(NAME) $(SRCS_O)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(SRCS_O)
+	@ranlib $(NAME)
 
 %.o: %.c
-	gcc -Wall -Wextra -Werror $< -c -o $@
+	@gcc -Wall -Wextra -Werror $< -c -o $@
 
 clean:
-	/bin/rm -f $(SRCS_O)
+	@/bin/rm -f $(SRCS_O)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 

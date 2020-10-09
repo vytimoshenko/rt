@@ -48,21 +48,20 @@ all:		$(NAME)
 $(NAME):	$(OBJ)
 			$(MK_FT)
 			$(MK_MLX)
-			$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_DEP)
-			$(MK_DIR)
+			@$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_DEP)
 
 %.o:		%.c
-			$(CMPLR) $< -c -o $@
+			@$(CMPLR) $< -c -o $@
 
 clean:
 			@/bin/rm -f $(OBJ)
-			$(CL_FT)
-			$(CL_MLX)
+			@$(CL_FT)
+			@$(CL_MLX)
 			@/bin/rm -rf saves screenshots
 
 fclean: 	clean
 			@/bin/rm -f $(NAME)
-			$(FCL_FT)
+			@$(FCL_FT)
 
 re: 		fclean all
 

@@ -25,6 +25,10 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->spec = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_REFLECTIVE)))
 		scene->mats.arr[i]->refl = (double)ft_atoi(value) / 10.0;
+	else if (!(ft_strcmp(property, FILE_MATERIAL_REFRACTIVE)))
+		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
+	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
+		scene->mats.arr[i]->transp = (double)ft_atoi(value) / 10.0;
 	else
 		put_error_wrong_scene_data(property, "wrong material property name");
 }
