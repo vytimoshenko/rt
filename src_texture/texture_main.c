@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/09/25 16:38:20 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/10 20:30:43 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,28 @@ double uv_pattern_at(checkers, u, v)
 }
 */
 
+void	init_obj_texture(t_scene *s)
+{
+	int i = -1;
+	while (++i < s->objs.quant)
+	{
+		if (s->objs.arr[i]->t)
+			s->objs.arr[i]->t = s->texture;
+	}
+}
+
 
 int		texture(t_global *g)
 {
 	void	*img;
 	int 	*addr;
 //	char	*path = "textures/ljagushonok-pepe.png";
-	char	*path = "textures/brick-wall.png";
+//	char	*path = "textures/brick-wall.png";
 //	char	*path = "textures/316-3166191_sphere.png";
+	char	*path = "textures/300840060233211.png";
+//	char	*path = "textures/earthmap1k.png";
+//	char	*path = "textures/burning+hot+lava-1024x1024.png";
+//	char	*path = "textures/yellow+bananas-2048x2048.png";
 	int		img_width;
 	int 	img_height;
 	int 	bpp;
@@ -61,5 +75,6 @@ int		texture(t_global *g)
 	g->scene->texture->bits_per_pixel = bpp;
 	g->scene->texture->size_line = llenght;
 	g->scene->texture->endian = endian;
+	init_obj_texture(g->scene);
 	return (0);
 }

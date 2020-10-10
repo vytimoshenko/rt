@@ -6,11 +6,20 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/07 12:30:45 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/03 19:50:22 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
+
+t_texture 	*identify_texture(char *tex)
+{
+	t_texture *t;
+	t = malloc(sizeof(t_texture));
+	// check_tex(char *)
+	t->name = tex;
+	return t;
+}
 
 int 	identify_pattern(int pat)
 {
@@ -19,12 +28,12 @@ int 	identify_pattern(int pat)
 	return (0);
 }
 
-void 	identify_textures(char *texture, t_obj *obj)
+void 	identify_textures(char *texture, t_obj *obj, t_scene *scene)
 {
 	if (ft_isdigit(*texture))
 		obj->pattern = identify_pattern(ft_atoi(texture));
-//	else
-//		identify_texture();
+	else
+		obj->t = identify_texture(texture);
 }
 
 void	parse_material_description(t_scene *scene, char *property, char *value)
@@ -61,7 +70,7 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_TEXTURE)))
-		identify_textures(value, scene->objs.arr[i]);
+		identify_textures(value, scene->objs.arr[i], scene);
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }

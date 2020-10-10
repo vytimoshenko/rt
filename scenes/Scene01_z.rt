@@ -14,7 +14,7 @@ camera
 light
 {
 	type:		<ambient>;
-	intensity:	1;
+	intensity:	3;
 }
 
 light
@@ -101,17 +101,17 @@ object
 	position:	[0, 0, 40];
 	orientation:[0, 0, 0];
 	radius:		10;
-	texture:    4;
+	texture:    "b";
 }
 
 object
 {
 	type:		<sphere>;
 	material:	"Matte green";
-	position:	[20, 0, 40];
+	position:	[20, 8, 40];
 	orientation:	[0, 0, 0];
 	radius:		12;
-	texture:    4;
+	texture:    "b";
 }
 
 object
@@ -121,7 +121,7 @@ object
 	position:	[-20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		8;
-	texture:    4;
+	texture:    "b";
 }
 
 object
@@ -131,7 +131,7 @@ object
 	position:	[-10, 10, 40];
 	orientation:[0, 20, 40];
 	radius:		2;
-	texture:    4;
+	texture:    "b";
 }
 
 object
@@ -139,9 +139,9 @@ object
 	type:		<cylinder>;
 	material:	"Sunny yellow";
 	position:	[10, 0, 120];
-	orientation:[1, 1, 2];
+	orientation:[0, 1, 1];
 	radius:		10;
-	texture:    4;
+	texture:    "b";
 }
 
 object
@@ -149,16 +149,16 @@ object
 	type:		<cone>;
 	material:	"Deep magenta";
 	position:	[-20, -30, 70];
-	orientation:[0, -1, 0.5];
+	orientation:[0, -1, 1];
 	radius:		10;
-	texture:    4;
+	texture:    "b";
 }
 
 object
 {
 	type:		<plane>;
 	material:	"Deep magenta";
-	position:	[0, -10, 0];
+	position:	[0, -10, 1];
 	orientation:    [0, 0, 0];
-	texture:    4;
+	texture:    "b";
 }

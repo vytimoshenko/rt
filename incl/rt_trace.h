@@ -73,5 +73,7 @@ t_vec		nrm(t_vec v);
 t_vec		add(t_vec v1, t_vec v2);
 t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
+t_vec		cross_product(t_vec a, t_vec b);
+
 
 #endif

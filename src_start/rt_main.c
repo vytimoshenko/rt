@@ -64,6 +64,7 @@ int	main(int argc, char **argv)
 	global.scene = init_scene(argc, argv);
 	global.mlx = init_mlx();
 	global.scene->texture = (t_texture [1]){{0}};
+//	init_texture(scene)
 	texture(&global);
 /*
 	t_obj 		o = {global.scene->objs.quant, OBJECT_TYPE_SPHERE, 0, {255, 0 , 0}

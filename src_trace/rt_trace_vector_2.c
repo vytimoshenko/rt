@@ -41,3 +41,11 @@ t_vec	mult(double k, t_vec v)
 	result.z = k * v.z;
 	return (result);
 }
+
+t_vec	cross_product(t_vec a, t_vec b)
+{
+	double i = a.y * b.z - a.z * b.y;
+	double j = a.z * b.x - a.x * b.z;
+	double k = a.x * b.y - a.y * b.x;
+	return (t_vec){i, j , k};
+}

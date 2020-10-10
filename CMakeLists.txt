@@ -4,7 +4,7 @@ project(RT C)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+#set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
 
 set(CMAKE_SKIP_RPATH TRUE)
 
