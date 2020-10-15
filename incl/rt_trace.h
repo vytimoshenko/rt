@@ -29,9 +29,10 @@
 # define OBJECT_TYPE_CYLINDER			2
 # define OBJECT_TYPE_CONE				3
 
-# define REFLECTION_DEPTH				2
+# define REFLECTION_DEPTH				3
 # define MIN							0.0001
 # define MAX							100000
+# define REFL_ANGL						0.0
 
 # define PI								3.14159265
 
@@ -41,7 +42,7 @@ void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
 void		rotate_pix(t_pix *pix, t_cam *cam);
 
-t_clr		trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int refl_depth);
+void		trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int refl_depth);
 void		get_prop(t_scene *scene, t_pix *pix, t_pnt *point, t_obj *obj);
 void		get_normal(t_pnt *point, t_vec pix, t_obj *obj, t_vec cam);
 

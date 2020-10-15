@@ -20,9 +20,8 @@ void	trace_rays(t_scene *scene)
 	prepare_pixs(scene);
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
-		scene->pix_buff[i].color = add_color(init_clr(), 
 		trace_pixel(scene, scene->cams.arr[scene->act_cam]->
-		pos, &scene->pix_buff[i], REFLECTION_DEPTH));
+		pos, &scene->pix_buff[i], REFLECTION_DEPTH);
 	fill_aliasing_buffer(scene);
 }
 

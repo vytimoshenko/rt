@@ -64,9 +64,8 @@ void	get_multisample_color(t_scene *scene, t_pix *pix, double *jitter)
 		tmp.x = jitter[i] + scene->cams.arr[scene->act_cam]->
 		pos.x;
 		tmp.y = jitter[i] + scene->cams.arr[scene->act_cam]->
-		pos.y;
-		pix->color = add_color(pix->color, 
-		trace_pixel(scene, tmp, pix, REFLECTION_DEPTH));
+		pos.y; 
+		trace_pixel(scene, tmp, pix, REFLECTION_DEPTH);
 		sum.x += pix->color.r;
 		sum.y += pix->color.g;
 		sum.z += pix->color.b;

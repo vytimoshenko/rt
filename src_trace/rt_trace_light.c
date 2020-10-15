@@ -94,15 +94,15 @@ t_vec	reflect_ray(t_vec r, t_vec n)
 
 t_vec	refract_ray(t_vec r, t_vec n, int d)
 {
-	double cos;
-	double sq;
+	double c1;
+	double c2;
 	double angl;
 
 	r = nrm(r);
-	cos = dot(r, n);
-	angl = d % 2 ? 1.5 : 0.8;
-	sq = sqrt(ft_power(angl, 2) - 1 * ft_power((1.0 - cos), 2));
-	n = mult((angl * cos - sq), n);
+	angl = (d == 1) ? 1.5 : 1.0 / 1.5;
+	c1 = dot(r, n);
+	c2 = sqrt(1.0 - (pow(angl, 2) * (1.0 - pow((c1), 2))));
+	n = mult((angl * c1 - c2), n);
 	r = mult(angl, r);
 	return (sub(n, r));
 }

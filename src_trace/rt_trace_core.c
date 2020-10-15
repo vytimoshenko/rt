@@ -12,35 +12,32 @@
 
 #include "../incl/rt.h"
 
-t_clr	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, int k)
+static	void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, int k)
 {
 	if (pnt.refl > 0)
 	{
 		pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
-		return (add_color(multiply_color(1.0 - pnt.refl, pnt.final_clr),
-		multiply_color(pnt.refl, trace_pixel(scene, pnt.xyz, pix, k - 1))));
-		// pix->color = add_color(multiply_color(1.0 - pnt.refl,
-		// pnt.final_clr), multiply_color(pnt.refl, pix->color));
+		trace_pixel(scene, pnt.xyz, pix, k - 1);
+		pix->color = add_color(multiply_color(1.0 - pnt.refl,
+		pnt.final_clr), multiply_color(pnt.refl, pix->color));
 	}
 	else if (pnt.refr > 0)
 	{
-		pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, k);
-		return (add_color(pnt.final_clr,
-			trace_pixel(scene, pnt.xyz, pix, k - 1)));
-		// pix->color = add_color(multiply_color(1.0 - pnt.refr,
-		// pnt.final_clr), multiply_color(pnt.refr, pix->color));
+		if (scene->obj.t1 > 0.0001 && scene->obj.t2 > 0.0001)
+			pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, 0);
+		else
+			pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, 1);
+		trace_pixel(scene, pnt.xyz, pix, k - 1);
+		pix->color = add_color(pnt.final_clr, pix->color);
 	}
 	else if (pnt.trns > 0)
 	{
-		return (add_color(pnt.final_clr,
-			trace_pixel(scene, pnt.xyz, pix, k - 1)));
-		// pix->color = add_color(multiply_color(1.0 - pnt.refr,
-		// pnt.final_clr), multiply_color(pnt.refr, pix->color));
+		trace_pixel(scene, pnt.xyz, pix, k - 1);
+		pix->color = add_color(pnt.final_clr, pix->color);
 	}
-	return (pnt.final_clr);
 }
 
-t_clr	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
+void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 {
 	t_pnt	pnt;
 
@@ -49,14 +46,17 @@ t_clr	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 	if (scene->obj.closest == MAX && pix->obj_id == EMPTY)
 		pix->obj_id = NOTHING_SELECTED;
 	if (scene->obj.closest == MAX)
-		return (init_clr());
+		return ;
 	if (pix->obj_id == EMPTY)
 		pix->obj_id = scene->obj.id;
 	pnt.xyz = add(cam, mult(scene->obj.closest, pix->pos));
 	get_prop(scene, pix, &pnt, &scene->obj);
 	if (k == 0 || (pnt.refl <= 0 && pnt.refr <= 0 && pnt.trns <= 0))
-		return (pnt.final_clr);
-	return (recursion(scene, pnt, pix, k));
+	{
+		pix->color = pnt.final_clr;
+		return ;
+	}
+	recursion(scene, pnt, pix, k);
 }
 
 void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)

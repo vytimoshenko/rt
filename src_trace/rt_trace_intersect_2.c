@@ -19,15 +19,16 @@ void	plane(t_obj *obj, t_vec cam, t_vec pix)
 	double	xdn;
 	double	pdn;
 
+	t = -1;
 	x = sub(cam, obj->pos);
 	xdn = dot(x, obj->pos);
 	pdn = dot(pix, obj->pos);
-	if (!pdn)
+	if (pdn)
 	{
-		obj->t1 = -1;
-		obj->t2 = -1;
+		t = -xdn / pdn;
+		x = add(mult(t, pix), x);
 	}
-	if ((t = -xdn / pdn) > 0)
+	if (t > 0 && (dot(x, x) < obj->radius * obj->radius || obj->radius == 0))
 	{
 		obj->t1 = t;
 		obj->t2 = t;
@@ -71,21 +72,23 @@ void	cylinder(t_obj *obj, t_vec cam, t_vec pix)
 	double	d;
 
 	r = sub(cam, obj->pos);
-	k1 = dot(pix, pix) - dot(pix, obj->dir) *
-	dot(pix, obj->dir);
-	k2 = 2.0 * (dot(pix, r) - dot(pix, obj->dir) *
-	dot(r, obj->dir));
+	k1 = dot(pix, pix) - dot(pix, obj->dir) * dot(pix, obj->dir);
+	k2 = 2.0 * (dot(pix, r) - dot(pix, obj->dir) * dot(r, obj->dir));
 	k3 = dot(r, r) - dot(r, obj->dir) * dot(r, obj->dir) -
 	obj->radius * obj->radius;
 	d = k2 * k2 - 4 * k1 * k3;
-	if (d < 0)
+	if (d >= 0)
 	{
-		obj->t1 = -1;
-		obj->t2 = -1;
-		return ;
+		obj->t1 = (-k2 + sqrt(d)) / (2.0 * k1);
+		obj->t2 = (-k2 - sqrt(d)) / (2.0 * k1);
+		k1 = dot(r, obj->dir) + dot(mult(obj->t1, obj->dir), pix);
+		k2 = dot(r, obj->dir) + dot(mult(obj->t2, obj->dir), pix);
+		if (k1 < 50 && k2 < 50 && 
+		k1 > - 50 && k2 > - 50)
+			return ;
 	}
-	obj->t1 = (-k2 + sqrt(d)) / (2.0 * k1);
-	obj->t2 = (-k2 - sqrt(d)) / (2.0 * k1);
+	obj->t1 = -1;
+	obj->t2 = -1;
 }
 
 void	cone(t_obj *obj, t_vec cam, t_vec pix)

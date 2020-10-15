@@ -59,7 +59,7 @@ material
 	name:		"Super blue";
 	color:		[0, 0, 255];
 	specular:	1000;
-	reflective: 0;
+	reflective: 4;
 	refractive:	1;
 	transparency: 0;
 }
@@ -80,7 +80,7 @@ material
 	color:		[255, 0, 255];
 	specular:	0;
 	reflective:	0;
-	refractive:	0;
+	refractive: 5;
 }
 
 material
@@ -89,7 +89,7 @@ material
 	color:		[255, 255, 0];
 	specular:	1000;
 	reflective:	0;
-	refractive:	0;
+	refractive:	15;
 }
 
 material
@@ -149,6 +149,7 @@ object
 {
 	type:		<plane>;
 	material:	"Glossy white";
-	position:	[0, -10, 0];
+	position:	[0, -10, 25];
 	orientation:	[0, 0, 0];
+	radius:		10;
 }
