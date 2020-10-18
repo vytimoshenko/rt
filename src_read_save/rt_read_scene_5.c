@@ -49,6 +49,8 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 		scene->objs.arr[i]->dir = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
+	else if (!(ft_strcmp(property, FILE_OBJECT_LENGTH)))
+		scene->objs.arr[i]->len = (double)ft_atoi(value) / 2.0;
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }

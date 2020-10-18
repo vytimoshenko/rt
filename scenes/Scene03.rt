@@ -134,6 +134,7 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 0];
 	radius:		10;
+	length:		50;
 }
 
 object
@@ -143,6 +144,7 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 0.5];
 	radius:		10;
+	length:		10;
 }
 
 object

@@ -83,8 +83,8 @@ void	cylinder(t_obj *obj, t_vec cam, t_vec pix)
 		obj->t2 = (-k2 - sqrt(d)) / (2.0 * k1);
 		k1 = dot(r, obj->dir) + dot(mult(obj->t1, obj->dir), pix);
 		k2 = dot(r, obj->dir) + dot(mult(obj->t2, obj->dir), pix);
-		if (k1 < 50 && k2 < 50 && 
-		k1 > - 50 && k2 > - 50)
+		if ((k1 < obj->len && k1 > - obj->len) ||
+		(k2 < obj->len && k2 > - obj->len) ||  obj->len == 0)
 			return ;
 	}
 	obj->t1 = -1;
@@ -107,12 +107,16 @@ void	cone(t_obj *obj, t_vec cam, t_vec pix)
 	dot(r, obj->dir));
 	k3 = dot(r, r) - (1 + d * d) * dot(r, obj->dir) * dot(r, obj->dir);
 	d = k2 * k2 - 4.0 * k1 * k3;
-	if (d < 0)
+	if (d >= 0)
 	{
-		obj->t1 = -1;
-		obj->t2 = -1;
-		return ;
+		obj->t1 = (-k2 + sqrt(d)) / (2.0 * k1);
+		obj->t2 = (-k2 - sqrt(d)) / (2.0 * k1);
+		k1 = dot(r, obj->dir) + dot(mult(obj->t1, obj->dir), pix);
+		k2 = dot(r, obj->dir) + dot(mult(obj->t2, obj->dir), pix);
+		if ((k1 < obj->len && k1 > - obj->len) ||
+		(k2 < obj->len && k2 > - obj->len) ||  obj->len == 0)
+			return ;
 	}
-	obj->t1 = (-k2 + sqrt(d)) / (2.0 * k1);
-	obj->t2 = (-k2 - sqrt(d)) / (2.0 * k1);
+	obj->t2 = -1;
+	obj->t1 = -1;
 }
