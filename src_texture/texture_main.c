@@ -6,75 +6,86 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/10 20:30:43 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/17 19:10:02 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "rt.h"
 
-/*
-void	spherical_map(t_vec p, t_obj sp, double *u, double *v)
+int identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 {
-	double theta = atan2(p.y, p.z);
-	t_vec vec = p;
-	double radius = sp.radius;
-	double phi = acos(p.y / radius);
-	double raw_u = theta / (2 * PI);
-	*u = 1 - (raw_u + 0.5);
-	*v = 1 - phi / PI;
-}
-
-double uv_pattern_at(checkers, u, v)
-{
-	double u2 = u * T_WIDTH;
-	double v2 = v * T_HEIGHT;
-
-	if ((int)(u2 + v2) % 2 == 0)
-		return T_COLOR_R;
+	if (mat->t)
+		return (get_image_texel(mat, obj));
 	else
-		return T_COLOR_G;
+		return (get_patt_color(pnt, obj, uv, mat));
 }
-*/
 
-void	init_obj_texture(t_scene *s)
+//TODO очистить и отнормировать функцию
+int		get_image_texel(t_mat *mat, t_obj *obj)
+{
+	double u = obj->uv.u;
+	double v = obj->uv.v;
+
+	if (u < 0)
+		u = 0;
+	if (v < 0)
+		v = 0;
+	if (u > 1.0)
+		u = 1.0;
+	if (v > 1.0)
+		v = 1.0;
+
+	v = 1 - v;
+	int 	height = 0;
+	int 	weight = 0;
+
+	height = (int )(v * (mat->t->t_h));
+	weight = (int )(u * (mat->t->t_w));
+	if (height >= mat->t->t_h)
+		height = mat->t->t_h - 1;
+	if (weight >= mat->t->t_w)
+		weight = mat->t->t_w - 1;
+//		int texel = height + weight * obj->t->size_line / 4;
+	int texel = 4 +  height * mat->t->size_line / 4  + weight;
+//		int *texel = obj->t->addr + height * obj->t->size_line / 4 + weight * obj->t->bits_per_pixel;
+	printf("%d\n", texel);
+	int c_scale = 1.0 / 255.0;
+//		t_clr clr = {c_scale * texel[0], c_scale * texel[1], c_scale * texel[2]};
+//		if (texel < (obj->t->t_h * obj->t->t_w))
+//			pnt->color = integer_to_rgb(obj->t->addr[abs(texel)]);
+	return (mat->t->addr[texel]);
+//		pnt->color = clr;
+
+}
+
+// Function for initialisation textures
+void 	init_texture(t_texture *texture, t_mlx *mlx)
+{
+	//	char	*path = "textures/ljagushonok-pepe.png";
+	//	char	*path = "textures/316-3166191_sphere.png";
+	//	char	*path = "textures/300840060233211.png";
+	//	char	*path = "textures/earthmap1k.png";
+	//	char	*path = "textures/burning+hot+lava-1024x1024.png";
+//	char	*path = "textures/yellow+bananas-2048x2048.png";
+
+//	TODO Переделать открытие текстур под SDL2 or libpng
+	texture->data = mlx_png_file_to_image(mlx->mlx, texture->name, &texture->t_w
+									   , &texture->t_h);
+	texture->addr = (int *)mlx_get_data_addr(texture->data
+			, &texture->bits_per_pixel, &texture->size_line, &texture->endian);
+//		scene->get_textures->t_h = llenght / (bpp / 8);
+//		scene->get_textures->t_w = llenght / (bpp / 8);
+//	init_obj_texture(scene);
+}
+
+
+int		get_textures(t_global *g)
 {
 	int i = -1;
-	while (++i < s->objs.quant)
+	while (++i < g->scene->objs.quant)
 	{
-		if (s->objs.arr[i]->t)
-			s->objs.arr[i]->t = s->texture;
+		if (g->scene->mats.arr[g->scene->objs.arr[i]->mat]->t)
+			init_texture(g->scene->mats.arr[g->scene->objs.arr[i]->mat]->t, g->mlx);
 	}
-}
-
-
-int		texture(t_global *g)
-{
-	void	*img;
-	int 	*addr;
-//	char	*path = "textures/ljagushonok-pepe.png";
-//	char	*path = "textures/brick-wall.png";
-//	char	*path = "textures/316-3166191_sphere.png";
-	char	*path = "textures/300840060233211.png";
-//	char	*path = "textures/earthmap1k.png";
-//	char	*path = "textures/burning+hot+lava-1024x1024.png";
-//	char	*path = "textures/yellow+bananas-2048x2048.png";
-	int		img_width;
-	int 	img_height;
-	int 	bpp;
-	int 	llenght;
-	int		endian;
-
-	img = mlx_png_file_to_image(g->mlx->mlx, path, &img_width, &img_height);
-	addr = (int *)mlx_get_data_addr(img, &bpp, &llenght, &endian);
-	g->scene->texture->data = img;
-	g->scene->texture->addr = addr;
-//	g->scene->texture->t_h = llenght / (bpp / 8);
-//	g->scene->texture->t_w = llenght / (bpp / 8);
-	g->scene->texture->t_h = img_height;
-	g->scene->texture->t_w = img_width;
-	g->scene->texture->bits_per_pixel = bpp;
-	g->scene->texture->size_line = llenght;
-	g->scene->texture->endian = endian;
-	init_obj_texture(g->scene);
 	return (0);
 }

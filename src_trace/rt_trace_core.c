@@ -6,17 +6,11 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/10 13:42:45 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/17 18:32:05 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
-
-
-t_clr	integer_to_rgb(int clr)
-{
-	return (t_clr){(clr >> 16) & 255, (clr >> 8) & 255, clr & 255};
-}
 
 void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 {
@@ -71,15 +65,18 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 //	Main func
 //  pnt->color = scene->mats.arr[obj->mat]->color;
 	get_uv(pnt, obj, &obj->uv);
-	if (obj->pattern)
-		pnt->color = integer_to_rgb(choose_pattern(pnt, obj, obj->uv));
+	if (scene->mats.arr[obj->mat]->pattern || scene->mats.arr[obj->mat]->t)
+		pnt->color = integer_to_rgb(identify_patt_tex(pnt, obj, obj->uv, scene->mats.arr[obj->mat]));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->trns = scene->mats.arr[obj->mat]->transp;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;
 	pnt->light = get_light(scene, *pnt, mult(-1.0, pix->pos));
+//	TODO выделить в отдельную функцию отрисовки картинки
+/*
 	if (obj->t)
 	{
+*/
 /*
 		double phi = 0, theta = 0;
 		double v = 0, u = 0;
@@ -95,7 +92,8 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 			u = theta;
 		else
 			u = 1 - theta / PI;
-*/
+*//*
+
 
 		double u = obj->uv.u;
 		double v = obj->uv.v;
@@ -130,5 +128,6 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 		pnt->color = integer_to_rgb(obj->t->addr[texel]);
 //		pnt->color = clr;
 	}
+*/
 	pnt->final_clr = multiply_color(pnt->light, pnt->color);
 }

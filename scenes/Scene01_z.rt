@@ -42,24 +42,27 @@ material
 {
 	name:		"Shiny red";
 	color:		[255, 0, 0];
-	specular:	500;
-	reflective:	3;
+	specular:	0;
+	reflective:	0;
+	pattern: 5;
 }
 
 material
 {
 	name:		"Matte green";
 	color:		[0, 255, 0];
-	specular:	100;
-	reflective:	1;
+	specular:	0;
+	reflective:	0;
+	pattern: 5;
 }
 
 material
 {
 	name:		"Super blue";
 	color:		[0, 0, 255];
-	specular:	1000;
-	reflective:	5;
+	specular:	0;
+	reflective:	0;
+	pattern: 5;
 }
 
 material
@@ -68,6 +71,7 @@ material
 	color:		[255, 255, 255];
 	specular:	1000;
 	reflective:	0;
+	pattern: 5;
 }
 
 material
@@ -76,22 +80,25 @@ material
 	color:		[255, 0, 255];
 	specular:	0;
 	reflective:	0;
+	pattern: 5;
 }
 
 material
 {
 	name:		"Sunny yellow";
 	color:		[255, 255, 0];
-	specular:	1000;
-	reflective:	3;
+	specular:	0;
+	reflective:	0;
+	pattern: 5;
 }
 
 material
 {
 	name:		"Light gray";
 	color:		[153, 153, 153];
-	specular:	50;
+	specular:	0;
 	reflective:	0;
+	pattern: 5;
 }
 
 object
@@ -101,7 +108,6 @@ object
 	position:	[0, 0, 40];
 	orientation:[0, 0, 0];
 	radius:		10;
-	texture:    "b";
 }
 
 object
@@ -111,7 +117,6 @@ object
 	position:	[20, 8, 40];
 	orientation:	[0, 0, 0];
 	radius:		12;
-	texture:    "b";
 }
 
 object
@@ -121,7 +126,6 @@ object
 	position:	[-20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		8;
-	texture:    "b";
 }
 
 object
@@ -131,7 +135,6 @@ object
 	position:	[-10, 10, 40];
 	orientation:[0, 20, 40];
 	radius:		2;
-	texture:    "b";
 }
 
 object
@@ -141,7 +144,6 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 1];
 	radius:		10;
-	texture:    "b";
 }
 
 object
@@ -151,7 +153,6 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 1];
 	radius:		10;
-	texture:    "b";
 }
 
 object
@@ -160,5 +161,4 @@ object
 	material:	"Deep magenta";
 	position:	[0, -10, 1];
 	orientation:    [0, 0, 0];
-	texture:    "b";
 }

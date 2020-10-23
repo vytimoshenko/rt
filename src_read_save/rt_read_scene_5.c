@@ -6,34 +6,51 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/03 19:50:22 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/17 19:00:03 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
 
-t_texture 	*identify_texture(char *tex)
+int 		check_png(char *file)
 {
-	t_texture *t;
-	t = malloc(sizeof(t_texture));
-	// check_tex(char *)
-	t->name = tex;
-	return t;
-}
+	char *string;
 
-int 	identify_pattern(int pat)
-{
-	if (pat >= STRIPE_X && pat <= CHECKER)
-		return (pat);
+	string = ft_strchr(file, '.');
+	if (ft_strequ(string, "png"))
+		return (-1);
 	return (0);
 }
 
-void 	identify_textures(char *texture, t_obj *obj, t_scene *scene)
+t_texture 	*identify_texture(char *tex)
 {
-	if (ft_isdigit(*texture))
-		obj->pattern = identify_pattern(ft_atoi(texture));
-	else
-		obj->t = identify_texture(texture);
+	t_texture *t;
+	char *path;
+
+	path = "textures/";
+	path = ft_strjoin(path, tex);
+	if (check_png(ft_strchr(path, '/') + 1) < 0 || open(path, O_RDONLY) <= 0)
+	{
+		free(path);
+		return (NULL);
+	}
+	t = malloc(sizeof(t_texture));
+	t->name = path;
+	return t;
+}
+
+int 	identify_pattern(const char *pattern)
+{
+	int pat;
+
+//	TODO Проверка всего паттерна на то, что он состоиз из цифр
+	if (!ft_isdigit(*pattern))
+		return (0);
+	pat = ft_atoi(pattern);
+//	TODO Зачем здесь прооверка на петтерн?
+//	if (pat >= STRIPE_X && pat <= CHECKER)
+	return (pat);
+//	return (0);
 }
 
 void	parse_material_description(t_scene *scene, char *property, char *value)
@@ -49,6 +66,10 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->spec = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_REFLECTIVE)))
 		scene->mats.arr[i]->refl = (double)ft_atoi(value) / 10.0;
+	else if (!(ft_strcmp(property, FILE_MATERIAL_TEXTURE)))
+		scene->mats.arr[i]->t = identify_texture(value);
+	else if (!(ft_strcmp(property, FILE_MATERIAL_PATTERN)))
+		scene->mats.arr[i]->pattern = identify_pattern(value);
 	else
 		put_error_wrong_scene_data(property, "wrong material property name");
 }
@@ -69,8 +90,6 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 		scene->objs.arr[i]->dir = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
-	else if (!(ft_strcmp(property, FILE_OBJECT_TEXTURE)))
-		identify_textures(value, scene->objs.arr[i], scene);
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }

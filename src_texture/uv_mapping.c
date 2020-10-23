@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 17:26:09 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/10 20:38:13 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/23 20:27:48 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ void	get_cyco_uv(t_pnt *p, t_obj *obj, t_double2 *uv)
 void	get_sphere_uv(t_pnt *p, t_obj *obj, t_double2 *uv)
 {
 	t_vec tmp = mult(1 / obj->radius, sub(p->xyz, obj->pos));
+	//	TODO можно переворачивать текстур на объекте меняя местами z, x и у
+//	TODO или можно менять знак у координат
 	double phi = atan2(tmp.z, tmp.x);
 	double theta = asin(tmp.y);
 	uv->u = 1 - (phi + M_PI) / (2 * M_PI);
 	uv->v = (theta + M_PI / 2) / M_PI;
 }
 
+//TODO Зачем нужна эта функция?
 t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p)
 {
 	t_double2 uv = {0};
@@ -66,6 +69,7 @@ t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p)
 	return uv;
 }
 
+//TODO Зачем нужна эта функция?
 t_double2	get_plane_texel_l(t_obj *obj, t_pnt *p)
 {
 	t_double2 uv = {0};

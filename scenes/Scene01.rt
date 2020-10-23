@@ -160,5 +160,5 @@ object
 	material:	"Glossy white";
 	position:	[0, -10, 0];
 	orientation:	[0, 0, 0];
-	texture:    1;
+	get_textures:    1;
 }

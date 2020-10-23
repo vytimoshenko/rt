@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/09/24 21:25:29 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/14 20:22:22 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,6 @@ typedef struct			s_obj
 	t_vec				sin;
 	t_vec				cos;
 	double				k;
-
-	t_texture			*t;
 	t_double2				uv;
 
 	double				t1;
@@ -142,12 +140,14 @@ typedef struct			s_light
 typedef struct			s_mat
 {
 	int					id;
+	int					pattern;
 	char				*name;
 	t_clr				color;
 	double				spec;
 	double				refl;
 	double				transp;
 	double				refr;
+	t_texture			*t;
 }						t_mat;
 
 typedef struct			s_cams
