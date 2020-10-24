@@ -38,6 +38,9 @@
 # define MESSAGE_BOX_H					80
 # define MESSAGE_BOX_INDENTATION		10
 
+# define PEACES                         8
+
+
 void		show_interface(t_global *global);
 
 void		info_camera(t_scene *scene, t_mlx *mlx);

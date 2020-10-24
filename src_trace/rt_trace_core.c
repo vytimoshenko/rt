@@ -15,28 +15,27 @@
 void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 {
 	t_pnt	pnt;
+	t_obj obj;
 
-	scene->obj = intersect(scene->objs, cam, pix->pos, (t_mn_mx){0, MIN, MAX});
-	pix->depth = pix->depth == 0 ? scene->obj.closest : pix->depth;
-	if (scene->obj.closest == MAX && pix->obj_id == EMPTY)
+	obj = intersect(scene->objs, cam, pix->pos, (t_mn_mx){0, MIN, MAX});
+	pix->depth = pix->depth == 0 ? obj.closest : pix->depth;
+	if (obj.closest == MAX && pix->obj_id == EMPTY)
 		pix->obj_id = NOTHING_SELECTED;
-	if (scene->obj.closest == MAX)
-		return ;
-	if (pix->obj_id == EMPTY)
-		pix->obj_id = scene->obj.id;
-	pnt.xyz = add(cam, mult(scene->obj.closest, pix->pos));
-	get_prop(scene, pix, &pnt, &scene->obj);
-	if (k == 0 || (pnt.refl <= 0 && pnt.trns <= 0))
+	if (obj.closest != MAX)
 	{
-		pix->color = pnt.final_clr;
-		return ;
-	}
-	if (pnt.refl > 0)
-	{
-		pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
-		trace_pixel(scene, pnt.xyz, pix, k - 1);
-		pix->color = add_color(multiply_color(1.0 - pnt.refl,
-		pnt.final_clr), multiply_color(pnt.refl, pix->color));
+		if (pix->obj_id == EMPTY)
+			pix->obj_id = obj.id;
+		pnt.xyz = add(cam, mult(obj.closest, pix->pos));
+		get_prop(scene, pix, &pnt, &obj);
+		if (k == 0 || (pnt.refl <= 0 && pnt.trns <= 0))
+			pix->color = pnt.final_clr;
+		if (pnt.refl > 0 && k > 0)
+		{
+			pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
+			trace_pixel(scene, pnt.xyz, pix, k - 1);
+			pix->color = add_color(multiply_color(1.0 - pnt.refl,
+			pnt.final_clr), multiply_color(pnt.refl, pix->color));
+		}
 	}
 }
 

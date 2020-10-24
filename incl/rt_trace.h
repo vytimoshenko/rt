@@ -35,7 +35,7 @@
 
 # define PI								3.14159265
 
-void		trace_rays(t_scene *scene);
+void	    *trace_rays(void *peace);
 void		prepare_pixs(t_scene *scene);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
@@ -47,12 +47,12 @@ void		get_normal(t_pnt *point, t_vec pix, t_obj *obj, t_vec cam);
 
 t_obj		intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
 t_obj		check_closest_obj(t_obj closest_obj, double closest);
-void		select_obj_intersect(t_obj *obj, t_vec cam, t_vec pix);
+t_obj		select_obj_intersect(t_obj obj, t_vec cam, t_vec pix);
 
-void		plane(t_obj *obj, t_vec cam, t_vec pix);
-void		sphere(t_obj *obj, t_vec cam, t_vec pix);
-void		cylinder(t_obj *obj, t_vec cam, t_vec pix);
-void		cone(t_obj *obj, t_vec cam, t_vec pix);
+t_obj		plane(t_obj obj, t_vec cam, t_vec pix);
+t_obj		sphere(t_obj obj, t_vec cam, t_vec pix);
+t_obj		cylinder(t_obj obj, t_vec cam, t_vec pix);
+t_obj		cone(t_obj obj, t_vec cam, t_vec pix);
 
 void		plane_n(t_pnt *pnt, t_vec pix, t_obj *obj);
 void		sphere_n(t_pnt *pnt, t_vec pix, t_obj *obj);
@@ -73,5 +73,7 @@ t_vec		nrm(t_vec v);
 t_vec		add(t_vec v1, t_vec v2);
 t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
+
+void	    peaces(t_scene *scene);
 
 #endif
