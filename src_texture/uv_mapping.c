@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 17:26:09 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/23 20:27:48 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/24 22:13:31 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_double2	get_plane_texel_l(t_obj *obj, t_pnt *p)
 void 	get_plane_uv(t_pnt *p, t_obj *obj, t_double2 *uv)
 {
 /*	int k = 10;
-	t_double2 uv1 = get_plane_texel_g(obj, p);
+	t_double2 uv1 = get_plane_texel_l(obj, p);
 	uv->u = fmod(uv1.u, k) / (double )k;
 	uv->v = fmod(uv1.v, k) / (double )k;
 
@@ -91,8 +91,9 @@ void 	get_plane_uv(t_pnt *p, t_obj *obj, t_double2 *uv)
 		uv->u = 1 + uv->u;
 	if (uv->v < 0)
 		uv->v = 1 + uv->v;*/
-	int k = 10;
-	t_vec e1 = nrm(cross_product(p->n, (t_vec){1,0 , 0}));
+	int k = 16;
+//	TODO МОжно поворачивать текстуру меняя вектора
+	t_vec e1 = nrm(cross_product(p->n, (t_vec){1,0, 0}));
 	if (e1.x == 0 && e1.y == 0 && e1.z ==  0)
 		e1 = nrm(cross_product(p->n, (t_vec){0, 0, 1}));
 
@@ -107,6 +108,7 @@ void 	get_plane_uv(t_pnt *p, t_obj *obj, t_double2 *uv)
 		uv->u = 1 + uv->u;
 	if (uv->v < 0)
 		uv->v = 1 + uv->v;
+
 
 //	uv->u = fabs(uv->u);
 //	uv->v = fabs(uv->v);

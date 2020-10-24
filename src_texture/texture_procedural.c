@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 18:48:06 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/19 21:16:49 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/24 18:22:37 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,5 +147,9 @@ int get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 		return wave_pattern(uv, mat);
 	else if (mat->pattern == PERLIN_N)
 		return perlin_noise(obj);
+	else if (mat->pattern == WOOD)
+		return wood(obj);
+	else if (mat->pattern == MARBLE)
+		return marble(obj);
 	return (0);
 }

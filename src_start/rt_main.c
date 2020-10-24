@@ -6,12 +6,13 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/19 22:08:59 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/24 21:25:54 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
 
+//TODO Удалить
 void	pixel_put(t_mlx *mlx, int x, int y, int color)
 {
 	int i;
@@ -65,7 +66,8 @@ int	main(int argc, char **argv)
 	global.mlx = init_mlx();
 	global.scene->texture = (t_texture [1]){{0}};
 	get_textures(&global);
-	init();
+//	TODO Перенести функцию
+	init_p();
 /*
 	t_obj 		o = {global.scene->objs.quant, OBJECT_TYPE_SPHERE, 0, {255, 0 , 0}
 			, 0, 0, 0, 0, 10, {5, 4, 29}

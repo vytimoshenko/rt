@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/17 19:10:02 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/24 22:08:03 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		get_image_texel(t_mat *mat, t_obj *obj)
 {
 	double u = obj->uv.u;
 	double v = obj->uv.v;
+	int 	height;
+	int 	weight;
 
 	if (u < 0)
 		u = 0;
@@ -36,8 +38,6 @@ int		get_image_texel(t_mat *mat, t_obj *obj)
 		v = 1.0;
 
 	v = 1 - v;
-	int 	height = 0;
-	int 	weight = 0;
 
 	height = (int )(v * (mat->t->t_h));
 	weight = (int )(u * (mat->t->t_w));
@@ -46,14 +46,16 @@ int		get_image_texel(t_mat *mat, t_obj *obj)
 	if (weight >= mat->t->t_w)
 		weight = mat->t->t_w - 1;
 //		int texel = height + weight * obj->t->size_line / 4;
-	int texel = 4 +  height * mat->t->size_line / 4  + weight;
+//	int texel = 4 +  height * mat->t->size_line / 4  + weight;
+	int texel = height * mat->t->size_line / 4  + weight;
 //		int *texel = obj->t->addr + height * obj->t->size_line / 4 + weight * obj->t->bits_per_pixel;
 	printf("%d\n", texel);
-	int c_scale = 1.0 / 255.0;
+//	int c_scale = 1.0 / 255.0;
 //		t_clr clr = {c_scale * texel[0], c_scale * texel[1], c_scale * texel[2]};
 //		if (texel < (obj->t->t_h * obj->t->t_w))
 //			pnt->color = integer_to_rgb(obj->t->addr[abs(texel)]);
-	return (mat->t->addr[texel]);
+//	return (mat->t->addr[texel]);
+	return (mat->t->addr[texel] & 16 |  mat->t->addr[texel] & 8 |  mat->t->addr[texel]);
 //		pnt->color = clr;
 
 }
