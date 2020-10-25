@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/24 21:25:55 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:33:23 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@
 
 # include "rt_structures.h"
 
-//TODO при нажатии R и включенных текстурах вылетает сега
 
 enum e_coord
 {
@@ -56,17 +55,16 @@ enum e_patterns
 void	get_uv(t_pnt *p, t_obj *obj, t_double2 *uv);
 t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p);
 t_double2	get_plane_texel_l(t_obj *obj, t_pnt *p);
-//TODO удалить
-//void 	init();
-void init_p();
+void	init_p();
 int		get_textures(t_global *g);
 int		get_image_texel(t_mat *mat, t_obj *obj);
 int 	identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat);
 int 	get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat);
 int		stripe_pattern(t_obj *obj, t_double2 uv, t_mat *mat);
 int 	perlin_noise(t_obj *obj);
-int wood(t_obj *obj);
-int marble(t_obj *obj);
+int		wood(t_obj *obj);
+int		marble(t_obj *obj);
+void	free_texture(t_texture *t);
 t_clr	integer_to_rgb(int clr);
 int		rgb_to_integer(t_clr clr);
 

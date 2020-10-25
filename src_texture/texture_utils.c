@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 21:16:28 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/14 21:16:28 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:42:31 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,12 @@ t_clr	integer_to_rgb(int clr)
 int		rgb_to_integer(t_clr clr)
 {
 	return ((clr.r << 16) | (clr.g << 8) | clr.b);
+}
+
+void	free_texture(t_texture *t)
+{
+// TODO при втором нажатии на R вылетает сега
+//	free(t->addr);
+	free(t->data);
+	free(t->name);
 }

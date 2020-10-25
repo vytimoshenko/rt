@@ -45,6 +45,7 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
+	texture: "ljagushonok-pepe.png";
 }
 
 material
@@ -54,6 +55,7 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
+	texture: "ljagushonok-pepe.png";
 }
 
 material
@@ -63,6 +65,7 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
+	texture: "ljagushonok-pepe.png";
 }
 
 material
@@ -72,6 +75,8 @@ material
 	specular:	1000;
 	reflective:	0;
 	pattern: 6;
+	texture: "ljagushonok-pepe.png";
+
 }
 
 material
@@ -81,7 +86,6 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
-	texture: "yellow+bananas-2048x2048.png";
 }
 
 material
@@ -91,6 +95,7 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
+	texture: "ljagushonok-pepe.png";
 }
 
 material
@@ -100,6 +105,7 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 5;
+	texture: "ljagushonok-pepe.png";
 }
 
 object
@@ -143,8 +149,8 @@ object
 	type:		<cylinder>;
 	material:	"Sunny yellow";
 	position:	[10, 0, 120];
-	orientation:[0, 1, 1];
-	radius:		10;
+	orientation:[0, 1, 0];
+	radius:		20;
 }
 
 object
@@ -160,6 +166,6 @@ object
 {
 	type:		<plane>;
 	material:	"Deep magenta";
-	position:	[0, -10, 1];
+	position:	[1, -10, 0];
 	orientation:    [0, 0, 0];
 }

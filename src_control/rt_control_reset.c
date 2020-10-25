@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:06:21 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:51:05 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	reset(t_global *global, int key)
 		get_lights_statistics(global->scene);
 		get_objects_statistics(global->scene);
 		set_initial_angles(global->scene);
+//		TODO Добавил считывание тесктуры при нажатии R
+		get_textures(global);
 		draw(global);
 	}
 }
@@ -41,8 +43,16 @@ void	clean_scene(t_scene *scene)
 		free(scene->lights.arr[i]);
 	free(scene->lights.arr);
 	i = -1;
+//	TODO добавить очистку текстур
 	while (++i < scene->mats.quant)
+	{
+		if (scene->mats.arr[i]->t)
+		{
+			free_texture(scene->mats.arr[i]->t);
+			free(scene->mats.arr[i]->t);
+		}
 		free(scene->mats.arr[i]);
+	}
 	free(scene->mats.arr);
 	i = -1;
 	while (++i < scene->objs.quant)

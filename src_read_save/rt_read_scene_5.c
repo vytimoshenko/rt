@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/17 19:00:03 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/25 19:58:04 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,16 @@ t_texture 	*identify_texture(char *tex)
 int 	identify_pattern(const char *pattern)
 {
 	int pat;
+	static int perlin_status = 0;
 
 //	TODO Проверка всего паттерна на то, что он состоиз из цифр
 	if (!ft_isdigit(*pattern))
 		return (0);
+//	TODO Что будет, если в атои попадёт не цифра
 	pat = ft_atoi(pattern);
-//	TODO Зачем здесь прооверка на петтерн?
-//	if (pat >= STRIPE_X && pat <= CHECKER)
+	if (pat >= PERLIN_N && pat <= MARBLE && perlin_status++ == 0)
+		init_p();
 	return (pat);
-//	return (0);
 }
 
 void	parse_material_description(t_scene *scene, char *property, char *value)

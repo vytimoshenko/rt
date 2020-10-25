@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/24 22:08:03 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/25 18:45:41 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		get_image_texel(t_mat *mat, t_obj *obj)
 //	int texel = 4 +  height * mat->t->size_line / 4  + weight;
 	int texel = height * mat->t->size_line / 4  + weight;
 //		int *texel = obj->t->addr + height * obj->t->size_line / 4 + weight * obj->t->bits_per_pixel;
-	printf("%d\n", texel);
+//	printf("%d\n", texel);
 //	int c_scale = 1.0 / 255.0;
 //		t_clr clr = {c_scale * texel[0], c_scale * texel[1], c_scale * texel[2]};
 //		if (texel < (obj->t->t_h * obj->t->t_w))
