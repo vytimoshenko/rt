@@ -41,7 +41,7 @@ void	*trace_rays(void *peace)
 	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
 		trace_pixel(p->scene, p->scene->cams.arr[p->scene->act_cam]->
-		pos, &p->scene->pix_buff[i], 1);
+		pos, &p->scene->pix_buff[i], REFLECTION_DEPTH);
 	return (0);
 }
 

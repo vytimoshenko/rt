@@ -48,6 +48,8 @@
 # define FILE_MATERIAL_COLOR			"color"
 # define FILE_MATERIAL_SPECULAR			"specular"
 # define FILE_MATERIAL_REFLECTIVE		"reflective"
+# define FILE_MATERIAL_TRANSPARENCY		"transparency"
+# define FILE_MATERIAL_REFRACTIVE		"refractive"
 # define FILE_OBJECT					"object"
 # define FILE_OBJECT_TYPE				"type"
 # define FILE_OBJECT_TYPE_PLANE			"plane"
@@ -58,6 +60,7 @@
 # define FILE_OBJECT_POSITION			"position"
 # define FILE_OBJECT_ORIENTATION		"orientation"
 # define FILE_OBJECT_RADIUS				"radius"
+# define FILE_OBJECT_LENGTH				"length"
 
 void		read_scene(t_scene *scene, char *file_name);
 void		divide_to_items(t_scene *scene, char *line);

@@ -14,17 +14,15 @@
 
 t_obj	select_obj_intersect(t_obj obj, t_vec cam, t_vec pix)
 {
-	t_obj result;
-
 	if (obj.type == OBJECT_TYPE_PLANE)
-		result = plane(obj, cam, pix);
+		obj = plane(obj, cam, pix);
 	else if (obj.type == OBJECT_TYPE_SPHERE)
-		result = sphere(obj, cam, pix);
+		obj = sphere(obj, cam, pix);
 	else if (obj.type == OBJECT_TYPE_CYLINDER)
-		result = cylinder(obj, cam, pix);
+		obj = cylinder(obj, cam, pix);
 	else if (obj.type == OBJECT_TYPE_CONE)
-		result = cone(obj, cam, pix);
-	return (result);
+		obj = cone(obj, cam, pix);
+	return (obj);
 }
 
 t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)

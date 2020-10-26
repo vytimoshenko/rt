@@ -64,6 +64,7 @@ double		diffuse_and_specular(t_scene *scene, t_pnt point, t_vec pix, int i);
 double		diffuse(t_vec normal, t_vec light);
 double		specular(t_vec normal, t_vec light, t_vec pix, double specular);
 t_vec		reflect_ray(t_vec ray, t_vec normal);
+t_vec       refract_ray(t_vec ray, t_vec normal, int d);
 
 double		deg_to_rad(int degrees);
 double		dot(t_vec v1, t_vec v2);
