@@ -4,7 +4,7 @@ project(RT C)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_BUILD_TYPE Debug)
-#set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
 
 set(CMAKE_SKIP_RPATH TRUE)
 
@@ -140,7 +140,7 @@ add_executable(RT
         src_trace/rt_trace_normals.c
         src_trace/rt_trace_vector_1.c
         src_trace/rt_trace_vector_2.c
-        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping.c src_texture/texture_utils.c src_texture/texture_perline_noise.c)
+        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping.c src_texture/texture_utils.c src_texture/texture_perline_noise.c src_read_save/rt_read_scene_8_texture.c)
 
 #target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
 #target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)

@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 21:16:28 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/25 19:42:31 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/27 20:59:14 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ int		rgb_to_integer(t_clr clr)
 
 void	free_texture(t_texture *t)
 {
+//	Заглушка
+	if (t)
+		return ;
 // TODO при втором нажатии на R вылетает сега
-//	free(t->addr);
+// TODO попробовать очистку через mlx_destroy_image()
+/*	free(t->addr);
 	free(t->data);
-	free(t->name);
+	free(t->name);*/
 }

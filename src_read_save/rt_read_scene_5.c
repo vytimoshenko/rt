@@ -47,7 +47,7 @@ int 	identify_pattern(const char *pattern)
 //	TODO Проверка всего паттерна на то, что он состоиз из цифр
 	if (!ft_isdigit(*pattern))
 		return (0);
-//	TODO Что будет, если в атои попадёт не цифра
+//	TODO Что будет, если в атои попадёт не цифра?
 	pat = ft_atoi(pattern);
 	if (pat >= PERLIN_N && pat <= MARBLE && perlin_status++ == 0)
 		init_p();
