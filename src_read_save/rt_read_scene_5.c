@@ -50,7 +50,7 @@ int 	identify_pattern(const char *pattern)
 //	TODO Что будет, если в атои попадёт не цифра?
 	pat = ft_atoi(pattern);
 	if (pat >= PERLIN_N && pat <= MARBLE && perlin_status++ == 0)
-		init_p();
+		init_noise();
 	return (pat);
 }
 

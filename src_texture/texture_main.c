@@ -6,29 +6,28 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/27 21:21:01 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/28 20:47:26 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-int get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
+int		get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 {
 	if (mat->pattern >= STRIPE_X && mat->pattern <= STRIPE_Y)
-		return stripe_pattern(obj, uv, mat);
+		return (stripe_pattern(obj, uv, mat));
 	else if (mat->pattern == CHECKER)
-		return checker_pattern(uv, pnt, obj);
+		return (checker_pattern(uv, pnt, obj));
 	else if (mat->pattern == WAVE)
-		return wave_pattern(uv, mat);
+		return (wave_pattern(uv, mat));
 	else if (mat->pattern == PERLIN_N)
-		return perlin_noise(obj);
+		return (perlin_noise(obj));
 	else if (mat->pattern == WOOD)
-		return wood(obj);
+		return (wood(obj));
 	else if (mat->pattern == MARBLE)
-		return marble(obj);
+		return (marble(obj));
 	return (0);
 }
-
 
 int		get_image_texel(t_mat *mat, t_obj *obj)
 {
@@ -53,7 +52,7 @@ int		get_image_texel(t_mat *mat, t_obj *obj)
 		height = mat->t->t_h - 1;
 	if (weight >= mat->t->t_w)
 		weight = mat->t->t_w - 1;
-	texel = height * mat->t->size_line / 4  + weight;
+	texel = height * mat->t->size_line / 4 + weight;
 	return ((mat->t->addr[texel] & 16) | (mat->t->addr[texel] & 8)
 	| mat->t->addr[texel]);
 }

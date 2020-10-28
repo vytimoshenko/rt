@@ -85,7 +85,7 @@ material
 	color:		[255, 0, 255];
 	specular:	0;
 	reflective:	0;
-	pattern: 6;
+	pattern: 7;
 }
 
 material
@@ -95,7 +95,6 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 6;
-	texture: "ljagushonok-pepe.png";
 }
 
 material
@@ -105,7 +104,6 @@ material
 	specular:	0;
 	reflective:	0;
 	pattern: 5;
-	texture: "ljagushonok-pepe.png";
 }
 
 object
