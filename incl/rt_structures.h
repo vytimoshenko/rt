@@ -53,6 +53,7 @@ typedef struct			s_pnt
 	double				refr;
 	double				trns;
 	double				light;
+	double				angle;
 	t_vec				n;
 	double				light_intens;
 	t_clr				final_clr;
@@ -90,7 +91,6 @@ typedef struct			s_obj
 	t_vec				sin;
 	t_vec				cos;
 	double				k;
-	double				len;
 
 	double				t1;
 	double				t2;
@@ -115,8 +115,9 @@ typedef struct			s_mat
 	t_clr				color;
 	double				spec;
 	double				refl;
-	double				transp;
 	double				refr;
+	double				transp;
+	double				angle;
 }						t_mat;
 
 typedef struct			s_cams

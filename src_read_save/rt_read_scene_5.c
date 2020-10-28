@@ -29,6 +29,8 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
 	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
 		scene->mats.arr[i]->transp = (double)ft_atoi(value) / 10.0;
+	else if (!(ft_strcmp(property, FILE_MATERIAL_ANGLE)))
+		scene->mats.arr[i]->angle = 1 - (double)ft_atoi(value) / 10.0;
 	else
 		put_error_wrong_scene_data(property, "wrong material property name");
 }
@@ -49,8 +51,6 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 		scene->objs.arr[i]->dir = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
-	else if (!(ft_strcmp(property, FILE_OBJECT_LENGTH)))
-		scene->objs.arr[i]->len = (double)ft_atoi(value) / 2.0;
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }

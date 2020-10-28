@@ -49,7 +49,6 @@ material
 	name:		"Shiny red";
 	color:		[255, 0, 0];
 	specular:	500;
-	reflective:	0.5;
 }
 
 material
