@@ -61,6 +61,7 @@
 # define FILE_OBJECT_POSITION			"position"
 # define FILE_OBJECT_ORIENTATION		"orientation"
 # define FILE_OBJECT_RADIUS				"radius"
+# define FILE_OBJECT_LENGTH				"length"
 
 void		read_scene(t_scene *scene, char *file_name);
 void		divide_to_items(t_scene *scene, char *line);

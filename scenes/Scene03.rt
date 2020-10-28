@@ -44,7 +44,7 @@ material
 	color:		[255, 0, 0];
 	specular:	5;
 	refractive:	5;
-	angle:		0;
+	angle:		4;
 }
 
 material
@@ -135,6 +135,7 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 0];
 	radius:		10;
+	length:		50;
 }
 
 object
@@ -144,6 +145,7 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 0.5];
 	radius:		10;
+	length:		100;
 }
 
 object
@@ -152,5 +154,4 @@ object
 	material:	"Glossy white";
 	position:	[0, -10, 0];
 	orientation:	[0, 0, 0];
-	radius:		10;
 }

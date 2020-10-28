@@ -91,6 +91,7 @@ typedef struct			s_obj
 	t_vec				sin;
 	t_vec				cos;
 	double				k;
+	double				len;
 
 	double				t1;
 	double				t2;
