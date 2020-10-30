@@ -1,0 +1,4 @@
+*.o
+*.a
+.DS-Store
+RT

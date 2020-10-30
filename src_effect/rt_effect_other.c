@@ -44,7 +44,7 @@ void	effect_anaglyph(t_scene *scene)
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 		scene->pix_buff[i].anaglyph = scene->pix_buff[i].color;
 	scene->cams.arr[scene->act_cam]->pos.x += 1;
-	trace_rays(scene);
+	peaces(scene);
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 	{

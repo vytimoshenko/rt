@@ -12,41 +12,43 @@
 
 #include "../incl/rt.h"
 
-void	select_obj_intersect(t_obj *obj, t_vec cam, t_vec pix)
+t_obj	select_obj_intersect(t_obj obj, t_vec cam, t_vec pix)
 {
-	if (obj->type == OBJECT_TYPE_PLANE)
-		plane(obj, cam, pix);
-	else if (obj->type == OBJECT_TYPE_SPHERE)
-		sphere(obj, cam, pix);
-	else if (obj->type == OBJECT_TYPE_CYLINDER)
-		cylinder(obj, cam, pix);
-	else if (obj->type == OBJECT_TYPE_CONE)
-		cone(obj, cam, pix);
+	if (obj.type == OBJECT_TYPE_PLANE)
+		obj = plane(obj, cam, pix);
+	else if (obj.type == OBJECT_TYPE_SPHERE)
+		obj = sphere(obj, cam, pix);
+	else if (obj.type == OBJECT_TYPE_CYLINDER)
+		obj = cylinder(obj, cam, pix);
+	else if (obj.type == OBJECT_TYPE_CONE)
+		obj = cone(obj, cam, pix);
+	return (obj);
 }
 
 t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 {
 	int		i;
 	t_obj	closest_obj;
+	t_obj	tmp;
 
 	i = -1;
 	t_min_max.t = t_min_max.t_max;
 	closest_obj.null = 0;
 	while (++i < objs.quant)
 	{
-		select_obj_intersect(objs.arr[i], cam, pix);
-		if (objs.arr[i]->t1 >= t_min_max.t_min && objs.arr[i]->t1 <=
-		t_min_max.t_max && objs.arr[i]->t1 < t_min_max.t)
+		tmp = select_obj_intersect(*objs.arr[i], cam, pix);
+		if (tmp.t1 >= t_min_max.t_min && tmp.t1 <=
+		t_min_max.t_max && tmp.t1 < t_min_max.t)
 		{
-			t_min_max.t = objs.arr[i]->t1;
-			closest_obj = *objs.arr[i];
+			t_min_max.t = tmp.t1;
+			closest_obj = tmp;
 			closest_obj.null = 1;
 		}
-		if (objs.arr[i]->t2 >= t_min_max.t_min && objs.arr[i]->t2 <=
-		t_min_max.t_max && objs.arr[i]->t2 < t_min_max.t)
+		if (tmp.t2 >= t_min_max.t_min && tmp.t2 <=
+		t_min_max.t_max && tmp.t2 < t_min_max.t)
 		{
-			t_min_max.t = objs.arr[i]->t2;
-			closest_obj = *objs.arr[i];
+			t_min_max.t = tmp.t2;
+			closest_obj = tmp;
 			closest_obj.null = 1;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/11 20:05:21 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/10/30 21:46:14 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@
 # define FILE_MATERIAL_REFLECTIVE		"reflective"
 # define FILE_MATERIAL_TEXTURE			"texture"
 # define FILE_MATERIAL_PATTERN			"pattern"
+# define FILE_MATERIAL_TRANSPARENCY		"transparency"
+# define FILE_MATERIAL_REFRACTIVE		"refractive"
+# define FILE_MATERIAL_ANGLE			"angle"
 # define FILE_OBJECT					"object"
 # define FILE_OBJECT_TYPE				"type"
 # define FILE_OBJECT_TYPE_PLANE			"plane"
@@ -60,6 +63,7 @@
 # define FILE_OBJECT_POSITION			"position"
 # define FILE_OBJECT_ORIENTATION		"orientation"
 # define FILE_OBJECT_RADIUS				"radius"
+# define FILE_OBJECT_LENGTH				"length"
 
 void		read_scene(t_scene *scene, char *file_name);
 void		divide_to_items(t_scene *scene, char *line);
