@@ -52,6 +52,8 @@ enum e_patterns
 	MARBLE
 };
 
+int 	identify_pattern(const char *pattern);
+t_texture 	*identify_texture(char *tex);
 void	get_uv(t_pnt *p, t_obj *obj, t_double2 *uv);
 t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p);
 //TODO Можно ли сделать static и убрать из хедера?

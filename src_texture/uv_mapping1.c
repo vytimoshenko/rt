@@ -22,6 +22,7 @@ void			get_cyco_uv(t_pnt *p, t_obj *obj, t_double2 *uv, int k)
 
 	u = get_texture_dir(nrm(obj->dir));
 	v = cross_product(u, nrm((obj->dir)));
+	//	TODO можно смещать и расширять текстуры
 	loc = mult(-1 / obj->radius, sub(p->xyz, obj->pos));
 	tmp2.x = dot(loc, u);
 	tmp2.y = dot(loc, obj->dir);
