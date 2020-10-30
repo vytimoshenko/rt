@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "../incl/rt.h"
 
 int		get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 {

@@ -6,7 +6,7 @@
 #    By: vitaly <vitaly@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/09/09 11:29:03 by wquirrel         ###   ########.fr        #
+#    Updated: 2020/10/30 21:42:01 by wquirrel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC		= 	$(wildcard src_start/*.c)		\
 			$(wildcard src_effect/*.c)		\
 			$(wildcard src_control/*.c)		\
 			$(wildcard src_interface/*.c)	\
-			
+			$(wildcard src_texture/*.c)
+
 OBJ		= 	$(SRC:.c=.o)
 
 CMPLR	=	gcc

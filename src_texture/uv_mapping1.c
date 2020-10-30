@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "../incl/rt.h"
 
 void			get_cyco_uv(t_pnt *p, t_obj *obj, t_double2 *uv, int k)
 {

@@ -43,7 +43,8 @@ material
 	name:		"Shiny red";
 	color:		[255, 0, 0];
 	specular:	500;
-	reflective:	3;
+	refractive:	3;
+	angle:      0;
 }
 
 material
@@ -52,6 +53,7 @@ material
 	color:		[0, 255, 0];
 	specular:	100;
 	reflective:	1;
+	texture: "earthmap1k.png";
 }
 
 material
@@ -68,6 +70,8 @@ material
 	color:		[255, 255, 255];
 	specular:	1000;
 	reflective:	0;
+	transparency: 4;
+	pattern:    6;
 }
 
 material
@@ -84,6 +88,7 @@ material
 	color:		[255, 255, 0];
 	specular:	1000;
 	reflective:	3;
+	pattern: 7;
 }
 
 material
@@ -101,7 +106,6 @@ object
 	position:	[0, -10, 30];
 	orientation:[0, 0, 0];
 	radius:		10;
-	texture:    1;
 }
 
 object
@@ -111,7 +115,6 @@ object
 	position:	[20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		12;
-	texture:    1;
 }
 
 object
@@ -121,7 +124,6 @@ object
 	position:	[-20, 0, 40];
 	orientation:	[0, 0, 0];
 	radius:		8;
-	texture:    1;
 }
 
 object
@@ -131,7 +133,6 @@ object
 	position:	[-10, 15, 80];
 	orientation:[0, 0, 0];
 	radius:		2;
-	texture:    1;
 }
 
 object
@@ -141,7 +142,7 @@ object
 	position:	[10, 0, 120];
 	orientation:[0, 1, 0];
 	radius:		10;
-	texture:    1;
+	length:     50;
 }
 
 object
@@ -151,7 +152,6 @@ object
 	position:	[-20, -30, 70];
 	orientation:[0, -1, 0.5];
 	radius:		10;
-	texture:    1;
 }
 
 object
@@ -160,5 +160,5 @@ object
 	material:	"Glossy white";
 	position:	[0, -10, 0];
 	orientation:	[0, 0, 0];
-	get_textures:    1;
+	radius:     50;
 }

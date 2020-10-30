@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "../incl/rt.h"
 
 int		wave_pattern(t_double2 uv, t_mat *mat)
 {

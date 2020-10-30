@@ -11,7 +11,7 @@ set(CMAKE_SKIP_RPATH TRUE)
 #include_directories(.)
 include_directories(incl)
 include_directories(libft)
-include_directories(lib)
+include_directories(mlx)
 #include_directories(mlx)
 
 add_executable(RT
@@ -140,11 +140,12 @@ add_executable(RT
         src_trace/rt_trace_normals.c
         src_trace/rt_trace_vector_1.c
         src_trace/rt_trace_vector_2.c
-        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c)
+        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
+        src_trace/rt_trace_added.c)
 
 #target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
 #target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libmlx.dylib)
-target_link_libraries(RT "-framework OpenGL -framework AppKit")
-#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libmlx.dylib)
-#target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/lib)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
+target_link_libraries(RT "-framework OpenGL -framework AppKit -")
+#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
+#target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/mlx)
