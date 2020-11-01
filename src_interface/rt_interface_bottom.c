@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:34 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:07:36 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 14:15:19 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	info_color(t_scene *scene, t_mlx *mlx)
 	int		x;
 	int		y;
 	char	*str;
+	int		color;
 
 	x = 230;
 	y = WIN_SIZE_H - 30;
@@ -47,25 +48,8 @@ void	info_color(t_scene *scene, t_mlx *mlx)
 	mlx_string_put(mlx->mlx, mlx->win, x + 160, y, TEXT_COLOR,
 	str = ft_itoa((int)scene->picked_color.b));
 	free(str);
-	info_color_sample(mlx, unite_color_channels(scene->picked_color));
-}
-
-void	info_color_sample(t_mlx *mlx, int color)
-{
-	int		x;
-	int		y;
-	int		x_rect;
-	int		y_rect;
-
-	x = 200;
-	y = WIN_SIZE_H - 27;
-	y_rect = -1;
-	while (++y_rect < 18)
-	{
-		x_rect = -1;
-		while (++x_rect < 18)
-			mlx_pixel_put(mlx->mlx, mlx->win, x_rect + x, y_rect + y, color);
-	}
+	color = unite_color_channels(scene->picked_color);
+	color_sample(mlx, color, 200, WIN_SIZE_H - 27);
 }
 
 void	info_scene_file_name(t_scene *scene, t_mlx *mlx)
