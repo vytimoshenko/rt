@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 16:46:39 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 22:24:24 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@
 # define FILE_OBJECT_TYPE_SPHERE		"sphere"
 # define FILE_OBJECT_TYPE_CYLINDER		"cylinder"
 # define FILE_OBJECT_TYPE_CONE			"cone"
+# define FILE_OBJECT_GROUP				"group"
 # define FILE_OBJECT_MATERIAL			"material"
 # define FILE_OBJECT_POSITION			"position"
 # define FILE_OBJECT_ORIENTATION		"orientation"

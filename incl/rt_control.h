@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:03:27 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 22:49:15 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "rt.h"
 
 # define NOTHING_SELECTED				-1
+# define NO_GROUP						-1
 
 # define MODE_CAMERA	                0
 # define MODE_LIGHT 	                1
@@ -109,6 +110,7 @@ int		apply_material(int x, int y, t_global *global);
 int		select_object(int x, int y, t_global *global);
 void	change_object(t_scene *scene, int key);
 void	move_object(t_scene *scene, int key);
+void	make_move(t_scene *scene, int key, int i);
 
 void	change_effect(t_scene *scene, int key);
 void	change_effect_grade(t_scene *scene, int key);
