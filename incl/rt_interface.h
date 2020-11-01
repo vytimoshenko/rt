@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 16:58:46 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 20:21:55 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void		info_object(t_scene *scene, t_mlx *mlx);
 void		info_object_1(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_object_2(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_object_3(t_scene *scene, t_mlx *mlx, int x, int y);
+void		info_object_4(t_scene *scene, t_mlx *mlx, int x, int y);
 
 void		info_effect(t_scene *scene, t_mlx *mlx);
 void		info_effect_1(t_scene *scene, t_mlx *mlx, int x, int y);
