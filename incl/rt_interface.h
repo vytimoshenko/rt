@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/01 16:58:46 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@
 # define MESSAGE_BOX_H					80
 # define MESSAGE_BOX_INDENTATION		10
 
+# define NO_TEXTURE						0
+# define IMAGE_TEXTURE					1
+# define PROCEDURAL_TEXTURE				2
+
 # define PEACES                         8
 
 
@@ -56,7 +60,13 @@ void		info_material(t_scene *scene, t_mlx *mlx);
 void		info_material_1(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_material_2(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_material_3(t_scene *scene, t_mlx *mlx, int x, int y);
-void		info_material_color_sample(t_mlx *mlx, int color, int x, int y);
+void		info_material_4(t_scene *scene, t_mlx *mlx, int x, int y);
+
+void		color_sample(t_mlx *mlx, int color, int x, int y);
+int			get_material_id(t_scene *scene);
+int			get_texture_type(t_scene *scene);
+char		*get_prcedural_texture_name(int pattern);
+char 		*trim_textures_path(char *path);
 
 void		info_object(t_scene *scene, t_mlx *mlx);
 void		info_object_1(t_scene *scene, t_mlx *mlx, int x, int y);
@@ -74,7 +84,6 @@ void		info_render_2(t_mlx *mlx, int x, int y);
 
 void		info_coordinates(t_scene *scene, t_mlx *mlx);
 void		info_color(t_scene *scene, t_mlx *mlx);
-void		info_color_sample(t_mlx *mlx, int color);
 void		info_scene_file_name(t_scene *scene, t_mlx *mlx);
 void		info_help_string(t_mlx *mlx);
 

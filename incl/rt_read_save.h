@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/01 16:46:39 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "rt.h"
 
 # define SAVE_PATH						"./saves/"
+# define TEXTURES_PATH					"textures/"
 # define SCENE_FILE_EXTENSION			".rt"
 # define SAVE_MESSAGE_TITLE				"SCENE SAVED AS"
 # define CURRENT_TIME_STR_LENGTH		24

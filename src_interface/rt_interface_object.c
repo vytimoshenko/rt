@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:32 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:08:34 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 18:23:43 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,27 @@ void	info_object_3(t_scene *scene, t_mlx *mlx, int x, int y)
 {
 	char	*str;
 
-	if (scene->objs.arr[scene->act_obj]->type != OBJECT_TYPE_PLANE)
+	if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_PLANE)
+		return ;
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
+	"- radius/length:       /");
+	mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 50, TEXT_COLOR,
+	str = ft_itoa(scene->objs.arr[scene->act_obj]->radius));
+	free(str);
+	if (scene->objs.arr[scene->act_obj]->len != 0)
 	{
-		mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
-		"- radius:");
-		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 50, TEXT_COLOR,
-		str = ft_itoa(scene->objs.arr[scene->act_obj]->radius));
+		mlx_string_put(mlx->mlx, mlx->win, x + 250, y + 50, TEXT_COLOR,
+		str = ft_itoa(scene->objs.arr[scene->act_obj]->len));
 		free(str);
+	}
+	else if (scene->objs.arr[scene->act_obj]->type != OBJECT_TYPE_SPHERE)
+	{
+		mlx_string_put(mlx->mlx, mlx->win, x + 250, y + 50, TEXT_COLOR,
+		"infinity");
+	}
+	else
+	{
+		mlx_string_put(mlx->mlx, mlx->win, x + 250, y + 50, TEXT_COLOR,
+		"n/a");
 	}
 }
