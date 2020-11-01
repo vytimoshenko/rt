@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:07:52 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 18:04:50 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ void	info_header_and_author(t_mlx *mlx, int x, int y)
 	"-= rt =-");
 	mlx_string_put(mlx->mlx, mlx->win, x - 60, y + 10, TEXT_COLOR,
 	"basic raytracing render");
-	mlx_string_put(mlx->mlx, mlx->win, x + 20, y + 540, TEXT_COLOR,
-	"-= Developed by mperseus at 21 School, Moscow, 2020 =-");
+	mlx_string_put(mlx->mlx, mlx->win, x - 200, y + 540, TEXT_COLOR,
+	"-= Developed by mperseus, wquirrel and eflorean");
+	mlx_string_put(mlx->mlx, mlx->win, x + 280, y + 540, TEXT_COLOR,
+	"at 21 School, Moscow, 2020 =-");
 }
 
 void	info_help_general(t_mlx *mlx, int x, int y)

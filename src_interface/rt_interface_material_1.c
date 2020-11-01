@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:12 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 16:59:42 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 18:12:44 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void	info_material_1(t_scene *scene, t_mlx *mlx, int x, int y)
 	free(str);
 	mlx_string_put(mlx->mlx, mlx->win, x + 210, y, TEXT_COLOR,
 	scene->mats.arr[i]->name);
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 30, TEXT_COLOR,
+	"- texture type:");
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
+	"- texture name:");
 }
 
 void	info_material_2(t_scene *scene, t_mlx *mlx, int x, int y)
@@ -50,20 +54,20 @@ void	info_material_2(t_scene *scene, t_mlx *mlx, int x, int y)
 	int		i;
 
 	i = get_material_id(scene);
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 30, TEXT_COLOR,
-	"- texture type:");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
-	"- texture name:");
 	if (get_texture_type(scene) == NO_TEXTURE)
 	{
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 30, TEXT_COLOR, "n/a");
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 50, TEXT_COLOR, "n/a");
-	} else if (get_texture_type(scene) == IMAGE_TEXTURE) {
+	}
+	if (get_texture_type(scene) == IMAGE_TEXTURE)
+	{
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 30, TEXT_COLOR,
 		"image");
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 50, TEXT_COLOR,
 		trim_textures_path(scene->mats.arr[i]->t->name));
-	} else if (get_texture_type(scene) == PROCEDURAL_TEXTURE) {
+	}
+	else if (get_texture_type(scene) == PROCEDURAL_TEXTURE)
+	{
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 30, TEXT_COLOR,
 		"procedural");
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 50, TEXT_COLOR,
