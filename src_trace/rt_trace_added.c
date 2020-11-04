@@ -12,6 +12,34 @@
 
 #include "../incl/rt.h"
 
+t_obj	check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam)
+{
+	int i;
+	double tmp;
+	t_vec vec;
+	t_vec point;
+
+	i = -1;	
+	if (plane.type == OBJECT_TYPE_PLANE && plane.t1 > 0)
+	{
+		point = add(mult(plane.t1, pix), cam);
+		while (++i < objs.quant)
+		{
+			if (objs.arr[i]->type == OBJECT_TYPE_PLANE)
+			{
+				vec = nrm(sub(point, objs.arr[i]->pos));
+				tmp = dot(objs.arr[i]->dir, vec);
+				if (tmp >= MIN)
+				{
+					plane.t1 = -1;
+					plane.t2 = -1;
+				}
+			}
+		}
+	}
+	return (plane);
+}
+
 void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 {
 	if (pnt.refl > 0)

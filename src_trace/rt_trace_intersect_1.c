@@ -37,15 +37,16 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	while (++i < objs.quant)
 	{
 		tmp = select_obj_intersect(*objs.arr[i], cam, pix);
+		tmp = check_planes(objs, tmp, pix, cam);
 		if (tmp.t1 >= t_min_max.t_min && tmp.t1 <=
-		t_min_max.t_max && tmp.t1 < t_min_max.t)
+		t_min_max.t_max && tmp.t1 < t_min_max.t - MIN)
 		{
 			t_min_max.t = tmp.t1;
 			closest_obj = tmp;
 			closest_obj.null = 1;
 		}
 		if (tmp.t2 >= t_min_max.t_min && tmp.t2 <=
-		t_min_max.t_max && tmp.t2 < t_min_max.t)
+		t_min_max.t_max && tmp.t2 < t_min_max.t - MIN)
 		{
 			t_min_max.t = tmp.t2;
 			closest_obj = tmp;

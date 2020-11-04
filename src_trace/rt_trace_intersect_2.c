@@ -21,8 +21,8 @@ t_obj	plane(t_obj obj, t_vec cam, t_vec pix)
 
 	t = -1;
 	x = sub(cam, obj.pos);
-	xdn = dot(x, obj.pos);
-	pdn = dot(pix, obj.pos);
+	xdn = dot(x, obj.dir);
+	pdn = dot(pix, obj.dir);
 	if (pdn)
 	{
 		t = -xdn / pdn;

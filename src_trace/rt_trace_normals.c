@@ -14,7 +14,7 @@
 
 void	plane_n(t_pnt *pnt, t_vec pix, t_obj *obj)
 {
-	pnt->n = dot(pix, obj->pos) < 0 ? obj->pos : mult(-1, obj->pos);
+	pnt->n = dot(pix, obj->dir) < 0 ? obj->dir : mult(-1, obj->dir);
 	pnt->n = nrm(pnt->n);
 }
 

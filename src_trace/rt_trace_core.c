@@ -41,9 +41,7 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 	if (obj->type == OBJECT_TYPE_PLANE)
 		plane_n(pnt, pix->pos, obj);
 	else if (obj->type == OBJECT_TYPE_SPHERE)
-	{
 		sphere_n(pnt, pix->pos, obj);
-	}
 	else if (obj->type == OBJECT_TYPE_CYLINDER)
 		cylinder_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	else if (obj->type == OBJECT_TYPE_CONE)
