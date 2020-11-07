@@ -22,10 +22,14 @@ t_obj	select_obj_intersect(t_obj obj, t_vec cam, t_vec pix)
 		obj = cylinder(obj, cam, pix);
 	else if (obj.type == OBJECT_TYPE_CONE)
 		obj = cone(obj, cam, pix);
+	else if (obj.type == OBJECT_TYPE_PARABOLOID)
+		obj = paraboloid(obj, cam, pix);
+	else if (obj.type == OBJECT_TYPE_HYPERBOLOID)
+		obj = hyperboloid(obj, cam, pix);
 	return (obj);
 }
 
-t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
+t_obj	nearest_obj(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 {
 	int		i;
 	t_obj	closest_obj;
@@ -37,15 +41,16 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	while (++i < objs.quant)
 	{
 		tmp = select_obj_intersect(*objs.arr[i], cam, pix);
+		tmp = check_planes(objs, tmp, pix, cam);
 		if (tmp.t1 >= t_min_max.t_min && tmp.t1 <=
-		t_min_max.t_max && tmp.t1 < t_min_max.t)
+		t_min_max.t_max && tmp.t1 < t_min_max.t - MIN)
 		{
 			t_min_max.t = tmp.t1;
 			closest_obj = tmp;
 			closest_obj.null = 1;
 		}
 		if (tmp.t2 >= t_min_max.t_min && tmp.t2 <=
-		t_min_max.t_max && tmp.t2 < t_min_max.t)
+		t_min_max.t_max && tmp.t2 < t_min_max.t - MIN)
 		{
 			t_min_max.t = tmp.t2;
 			closest_obj = tmp;
@@ -54,6 +59,30 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	}
 	return (check_closest_obj(closest_obj, t_min_max.t));
 }
+
+t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
+{
+	t_obj obj;
+	double t;
+
+	obj = nearest_obj(objs, cam, pix, t_min_max);
+	if (obj.type == OBJECT_TYPE_SPHERE && obj.t1 > MIN && obj.t2 > MIN)
+	{
+		if (obj.t1 > obj.t2)
+			t = obj.t1;
+		else
+			t = obj.t2;
+		cam = add(cam, mult(t, pix));
+		obj = nearest_obj(objs, cam, pix, t_min_max);
+		obj.t1 = (obj.t1 > MIN) ? obj.t1 + t : obj.t1;
+		obj.t2 = (obj.t2 > MIN) ? obj.t2 + t : obj.t2;
+		obj.closest = (obj.closest > 0) ? obj.closest + t : obj.closest;
+		if (obj.type == OBJECT_TYPE_SPHERE)
+			printf("%f %f %f\n", cam.x, cam.y, cam.z);
+	}
+	return (obj);
+}
+
 
 t_obj	check_closest_obj(t_obj closest_obj, double t)
 {

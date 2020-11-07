@@ -14,7 +14,7 @@
 
 void	plane_n(t_pnt *pnt, t_vec pix, t_obj *obj)
 {
-	pnt->n = dot(pix, obj->pos) < 0 ? obj->pos : mult(-1, obj->pos);
+	pnt->n = dot(pix, obj->dir) < 0 ? obj->dir : mult(-1, obj->dir);
 	pnt->n = nrm(pnt->n);
 }
 
@@ -51,5 +51,26 @@ void	cone_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam)
 	k = obj->radius / m;
 	pnt->n = nrm(sub(sub(pnt->xyz, obj->pos),
 	mult(1.0 + k * k, mult(m, obj->dir))));
+	pnt->n = dot(pix, pnt->n) < MIN ? pnt->n : mult(-1, pnt->n);
+}
+
+void	paraboloid_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam)
+{
+	double	m;
+	t_vec	p;
+
+	p = add(cam, mult(obj->closest, pix));
+	m = dot(sub(p, obj->pos), obj->dir) * obj->radius;
+	pnt->n = nrm(sub(sub(p, obj->pos), mult(m, obj->dir)));
+	pnt->n = dot(pix, pnt->n) < MIN ? pnt->n : mult(-1, pnt->n);
+}
+
+void	hyperboloid_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam)
+{
+	t_vec	p;
+
+	p = add(cam, mult(obj->closest, pix));
+	p = sub(p, obj->pos);
+	pnt->n = nrm((t_vec){p.x, -p.y, p.z});
 	pnt->n = dot(pix, pnt->n) < MIN ? pnt->n : mult(-1, pnt->n);
 }

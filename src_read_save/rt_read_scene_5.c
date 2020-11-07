@@ -48,11 +48,11 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	else if (!(ft_strcmp(property, FILE_OBJECT_POSITION)))
 		scene->objs.arr[i]->pos = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_ORIENTATION)))
-		scene->objs.arr[i]->dir = parse_vector(value);
+		scene->objs.arr[i]->dir = nrm(parse_vector(value));
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_LENGTH)))
-		scene->objs.arr[i]->len = (double)ft_atoi(value);
+		scene->objs.arr[i]->len = (double)ft_atoi(value) / 10;
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }
@@ -67,6 +67,10 @@ int		find_object_type(char *value)
 		return (OBJECT_TYPE_CYLINDER);
 	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_CONE)))
 		return (OBJECT_TYPE_CONE);
+	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_PARABOLOID)))
+		return (OBJECT_TYPE_PARABOLOID);
+	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_HYPERBOLOID)))
+		return (OBJECT_TYPE_HYPERBOLOID);
 	put_error_wrong_scene_data(value, "wrong object type");
 	return (-1);
 }

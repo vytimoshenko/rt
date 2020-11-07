@@ -7,7 +7,7 @@ scene
 
 camera
 {
-	position:	[0, 0, -20]
+	position:	[0, 0, -100]
 	direction:	[0, 0, 0];
 }
 
@@ -21,14 +21,14 @@ light
 {
 	type:		<point>;
 	intensity:	5;
-	position:	[-20, 20, 30];
+	position:	[-20, 20, -50];
 }
 
 light
 {
 	type:		<point>;
 	intensity:	4;
-	position:	[20, 9, 0];
+	position:	[-20, 9, -50];
 }
 
 light
@@ -43,15 +43,13 @@ material
 	name:		"Shiny red";
 	color:		[255, 0, 0];
 	specular:	5;
-	refractive:	5;
-	angle:		4;
 }
 
 material
 {
 	name:		"Matte green";
 	color:		[0, 255, 0];
-	specular:	100;
+	specular:	0;
 	reflective:	0;
 }
 
@@ -71,8 +69,6 @@ material
 	color:		[255, 255, 255];
 	specular:	1000;
 	reflective: 0;
-	refractive:	4;
-	transparency: 4;
 }
 
 material
@@ -104,54 +100,56 @@ material
 object
 {
 	type:		<sphere>;
-	material:	"Super blue";
-	position:	[-11, 1, 40];
-	orientation:	[0, 0, 0];
-	radius:		10;
-}
-
-object
-{
-	type:		<sphere>;
-	material:	"Super blue";
-	position:	[-11, 1, 40];
-	orientation:[0, 0, 0];
-	radius:		10;
-}
-
-object
-{
-	type:		<sphere>;
 	material:	"Shiny red";
-	position:	[11, 1, 40];
+	position:	[0, 0, 10];
 	orientation:[0, 0, 0];
 	radius:		10;
-}
-
-object
-{
-	type:		<cylinder>;
-	material:	"Sunny yellow";
-	position:	[10, 0, 120];
-	orientation:[0, 1, 0];
-	radius:		10;
-	length:		50;
-}
-
-object
-{
-	type:		<cone>;
-	material:	"Deep magenta";
-	position:	[-20, -30, 70];
-	orientation:[0, -1, 0.5];
-	radius:		10;
-	length:		100;
 }
 
 object
 {
 	type:		<plane>;
-	material:	"Glossy white";
-	position:	[0, -10, 0];
+	material:	"Matte green";
+	position:	[50, 0, 50];
+	orientation:[1, 0, -1];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Matte green";
+	position:	[-50, 0, 50];
+	orientation:[-1, 0, -1];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Matte green";
+	position:	[0, 50, 50];
 	orientation:	[0, 1, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Matte green";
+	position:	[0, -50, 50];
+	orientation:	[0, -1, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Matte green";
+	position:	[-50, 0, 100];
+	orientation:	[-1, 0, 1];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Matte green";
+	position:	[50, 0, 100];
+	orientation:	[1, 0, 1];
 }

@@ -80,6 +80,8 @@ typedef struct			s_obj
 	int					id;
 	int					type;
 	int					mat;
+	int					rec;
+	int					neg;
 	t_clr				color;
 	double				spec;
 	double				refl;
