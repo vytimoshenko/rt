@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 16:46:39 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/06 21:55:58 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@
 # define FILE_MATERIAL_REFLECTIVE		"reflective"
 # define FILE_MATERIAL_TEXTURE			"texture"
 # define FILE_MATERIAL_PATTERN			"pattern"
+# define FILE_MATERIAL_SCALE			"scale"
+# define FILE_MATERIAL_SHIFT			"shift"
 # define FILE_MATERIAL_TRANSPARENCY		"transparency"
 # define FILE_MATERIAL_REFRACTIVE		"refractive"
 # define FILE_MATERIAL_ANGLE			"angle"

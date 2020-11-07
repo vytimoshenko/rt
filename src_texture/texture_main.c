@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/30 22:47:46 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 20:28:24 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,8 @@ int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 		return (get_patt_color(pnt, obj, uv, mat));
 }
 
-// Function for initialisation textures
 void	init_texture(t_texture *texture, t_mlx *mlx)
 {
-//	TODO можно ли добавлять другие текстуры для чтения?
-//	TODO Переделать открытие текстур под SDL2 or libpng
 	texture->data = mlx_png_file_to_image(mlx->mlx, texture->name
 			, &texture->t_w, &texture->t_h);
 	texture->addr = (int *)mlx_get_data_addr(texture->data

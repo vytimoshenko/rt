@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/06 21:58:48 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 	else if (obj->type == OBJECT_TYPE_CONE)
 		cone_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	pnt->color = scene->mats.arr[obj->mat]->color;
-	get_uv(pnt, obj, &obj->uv);
+	get_uv(pnt, obj, &obj->uv, scene->mats.arr[obj->mat]);
 	if (scene->mats.arr[obj->mat]->pattern || scene->mats.arr[obj->mat]->t)
 		pnt->color = integer_to_rgb(identify_patt_tex(pnt, obj, obj->uv, scene->mats.arr[obj->mat]));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;

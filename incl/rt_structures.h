@@ -6,17 +6,17 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:05:12 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_STRUCTURES_H
+#ifndef RT_STRUCTURES_H
 
-# define rt_STRUCTURES_H
+# define RT_STRUCTURES_H
 
 # include "rt.h"
 
-typedef struct 			s_double2
+typedef struct			s_double2
 {
 	double u;
 	double v;
@@ -29,27 +29,27 @@ typedef struct			s_clr
 	unsigned char		b;
 }						t_clr;
 
-typedef struct s_texture
+typedef struct			s_texture
 {
-	void 				*data;
-	char 				*name;
-	int 				*addr;
+	void				*data;
+	char				*name;
+	int					*addr;
 	int					t_w;
-	int 				t_h;
+	int					t_h;
 
 	int					bits_per_pixel;
 	int					size_line;
 	int					endian;
-	float  				t_x;
-	float 				t_y;
+	float				t_x;
+	float				t_y;
 	t_clr				clr;
-}				t_texture;
-
-typedef struct	s_textures
+}						t_texture;
+//TODO Нужна ли эта структура?
+typedef struct			s_textures
 {
-	int			quantity;
-	t_texture	*tex;
-}				t_textures;
+	int					quantity;
+	t_texture			*tex;
+}						t_textures;
 
 typedef struct			s_vec
 {
@@ -121,7 +121,7 @@ typedef struct			s_obj
 	t_vec				cos;
 	double				k;
 	double				len;
-	t_double2				uv;
+	t_double2			uv;
 
 	double				t1;
 	double				t2;
@@ -150,6 +150,8 @@ typedef struct			s_mat
 	double				refr;
 	double				transp;
 	double				angle;
+	double				scale;
+	t_vec				shift;
 	t_texture			*t;
 }						t_mat;
 
@@ -245,12 +247,11 @@ typedef struct			s_global
 	t_mlx				*mlx;
 }						t_global;
 
-typedef struct		s_peace
+typedef struct			s_peace
 {
 	t_scene				*scene;
 	pthread_t			p;
 	int					i;
-}					t_peace;
-
+}						t_peace;
 
 #endif

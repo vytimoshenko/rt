@@ -112,7 +112,6 @@ add_executable(RT
         src_interface/rt_interface_help_2.c
         src_interface/rt_interface_light.c
         src_interface/rt_interface_main.c
-        src_interface/rt_interface_material.c
         src_interface/rt_interface_object.c
         src_interface/rt_interface_other.c
         src_interface/rt_interface_render.c
@@ -140,12 +139,14 @@ add_executable(RT
         src_trace/rt_trace_normals.c
         src_trace/rt_trace_vector_1.c
         src_trace/rt_trace_vector_2.c
-        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
-        src_trace/rt_trace_added.c)
+        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils1.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
+        src_trace/rt_trace_added.c src_texture/texture_utils2.c
+        src_interface/rt_interface_material_1.c
+        src_interface/rt_interface_material_2.c)
 
 #target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
 #target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
-target_link_libraries(RT "-framework OpenGL -framework AppKit -")
+target_link_libraries(RT "-framework OpenGL -framework AppKit")
 #target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
 #target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/mlx)

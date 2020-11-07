@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 19:29:36 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->t = identify_texture(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_PATTERN)))
 		scene->mats.arr[i]->pattern = identify_pattern(value);
+	else if (!(ft_strcmp(property, FILE_MATERIAL_SCALE)))
+		scene->mats.arr[i]->scale = ft_atoi(value);
+	else if (!(ft_strcmp(property, FILE_MATERIAL_SHIFT)))
+		scene->mats.arr[i]->shift = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_REFRACTIVE)))
 		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
 	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
