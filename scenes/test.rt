@@ -7,7 +7,7 @@ scene
 
 camera
 {
-	position:	[0, 0, -20]
+	position:	[0, 0, -10];
 	direction:	[0, 0, 0];
 }
 
@@ -28,7 +28,7 @@ light
 {
 	type:		<point>;
 	intensity:	4;
-	position:	[20, 9, 0];
+	position:	[0, 9, 0];
 }
 
 light
@@ -52,7 +52,7 @@ material
 	name:		"Matte green";
 	color:		[0, 255, 0];
 	specular:	100;
-	reflective:	0;
+	reflective:	5;
 }
 
 material
@@ -60,9 +60,7 @@ material
 	name:		"Super blue";
 	color:		[0, 0, 255];
 	specular:	1000;
-	reflective: 4;
-	refractive:	1;
-	transparency: 0;
+	reflective: 0;
 }
 
 material
@@ -103,55 +101,9 @@ material
 
 object
 {
-	type:		<sphere>;
+	type:		<hyperboloid>;
 	material:	"Super blue";
-	position:	[-11, 1, 40];
-	orientation:	[0, 0, 0];
+	position:	[0, 0, 50];
+	orientation:[1, 0, 0];
 	radius:		10;
-}
-
-object
-{
-	type:		<sphere>;
-	material:	"Super blue";
-	position:	[-11, 1, 40];
-	orientation:[0, 0, 0];
-	radius:		10;
-}
-
-object
-{
-	type:		<sphere>;
-	material:	"Shiny red";
-	position:	[11, 1, 40];
-	orientation:[0, 0, 0];
-	radius:		10;
-}
-
-object
-{
-	type:		<cylinder>;
-	material:	"Sunny yellow";
-	position:	[10, 0, 120];
-	orientation:[0, 1, 0];
-	radius:		10;
-	length:		50;
-}
-
-object
-{
-	type:		<cone>;
-	material:	"Deep magenta";
-	position:	[-20, -30, 70];
-	orientation:[0, -1, 0.5];
-	radius:		10;
-	length:		100;
-}
-
-object
-{
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[0, -10, 0];
-	orientation:	[0, 1, 0];
 }

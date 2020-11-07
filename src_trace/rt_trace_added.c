@@ -45,7 +45,7 @@ void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 	if (pnt.refl > 0)
 	{
 		pix->pos = reflect_ray(mult(-1.0, pix->pos), pnt.n);
-		trace_pixel(scene, pnt.xyz, pix, obj.k - 1);
+		trace_pixel(scene, pnt.xyz, pix, obj.rec - 1);
 		pix->color = add_color(multiply_color(1.0 - pnt.refl,
 		pnt.final_clr), multiply_color(pnt.refl, pix->color));
 	}
@@ -55,7 +55,7 @@ void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 			pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, pnt.angle, 0);
 		else
 			pix->pos = refract_ray(mult(-1.0, pix->pos), pnt.n, pnt.angle, 1);
-		trace_pixel(scene, pnt.xyz, pix, obj.k - 1);
+		trace_pixel(scene, pnt.xyz, pix, obj.rec - 1);
 		pix->color = add_color(pnt.final_clr, pix->color);
 	}
 	else if (pnt.trns > 0)

@@ -110,6 +110,8 @@ typedef struct			s_obj
 	int					type;
 	int					mat;
 	int					pattern;
+	int					rec;
+	int					neg;
 	t_clr				color;
 	double				spec;
 	double				refl;

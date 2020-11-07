@@ -30,6 +30,7 @@ void	peaces(t_scene *scene)
 	while (++i < PEACES)
 		pthread_join(peace[i].p, NULL);
 	fill_aliasing_buffer(scene);
+
 }
 
 void	*trace_rays(void *peace)

@@ -32,7 +32,7 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 		pix->color = pnt.final_clr;
 		return ;
 	}
-	obj.k = k;
+	obj.rec = k;
 	recursion(scene, pnt, pix, obj);
 }
 
@@ -46,6 +46,10 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 		cylinder_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	else if (obj->type == OBJECT_TYPE_CONE)
 		cone_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
+	else if (obj->type == OBJECT_TYPE_PARABOLOID)
+		paraboloid_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
+	else if (obj->type == OBJECT_TYPE_HYPERBOLOID)
+		hyperboloid_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	pnt->color = scene->mats.arr[obj->mat]->color;
 	get_uv(pnt, obj, &obj->uv, scene->mats.arr[obj->mat]);
 	if (scene->mats.arr[obj->mat]->pattern || scene->mats.arr[obj->mat]->t)
