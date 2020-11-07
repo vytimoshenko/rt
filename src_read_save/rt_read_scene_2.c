@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:03 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:05 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 22:49:37 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,13 @@ void	allocate_memory(t_scene *scene)
 	scene->mats.quant);
 	i = -1;
 	while (++i < scene->mats.quant)
-		scene->mats.arr[i] =
-		(t_mat *)ft_memalloc(sizeof(t_mat));
+		scene->mats.arr[i] = (t_mat *)ft_memalloc(sizeof(t_mat));
 	scene->objs.arr = (t_obj **)ft_memalloc(sizeof(t_obj *) *
 	scene->objs.quant);
 	i = -1;
 	while (++i < scene->objs.quant)
+	{
 		scene->objs.arr[i] = (t_obj *)ft_memalloc(sizeof(t_obj));
+		scene->objs.arr[i]->group = NO_GROUP;
+	}
 }

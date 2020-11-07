@@ -106,6 +106,7 @@ typedef struct			s_cam
 typedef struct			s_obj
 {
 	int					id;
+	int					group;
 	int					type;
 	int					mat;
 	int					pattern;

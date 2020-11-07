@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:13 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:06:14 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/01 22:49:21 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,25 @@ void	change_object(t_scene *scene, int key)
 void	move_object(t_scene *scene, int key)
 {
 	int i;
+	int group;
 
 	i = scene->act_obj;
+	if (scene->objs.arr[i]->group != NO_GROUP)
+	{
+		group = scene->objs.arr[i]->group;
+		i = -1;
+		while (++i < scene->objs.quant)
+		{
+			if (scene->objs.arr[i]->group == group)
+				make_move(scene, key, i);
+		}
+	}
+	else
+		make_move(scene, key, i);
+}
+
+void	make_move(t_scene *scene, int key, int i)
+{
 	if (key == ARROW_DOWN)
 		scene->objs.arr[i]->pos.y -= OBJECT_MOVEMENT_INCREMENT;
 	else if (key == ARROW_UP)

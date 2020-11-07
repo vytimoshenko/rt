@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 19:29:36 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:20:17 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	scene->objs.arr[i]->id = i;
 	if (!(ft_strcmp(property, FILE_OBJECT_TYPE)))
 		scene->objs.arr[i]->type = find_object_type(value);
+	else if (!(ft_strcmp(property, FILE_OBJECT_GROUP)))
+		scene->objs.arr[i]->group = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_MATERIAL)))
 		scene->objs.arr[i]->mat = find_object_material(scene, value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_POSITION)))
