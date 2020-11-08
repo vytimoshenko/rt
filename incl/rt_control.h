@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_CONTROL_H
+#ifndef RT_CONTROL_H
 
-# define rt_CONTROL_H
+# define RT_CONTROL_H
 
 # include "rt.h"
 

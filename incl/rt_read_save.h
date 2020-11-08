@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RT_READ_SAVE_H
 
-#ifndef rt_READ_SAVE_H
-
-# define rt_READ_SAVE_H
+# define RT_READ_SAVE_H
 
 # include "rt.h"
 
@@ -70,6 +69,7 @@
 # define FILE_OBJECT_ORIENTATION		"orientation"
 # define FILE_OBJECT_RADIUS				"radius"
 # define FILE_OBJECT_LENGTH				"length"
+# define FILE_OBJECT_NEGATIVE			"negative"
 
 void		read_scene(t_scene *scene, char *file_name);
 void		divide_to_items(t_scene *scene, char *line);

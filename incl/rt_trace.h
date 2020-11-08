@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_TRACE_H
+#ifndef RT_TRACE_H
 
-# define rt_TRACE_H
+# define RT_TRACE_H
 
 # define VIEWPORT_SIZE_W				1.25
 # define VIEWPORT_SIZE_H				1
@@ -37,7 +37,7 @@
 
 # define PI								3.14159265
 
-void	    *trace_rays(void *peace);
+void		*trace_rays(void *peace);
 void		prepare_pixs(t_scene *scene);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
@@ -52,6 +52,8 @@ t_obj		intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
 t_obj		check_closest_obj(t_obj closest_obj, double closest);
 t_obj		select_obj_intersect(t_obj obj, t_vec cam, t_vec pix);
 t_obj		check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam);
+t_obj		nearest_obj(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
+void		check_inter(t_obj tmp, t_obj *clst, t_mn_mx *t_min_max, double t);
 
 t_obj		plane(t_obj obj, t_vec cam, t_vec pix);
 t_obj		sphere(t_obj obj, t_vec cam, t_vec pix);
@@ -72,8 +74,7 @@ double		diffuse_and_specular(t_scene *scene, t_pnt point, t_vec pix, int i);
 double		diffuse(t_vec normal, t_vec light);
 double		specular(t_vec normal, t_vec light, t_vec pix, double specular);
 t_vec		reflect_ray(t_vec ray, t_vec normal);
-t_vec       refract_ray(t_vec ray, t_vec normal, double angl, int d);
-
+t_vec		refract_ray(t_vec ray, t_vec normal, double angl, int d);
 double		deg_to_rad(int degrees);
 double		dot(t_vec v1, t_vec v2);
 double		len(t_vec v1);
@@ -85,6 +86,6 @@ t_vec		mult(double k, t_vec v);
 t_vec		cross_product(t_vec a, t_vec b);
 
 
-void	    peaces(t_scene *scene);
+void		peaces(t_scene *scene);
 
 #endif

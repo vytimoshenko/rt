@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RT_START_H
 
-#ifndef rt_START_H
-
-# define rt_START_H
+# define RT_START_H
 
 # define FALSE	0
 # define TRUE	1

@@ -34,11 +34,37 @@ double	get_light(t_scene *scene, t_pnt pnt, t_vec pix)
 	return (intensity);
 }
 
+double	shadow(t_scene *scene, t_pnt pnt, t_vec l, double t_max)
+{
+	t_obj	sh;
+	double	ret;
+	double	t;
+
+	sh = nearest_obj(scene->objs, pnt.xyz, l,
+	(t_mn_mx){0, 0.000001, t_max});
+	if (sh.null && scene->mats.arr[sh.mat]->transp == 0.0 && sh.neg == 0)
+		ret = 0;
+	else
+	{
+		ret = 1;
+		while (sh.null && scene->mats.arr[sh.mat]->transp > 0)
+		{
+			if (sh.neg == 0)
+				ret *= scene->mats.arr[sh.mat]->transp;
+			t = (sh.t1 > sh.t2) ? sh.t1 : sh.t2;
+			pnt.xyz = add(pnt.xyz, mult(t, l));
+			sh = nearest_obj(scene->objs, pnt.xyz, l,
+			(t_mn_mx){0, 0.000001, t_max});
+		}
+	}
+	return (ret);
+}
+
 double	diffuse_and_specular(t_scene *scene, t_pnt pnt,
 			t_vec pix, int i)
 {
 	t_vec	l;
-	t_obj	shadow;
+	t_obj	sh;
 	double	t_max;
 	double	intensity;
 
@@ -52,15 +78,15 @@ double	diffuse_and_specular(t_scene *scene, t_pnt pnt,
 		l = scene->lights.arr[i]->pos;
 		t_max = MAX;
 	}
-	shadow = intersect(scene->objs, pnt.xyz, l,
+	sh = intersect(scene->objs, pnt.xyz, l,
 	(t_mn_mx){0, 0.000001, t_max});
-	if (shadow.null)
+	if (sh.null && scene->mats.arr[sh.mat]->transp == 0.0)
 		return (-1);
 	intensity = scene->lights.arr[i]->intens * diffuse(pnt.n, l);
 	if (pnt.spec)
 		intensity += scene->lights.arr[i]->intens *
 		specular(pnt.n, l, pix, pnt.spec);
-	return (intensity);
+	return (intensity * shadow(scene, pnt, l, t_max));
 }
 
 double	diffuse(t_vec n, t_vec l)
@@ -85,9 +111,4 @@ double	specular(t_vec n, t_vec l, t_vec p, double s)
 		return (pow(rdp / (len(r) * len(p)), s));
 	else
 		return (0);
-}
-
-t_vec	reflect_ray(t_vec r, t_vec n)
-{
-	return (sub(mult(2.0 * dot(r, n), n), r));
 }

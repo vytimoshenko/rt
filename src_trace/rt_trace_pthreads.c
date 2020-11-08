@@ -14,12 +14,12 @@
 
 t_obj	check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam)
 {
-	int i;
-	double tmp;
-	t_vec vec;
-	t_vec point;
+	int		i;
+	double	tmp;
+	t_vec	vec;
+	t_vec	point;
 
-	i = -1;	
+	i = -1;
 	if (plane.type == OBJECT_TYPE_PLANE && plane.t1 > 0)
 	{
 		point = add(mult(plane.t1, pix), cam);
@@ -65,19 +65,22 @@ void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 	}
 }
 
-t_vec	refract_ray(t_vec r, t_vec n, double angl, int d)
+void	peaces(t_scene *scene)
 {
-	double c1;
-	double c2;
+	int		i;
+	t_peace	peace[PEACES];
 
-	r = nrm(r);
-	if (angl == 0)
-		angl = 1 / 1.5;
-	if (d == 1)
-		angl = 1 / angl; 
-	c1 = dot(r, n);
-	c2 = sqrt(1.0 - (pow(angl, 2) * (1.0 - pow((c1), 2))));
-	n = mult((angl * c1 - c2), n);
-	r = mult(angl, r);
-	return (sub(n, r));
+	i = -1;
+	clean_pix_buffer(scene);
+	prepare_pixs(scene);
+	while (++i < PEACES)
+	{
+		peace[i].i = i;
+		peace[i].scene = scene;
+		pthread_create(&(peace[i].p), NULL, trace_rays, &(peace[i]));
+	}
+	i = -1;
+	while (++i < PEACES)
+		pthread_join(peace[i].p, NULL);
+	fill_aliasing_buffer(scene);
 }
