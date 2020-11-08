@@ -44,15 +44,22 @@ ADD_LIB =	-L ./libft	-l ft	\
 
 ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
 
+OBJDIR	= ./obj/
+OBJ = $(addprefix $(OBJDIR), $(SRC:.c=.o))
+
 all:		$(NAME)
 
-$(NAME):	$(OBJ)
-			$(MK_FT)
-			$(MK_MLX)
-			$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_FMW) $(ADD_DEP)
-			$(MK_DIR)
+$(NAME):	obj $(OBJ)
+			@$(MK_FT)
+			@$(MK_MLX)
+			@$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_FMW) $(ADD_DEP)
+			@$(MK_DIR)
 
-%.o:		%.c
+obj:
+	@mkdir -p $(OBJDIR)
+	@mkdir -p $(dir $(OBJ))
+
+$(OBJDIR)%.o:		%.c
 			$(CMPLR) $< -c -o $@
 
 clean:
