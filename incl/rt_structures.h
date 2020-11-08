@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_STRUCTURES_H
+#ifndef RT_STRUCTURES_H
 
-# define rt_STRUCTURES_H
+# define RT_STRUCTURES_H
 
 # include "rt.h"
 
@@ -213,12 +213,11 @@ typedef struct			s_global
 	t_mlx				*mlx;
 }						t_global;
 
-typedef struct		s_peace
+typedef struct			s_peace
 {
 	t_scene				*scene;
 	pthread_t			p;
 	int					i;
-}					t_peace;
-
+}						t_peace;
 
 #endif

@@ -44,6 +44,7 @@ material
 	color:			[255, 0, 0];
 	specular:		5;
 	transparency:	5;
+	refractive:		3;
 }
 
 material
@@ -102,7 +103,7 @@ object
 {
 	type:		<sphere>;
 	material:	"Shiny red";
-	position:	[10, 0, -20];
+	position:	[10, 10, 0];
 	orientation:[0, 0, 0];
 	radius:		10;
 	negative:	0;
@@ -154,4 +155,4 @@ object
 	material:	"Matte green";
 	position:	[50, 0, 100];
 	orientation:	[1, 0, 1];
-}
+}	

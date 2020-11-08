@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_H
+#ifndef RT_H
 
-# define rt_H
+# define RT_H
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"

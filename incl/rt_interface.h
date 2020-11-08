@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_INTERFACE_H
+#ifndef RT_INTERFACE_H
 
-# define rt_INTERFACE_H
+# define RT_INTERFACE_H
 
 # include "rt.h"
 
@@ -39,7 +39,6 @@
 # define MESSAGE_BOX_INDENTATION		10
 
 # define PEACES                         8
-
 
 void		show_interface(t_global *global);
 

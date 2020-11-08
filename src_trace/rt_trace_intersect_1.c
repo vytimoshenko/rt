@@ -12,6 +12,13 @@
 
 #include "../incl/rt.h"
 
+void	check_inter(t_obj tmp, t_obj *clst, t_mn_mx *t_min_max, double t)
+{
+	t_min_max->t = t;
+	*(clst) = tmp;
+	clst->null = 1;
+}
+
 t_obj	select_obj_intersect(t_obj obj, t_vec cam, t_vec pix)
 {
 	if (obj.type == OBJECT_TYPE_PLANE)
@@ -44,30 +51,21 @@ t_obj	nearest_obj(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 		tmp = check_planes(objs, tmp, pix, cam);
 		if (tmp.t1 >= t_min_max.t_min && tmp.t1 <=
 		t_min_max.t_max && tmp.t1 < t_min_max.t - MIN)
-		{
-			t_min_max.t = tmp.t1;
-			closest_obj = tmp;
-			closest_obj.null = 1;
-		}
+			check_inter(tmp, &closest_obj, &t_min_max, tmp.t1);
 		if (tmp.t2 >= t_min_max.t_min && tmp.t2 <=
 		t_min_max.t_max && tmp.t2 < t_min_max.t - MIN)
-		{
-			t_min_max.t = tmp.t2;
-			closest_obj = tmp;
-			closest_obj.null = 1;
-		}
+			check_inter(tmp, &closest_obj, &t_min_max, tmp.t2);
 	}
 	return (check_closest_obj(closest_obj, t_min_max.t));
 }
 
 t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 {
-	t_obj obj;
-	double t;
+	t_obj	obj;
+	double	t;
 
 	obj = nearest_obj(objs, cam, pix, t_min_max);
-	while (obj.neg == 1 && obj.closest > t_min_max.t_min &&
-	obj.closest < t_min_max.t_max)
+	while (obj.neg == 1 && obj.null)
 	{
 		t = (obj.t1 > obj.t2) ? obj.t1 : obj.t2;
 		cam = add(cam, mult(t, pix));
@@ -78,7 +76,6 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	}
 	return (obj);
 }
-
 
 t_obj	check_closest_obj(t_obj closest_obj, double t)
 {

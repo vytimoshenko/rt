@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RT_READ_SAVE_H
 
-#ifndef rt_READ_SAVE_H
-
-# define rt_READ_SAVE_H
+# define RT_READ_SAVE_H
 
 # include "rt.h"
 

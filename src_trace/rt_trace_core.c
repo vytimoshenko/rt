@@ -15,11 +15,11 @@
 void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 {
 	t_pnt	pnt;
-	t_obj obj;
+	t_obj	obj;
 
 	obj = intersect(scene->objs, cam, pix->pos, (t_mn_mx){0, MIN, MAX});
 	pix->depth = pix->depth == 0 ? obj.closest : pix->depth;
-	if (obj.closest == MAX && pix->obj_id == EMPTY)
+	if ((obj.closest == MAX && pix->obj_id == EMPTY) || obj.neg == 1)
 		pix->obj_id = NOTHING_SELECTED;
 	if (obj.closest == MAX)
 		return ;
@@ -27,6 +27,8 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 		pix->obj_id = obj.id;
 	pnt.xyz = add(cam, mult(obj.closest, pix->pos));
 	get_prop(scene, pix, &pnt, &obj);
+	if (obj.neg == 1)
+		return ;
 	if (k == 0 || (pnt.refl <= 0 && pnt.refr <= 0 && pnt.trns <= 0))
 	{
 		pix->color = pnt.final_clr;
@@ -56,8 +58,7 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;
 	pnt->angle = scene->mats.arr[obj->mat]->angle;
-	if (obj->type == OBJECT_TYPE_PLANE)
-		pnt->refr = 0;
+	pnt->refr = (obj->type == OBJECT_TYPE_PLANE) ? 0 : pnt->refr;
 	pnt->light = get_light(scene, *pnt, mult(-1.0, pix->pos));
 	pnt->final_clr = multiply_color(pnt->light, pnt->color);
 	if (pnt->refr > 0)

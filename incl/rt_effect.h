@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_EFFECT_H
+#ifndef RT_EFFECT_H
 
-# define rt_EFFECT_H
+# define RT_EFFECT_H
 
 # include "rt.h"
 
