@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 22:05:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/08 17:49:03 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct			s_texture
 {
 	void				*data;
 	char				*name;
-	int					*addr;
+	Uint32 				*addr;
 	int					t_w;
 	int					t_h;
 
@@ -156,6 +156,7 @@ typedef struct			s_mat
 	double				scale;
 	t_vec				shift;
 	t_texture			*t;
+	int					alpha;
 }						t_mat;
 
 typedef struct			s_cams

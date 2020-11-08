@@ -71,9 +71,8 @@ material
 	name:		"Glossy white";
 	color:		[255, 255, 255];
 	specular:	0;
-	reflective:	0;
 	transparency: 0;
-	pattern:    7;
+	texture:    "ljagushonok-pepe.png";
 }
 
 material
@@ -121,14 +120,7 @@ object
 	radius:		8;
 }
 
-object
-{
-	type:		<sphere>;
-	material:	"Glossy white";
-	position:	[-10, 15, 80];
-	orientation:[0, 0, 0];
-	radius:		2;
-}
+
 
 object
 {

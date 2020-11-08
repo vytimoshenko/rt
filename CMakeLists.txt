@@ -4,15 +4,23 @@ project(RT C)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+#set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+#set(CMAKE_C_FLAGS "-framework OpenGL  -framework AppKit -I frameworks/SDL2.framework/Headers -framework SDL2 -framework SDL2_image")
 
-set(CMAKE_SKIP_RPATH TRUE)
+#set(CMAKE_SKIP_RPATH TRUE)
+#find_library(SDL2_LIBRARY NAME SDL2)
 
 #include_directories(.)
+set(SDL2_DIR "SDL2/SDL2/cmake/SDL2")
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
 include_directories(incl)
 include_directories(libft)
 include_directories(mlx)
-#include_directories(mlx)
+
+#include_directories(${PROJECT_SOURCE_DIR}/frameworks/SDL2.framework/Headers ${PROJECT_SOURCE_DIR}/frameworks/SDL2
+#        ${PROJECT_SOURCE_DIR}/frameworks/SDL2_image.framework/Headers  ${PROJECT_SOURCE_DIR}/frameworks/SDL2_ttf.framework/Headers/)
+
 
 add_executable(RT
         libft/ft_arrdel.c
@@ -144,9 +152,15 @@ add_executable(RT
         src_interface/rt_interface_material_1.c
         src_interface/rt_interface_material_2.c)
 
-#target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
-#target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
-target_link_libraries(RT "-framework OpenGL -framework AppKit")
+target_link_libraries(RT ${PROJECT_SOURCE_DIR}/mlx/libmlx.a)
+target_link_libraries(RT  "-framework AppKit" "-framework OpenGL")
+#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
+#target_link_libraries(RT "-framework OpenGL -framework AppKit")
 #target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
 #target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/mlx)
+
+include_directories(RT ${SDL2_INCLUDE_DIRS})
+#target_link_libraries(RT ${SDL2_LIBRARIES})
+
+target_link_libraries(RT  ${SDL} "-F ${PROJECT_SOURCE_DIR}/frameworks -framework SDL2"
+        ${SDL2_IMG} "-rpath ${PROJECT_SOURCE_DIR}/frameworks -framework SDL2_image")

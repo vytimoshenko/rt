@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/07 22:09:41 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/08 20:08:11 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void		get_uv(t_pnt *p, t_obj *obj, t_double2 *uv, t_mat *mat);
 t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p);
 void		init_noise();
 int			get_textures(t_global *g);
-int			get_image_texel(t_mat *mat, t_obj *obj);
-int			identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat);
+int			get_image_texel(double *pnt, t_mat *mat, t_obj *obj);
+int			identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double *trns);
 int			checker_pattern(t_double2 uv, t_pnt *pnt, t_obj *obj);
 int			stripe_pattern(t_obj *obj, t_double2 uv, t_mat *mat);
 int			wave_pattern(t_double2 uv, t_mat *mat);

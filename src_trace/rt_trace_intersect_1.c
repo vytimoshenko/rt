@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:49 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/08 14:33:35 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	double t;
 
 	obj = nearest_obj(objs, cam, pix, t_min_max);
+/*
 	if (obj.type == OBJECT_TYPE_SPHERE && obj.t1 > MIN && obj.t2 > MIN)
 	{
 		if (obj.t1 > obj.t2)
@@ -77,9 +78,8 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 		obj.t1 = (obj.t1 > MIN) ? obj.t1 + t : obj.t1;
 		obj.t2 = (obj.t2 > MIN) ? obj.t2 + t : obj.t2;
 		obj.closest = (obj.closest > 0) ? obj.closest + t : obj.closest;
-		if (obj.type == OBJECT_TYPE_SPHERE)
-			printf("%f %f %f\n", cam.x, cam.y, cam.z);
 	}
+*/
 	return (obj);
 }
 
