@@ -34,6 +34,42 @@ double	get_light(t_scene *scene, t_pnt pnt, t_vec pix)
 	return (intensity);
 }
 
+int		shadow(t_scene *scene, t_pnt pnt, int i)
+{
+	t_obj	shadow;
+	t_vec	l;
+	double	t_max;
+	double	ret;
+	double t;
+
+	ret = 1;
+	if (scene->lights.arr[i]->type == LIGHT_TYPE_POINT)
+	{
+		l = sub(scene->lights.arr[i]->pos, pnt.xyz);
+		t_max = 1;
+	}
+	else
+	{
+		l = scene->lights.arr[i]->pos;
+		t_max = MAX;
+	}
+	shadow = intersect(scene->objs, pnt.xyz, l,
+	(t_mn_mx){0, 0.000001, t_max});
+	if (shadow.null && shadow.transp == 0)
+		ret = 0;
+	while (shadow.transp != 0 && shadow.closest > 0.000001 &&
+	shadow.closest < t_max)
+	{
+		ret *= shadow.transp;
+		printf("%f\n", shadow.transp);
+		t = (shadow.t1 > shadow.t2) ? shadow.t1 : shadow.t2;
+		l = add(l, mult(t, l));
+		shadow = intersect(scene->objs, pnt.xyz, l,
+		(t_mn_mx){0, 0.000001, t_max});
+	}
+	return (ret);
+}
+
 double	diffuse_and_specular(t_scene *scene, t_pnt pnt,
 			t_vec pix, int i)
 {
@@ -54,6 +90,8 @@ double	diffuse_and_specular(t_scene *scene, t_pnt pnt,
 	}
 	shadow = intersect(scene->objs, pnt.xyz, l,
 	(t_mn_mx){0, 0.000001, t_max});
+	if (shadow.transp > 0)
+		ft_putendl("transpr");
 	if (shadow.null)
 		return (-1);
 	intensity = scene->lights.arr[i]->intens * diffuse(pnt.n, l);

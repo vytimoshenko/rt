@@ -52,6 +52,7 @@ t_obj		intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
 t_obj		check_closest_obj(t_obj closest_obj, double closest);
 t_obj		select_obj_intersect(t_obj obj, t_vec cam, t_vec pix);
 t_obj		check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam);
+t_obj		nearest_obj(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
 
 t_obj		plane(t_obj obj, t_vec cam, t_vec pix);
 t_obj		sphere(t_obj obj, t_vec cam, t_vec pix);

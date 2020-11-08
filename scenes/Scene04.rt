@@ -40,9 +40,10 @@ light
 
 material
 {
-	name:		"Shiny red";
-	color:		[255, 0, 0];
-	specular:	5;
+	name:			"Shiny red";
+	color:			[255, 0, 0];
+	specular:		5;
+	transparency:	5;
 }
 
 material
@@ -101,9 +102,10 @@ object
 {
 	type:		<sphere>;
 	material:	"Shiny red";
-	position:	[0, 0, 10];
+	position:	[10, 0, -20];
 	orientation:[0, 0, 0];
 	radius:		10;
+	negative:	0;
 }
 
 object
