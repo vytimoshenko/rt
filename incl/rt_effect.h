@@ -6,17 +6,18 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:38 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:03:41 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:03:01 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_EFFECT_H
+#ifndef RT_EFFECT_H
 
-# define rt_EFFECT_H
+# define RT_EFFECT_H
 
 # include "rt.h"
 
 # define SHADE_UNSELECTED				0.5
+# define SHADE_UNSELECTED_IN_GROUP		0.8
 
 # define EFFECTS_QUANTITY				7
 # define EFFECT_GRAYSCALE				0
@@ -45,6 +46,11 @@
 # define ANTIALIASING_COLOR_THRESHOLD	32
 # define ANTIALIASING_OUTLINE_WIDTH		6
 # define MULTI_SAMPLING_RATE			16
+
+# define MOTION_BLUR_BUFFERS			10
+
+# define MOTION_BLUR_TITLE				"MOTION BLUR"
+# define MOTION_BLUR_OVERLAY_FINAL_POS	0
 
 void		final_processing(t_mlx *mlx, t_scene *scene);
 t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color);
@@ -78,5 +84,11 @@ t_clr		mix_color(t_clr c1, t_clr c2);
 t_clr		to_grayscale(t_clr color);
 t_clr		to_negative(t_clr color);
 t_clr		to_cartoon(t_scene *scene, t_clr color);
+
+void		make_motion_blur(t_global *global);
+void		merge_buffers(t_pix *pix_buff, t_clr **motion_blur_buffs);
+void		overlay_final_object_position(t_scene *scene);
+void		show_last_frame(t_scene *scene);
+void		show_progress_bar(t_mlx *mlx, int n);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/30 22:47:46 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:47:45 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 		return (get_patt_color(pnt, obj, uv, mat));
 }
 
-// Function for initialisation textures
 void	init_texture(t_texture *texture, t_mlx *mlx)
 {
 //	TODO можно ли добавлять другие текстуры для чтения?

@@ -6,13 +6,13 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 20:21:55 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:02:21 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_INTERFACE_H
+#ifndef RT_INTERFACE_H
 
-# define rt_INTERFACE_H
+# define RT_INTERFACE_H
 
 # include "rt.h"
 
@@ -24,7 +24,9 @@
 # define IMG_INDT_H						10
 
 # define TEXT_COLOR 					0xFFFFFF
-# define BOX_COLOR						0x40000000
+# define BOX_COLOR						0x000000
+# define PROGRESS_BAR_FILLED_COLOR		0xFFFFFF
+# define PROGRESS_BAR_UNFILLED_COLOR	0x222222
 
 # define HELP_BOX_W						1070
 # define HELP_BOX_H						600
@@ -34,16 +36,19 @@
 
 # define INFO_BOX_INDENTATION			30
 
-# define MESSAGE_BOX_W					700
+# define MESSAGE_BOX_W					500
 # define MESSAGE_BOX_H					80
 # define MESSAGE_BOX_INDENTATION		10
+
+# define PROGRESS_BAR_W					400
+# define PROGRESS_BAR_H					16
+# define PROGRESS_BAR_INDENTATION		30
 
 # define NO_TEXTURE						0
 # define IMAGE_TEXTURE					1
 # define PROCEDURAL_TEXTURE				2
 
 # define PEACES                         8
-
 
 void		show_interface(t_global *global);
 
@@ -66,7 +71,7 @@ void		color_sample(t_mlx *mlx, int color, int x, int y);
 int			get_material_id(t_scene *scene);
 int			get_texture_type(t_scene *scene);
 char		*get_prcedural_texture_name(int pattern);
-char 		*trim_textures_path(char *path);
+char		*trim_textures_path(char *path);
 
 void		info_object(t_scene *scene, t_mlx *mlx);
 void		info_object_1(t_scene *scene, t_mlx *mlx, int x, int y);
@@ -104,7 +109,10 @@ void		info_help_light(t_mlx *mlx, int x, int y);
 void		info_help_material(t_mlx *mlx, int x, int y);
 void		info_help_object(t_mlx *mlx, int x, int y);
 
+void		info_message_box(t_mlx *mlx, char *title, char *message);
+void		info_message_box_bar(t_mlx *mlx, char *title, char *message,
+			double i);
 void		info_draw_box(t_mlx *mlx, int size_w, int size_h);
-void		info_message_box(t_mlx *mlx, char *title, char *content);
+void		info_draw_bar(t_mlx *mlx, double i);
 
 #endif

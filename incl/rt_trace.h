@@ -6,13 +6,13 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:38 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:01:47 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_TRACE_H
+#ifndef RT_TRACE_H
 
-# define rt_TRACE_H
+# define RT_TRACE_H
 
 # define VIEWPORT_SIZE_W				1.25
 # define VIEWPORT_SIZE_H				1
@@ -35,7 +35,7 @@
 
 # define PI								3.14159265
 
-void	    *trace_rays(void *peace);
+void		*trace_rays(void *peace);
 void		prepare_pixs(t_scene *scene);
 void		get_centered_coordinates(t_pix *pix);
 void		get_pix_viewport_coordinates(t_scene *scene, t_pix *pix);
@@ -65,7 +65,7 @@ double		diffuse_and_specular(t_scene *scene, t_pnt point, t_vec pix, int i);
 double		diffuse(t_vec normal, t_vec light);
 double		specular(t_vec normal, t_vec light, t_vec pix, double specular);
 t_vec		reflect_ray(t_vec ray, t_vec normal);
-t_vec       refract_ray(t_vec ray, t_vec normal, double angl, int d);
+t_vec		refract_ray(t_vec ray, t_vec normal, double angl, int d);
 
 double		deg_to_rad(int degrees);
 double		dot(t_vec v1, t_vec v2);
@@ -77,7 +77,6 @@ t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
 t_vec		cross_product(t_vec a, t_vec b);
 
-
-void	    peaces(t_scene *scene);
+void		peaces(t_scene *scene);
 
 #endif

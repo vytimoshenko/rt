@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:20 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/04 12:31:37 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 t_clr	shade_unselesected(t_scene *scene, int i, t_clr color)
 {
-	if (scene->pix_buff[i].obj_id != scene->act_obj)
-		return (multiply_color(SHADE_UNSELECTED, color));
-	else
+	int id;
+	int group;
+
+	id = scene->pix_buff[i].obj_id;
+	group = scene->objs.arr[scene->act_obj]->group;
+	if (id == scene->act_obj)
 		return (color);
+	if (id == NOTHING_SELECTED || group == NO_GROUP)
+		return (multiply_color(SHADE_UNSELECTED, color));
+	if (group == scene->objs.arr[id]->group)
+		return (multiply_color(SHADE_UNSELECTED_IN_GROUP, color));
+	return (multiply_color(SHADE_UNSELECTED, color));
 }
 
 t_clr	effect_depth(t_scene *scene, int i)

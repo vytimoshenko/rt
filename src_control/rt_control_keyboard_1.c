@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:05:40 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:05:42 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:50:12 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@ void	escape_key(t_global *global, int key)
 		global->scene->show_help = FALSE;
 		global->scene->show_info = FALSE;
 		global->scene->got_color = FALSE;
-		if (global->scene->act_mod == MODE_OBJECT)
+		global->scene->ready_for_motion = FALSE;
+		if (global->scene->finished_motion == true &&
+		global->scene->act_mod == MODE_CAMERA)
 		{
-			global->scene->act_mod = MODE_CAMERA;
+			global->scene->finished_motion = false;
+			show_last_frame(global->scene);
 			update_interface_and_frame(global);
 		}
-		if (global->scene->act_mod == MODE_EFFECT)
+		if (global->scene->act_mod == MODE_OBJECT ||
+		global->scene->act_mod == MODE_EFFECT)
 		{
 			global->scene->act_mod = MODE_CAMERA;
 			update_interface_and_frame(global);
@@ -78,6 +82,13 @@ void	change_mode_2(t_global *global, int key)
 			global->scene->act_mod = MODE_CAMERA;
 		update_interface_and_frame(global);
 	}
+	if (key == B)
+	{
+		global->scene->act_mod = MODE_OBJECT;
+		info_message_box(global->mlx, MOTION_BLUR_TITLE,
+		"For motion blur select object and move it");
+		global->scene->ready_for_motion = true;
+	}
 }
 
 void	change_item(t_global *global, int key)
@@ -108,7 +119,7 @@ void	change_item(t_global *global, int key)
 
 void	change_grade(t_global *global, int key)
 {
-	if (key == PLUS || key == MINUS || key == B)
+	if (key == PLUS || key == MINUS || key == F)
 	{
 		if (global->scene->act_mod == MODE_LIGHT)
 			change_light_intensity(global->scene, key);

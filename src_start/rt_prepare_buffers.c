@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:10 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 09:07:41 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:46:07 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	prepare_buffers(t_scene *scene)
 	MOTION_BLUR_BUFFERS)))
 		ft_put_errno(PROGRAM_NAME);
 	i = -1;
-	while (++i < MOTION_BLUR_BUFFERS) {
+	while (++i < MOTION_BLUR_BUFFERS)
+	{
 		if (!(scene->motion_blur_buffs[i] = (t_clr *)ft_memalloc(sizeof(t_clr) *
 		(IMG_SIZE_W * IMG_SIZE_H))))
 			ft_put_errno(PROGRAM_NAME);

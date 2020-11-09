@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vitaly <vitaly@student.42.fr>              +#+  +:+       +#+         #
+#    By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr        #
+#    Updated: 2020/11/04 21:01:47 by mperseus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ FCL_FT	=	make fclean		-C libft
 MK_MLX	=	make			-C mlx
 CL_MLX	=	make clean		-C mlx
 
-MK_DIR	=	@/bin/mkdir saves
+MK_DIR	=	@/bin/mkdir saves screenshots
 
 ADD_ERR =	-Wall -Wextra -Werror
 ADD_DEP =	-Wno-deprecated-declarations
@@ -41,7 +41,9 @@ ADD_DEP =	-Wno-deprecated-declarations
 ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
-			-L ./mlx	-l mlx
+			-L ./mlx	-l mlx	\
+			-L ./SDL2/SDL2 			-l SDL2			\
+			-L ./SDL2/SDL2_image	-l SDL2_image
 #			-L ./minilibx_mms_20200219	-l mlx
 
 MLX				= libmlx.dylib

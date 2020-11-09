@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:56 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:07:58 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:59:50 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	info_help_light(t_mlx *mlx, int x, int y)
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 70, TEXT_COLOR,
 	"Move light source:          arrows/[/]");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 90, TEXT_COLOR,
-	"Turn on/off light source:   B");
+	"Turn on/off light source:   F");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 110, TEXT_COLOR,
 	"Light source intensity:     +/-");
 }

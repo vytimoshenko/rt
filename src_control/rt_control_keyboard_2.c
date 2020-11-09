@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:05:47 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:05:49 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:49:18 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void	move_item(t_global *global, int key)
 		else if (global->scene->act_mod == MODE_LIGHT)
 			move_light(global->scene, key);
 		else if (global->scene->act_mod == MODE_OBJECT)
-			move_object(global->scene, key);
+			move_object(global, key);
 		else
+			return ;
+		if (global->scene->finished_motion == true)
 			return ;
 		draw(global);
 	}
@@ -69,6 +71,14 @@ void	save_actions(t_global *global, int key)
 		global->scene->show_info = FALSE;
 		update_interface_only(global);
 		save_scene(global->scene, global->mlx);
+		return ;
+	}
+	else if (key == P)
+	{
+		global->scene->show_help = FALSE;
+		global->scene->show_info = FALSE;
+		update_interface_only(global);
+		save_screenshot(global->scene, global->mlx);
 		return ;
 	}
 	else

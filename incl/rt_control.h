@@ -6,13 +6,13 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 22:49:15 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:55:18 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef rt_CONTROL_H
+#ifndef RT_CONTROL_H
 
-# define rt_CONTROL_H
+# define RT_CONTROL_H
 
 # include "rt.h"
 
@@ -48,6 +48,7 @@
 # define A								0
 # define S								1
 # define D								2
+# define F								3
 # define H								4
 # define Z								6
 # define X								7
@@ -109,8 +110,8 @@ int		apply_material(int x, int y, t_global *global);
 
 int		select_object(int x, int y, t_global *global);
 void	change_object(t_scene *scene, int key);
-void	move_object(t_scene *scene, int key);
-void	make_move(t_scene *scene, int key, int i);
+void	move_object(t_global *global, int key);
+void	make_move(t_global *global, int key, int i);
 
 void	change_effect(t_scene *scene, int key);
 void	change_effect_grade(t_scene *scene, int key);
