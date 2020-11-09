@@ -4,15 +4,23 @@ project(RT C)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+#set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+#set(CMAKE_C_FLAGS "-framework OpenGL  -framework AppKit -I frameworks/SDL2.framework/Headers -framework SDL2 -framework SDL2_image")
 
-set(CMAKE_SKIP_RPATH TRUE)
+#set(CMAKE_SKIP_RPATH TRUE)
+#find_library(SDL2_LIBRARY NAME SDL2)
 
 #include_directories(.)
+set(SDL2_DIR "SDL2/SDL2/cmake/SDL2")
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
 include_directories(incl)
 include_directories(libft)
 include_directories(mlx)
-#include_directories(mlx)
+
+#include_directories(${PROJECT_SOURCE_DIR}/frameworks/SDL2.framework/Headers ${PROJECT_SOURCE_DIR}/frameworks/SDL2
+#        ${PROJECT_SOURCE_DIR}/frameworks/SDL2_image.framework/Headers  ${PROJECT_SOURCE_DIR}/frameworks/SDL2_ttf.framework/Headers/)
+
 
 add_executable(RT
         libft/ft_arrdel.c
@@ -112,7 +120,6 @@ add_executable(RT
         src_interface/rt_interface_help_2.c
         src_interface/rt_interface_light.c
         src_interface/rt_interface_main.c
-        src_interface/rt_interface_material.c
         src_interface/rt_interface_object.c
         src_interface/rt_interface_other.c
         src_interface/rt_interface_render.c
@@ -140,12 +147,20 @@ add_executable(RT
         src_trace/rt_trace_normals.c
         src_trace/rt_trace_vector_1.c
         src_trace/rt_trace_vector_2.c
-        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
-        src_trace/rt_trace_added.c)
+        src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils1.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
+        src_trace/rt_trace_added.c src_texture/texture_utils2.c
+        src_interface/rt_interface_material_1.c
+        src_interface/rt_interface_material_2.c)
 
-#target_link_libraries(RT  /Users/wquirrel/Desktop/rt/mlx/libmlx.a)
-#target_link_libraries(RT  "-framework AppKit" "-framework OpenGL" /Users/wquirrel/Desktop/rt/minilibx_mms_20200219/libmlx.dylib)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
-target_link_libraries(RT "-framework OpenGL -framework AppKit -")
+target_link_libraries(RT ${PROJECT_SOURCE_DIR}/mlx/libmlx.a)
+target_link_libraries(RT  "-framework AppKit" "-framework OpenGL")
+#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
+#target_link_libraries(RT "-framework OpenGL -framework AppKit")
 #target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
 #target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/mlx)
+
+include_directories(RT ${SDL2_INCLUDE_DIRS})
+#target_link_libraries(RT ${SDL2_LIBRARIES})
+
+target_link_libraries(RT  ${SDL} "-F ${PROJECT_SOURCE_DIR}/frameworks -framework SDL2"
+        ${SDL2_IMG} "-rpath ${PROJECT_SOURCE_DIR}/frameworks -framework SDL2_image")

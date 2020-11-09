@@ -7,6 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
 /*   Updated: 2020/11/09 20:02:01 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:19:44 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +56,8 @@
 # define FILE_MATERIAL_REFLECTIVE		"reflective"
 # define FILE_MATERIAL_TEXTURE			"texture"
 # define FILE_MATERIAL_PATTERN			"pattern"
+# define FILE_MATERIAL_SCALE			"scale"
+# define FILE_MATERIAL_SHIFT			"shift"
 # define FILE_MATERIAL_TRANSPARENCY		"transparency"
 # define FILE_MATERIAL_REFRACTIVE		"refractive"
 # define FILE_MATERIAL_ANGLE			"angle"
@@ -65,11 +68,14 @@
 # define FILE_OBJECT_TYPE_CYLINDER		"cylinder"
 # define FILE_OBJECT_TYPE_CONE			"cone"
 # define FILE_OBJECT_GROUP				"group"
+# define FILE_OBJECT_TYPE_PARABOLOID	"paraboloid"
+# define FILE_OBJECT_TYPE_HYPERBOLOID	"hyperboloid"
 # define FILE_OBJECT_MATERIAL			"material"
 # define FILE_OBJECT_POSITION			"position"
 # define FILE_OBJECT_ORIENTATION		"orientation"
 # define FILE_OBJECT_RADIUS				"radius"
 # define FILE_OBJECT_LENGTH				"length"
+# define FILE_OBJECT_NEGATIVE			"negative"
 
 void		read_scene(t_scene *scene, char *file_name);
 void		divide_to_items(t_scene *scene, char *line);

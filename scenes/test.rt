@@ -1,0 +1,109 @@
+
+scene
+{
+	name:		"Shapes";
+	author:		"Meowth Perseus";
+}
+
+camera
+{
+	position:	[0, 0, -10];
+	direction:	[0, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	1;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	5;
+	position:	[-20, 20, 30];
+}
+
+light
+{
+	type:		<point>;
+	intensity:	4;
+	position:	[0, 9, 0];
+}
+
+light
+{
+	type:		<directional>;
+	intensity:	1;
+	position:	[10, 40, 40];
+}
+
+material
+{
+	name:		"Shiny red";
+	color:		[255, 0, 0];
+	specular:	5;
+	refractive:	5;
+	angle:		4;
+}
+
+material
+{
+	name:		"Matte green";
+	color:		[0, 255, 0];
+	specular:	100;
+	reflective:	5;
+}
+
+material
+{
+	name:		"Super blue";
+	color:		[0, 0, 255];
+	specular:	1000;
+	reflective: 0;
+}
+
+material
+{
+	name:		"Glossy white";
+	color:		[255, 255, 255];
+	specular:	1000;
+	reflective: 0;
+	refractive:	4;
+	transparency: 4;
+}
+
+material
+{
+	name:		"Deep magenta";
+	color:		[255, 0, 255];
+	specular:	0;
+	reflective:	0;
+	refractive: 5;
+}
+
+material
+{
+	name:		"Sunny yellow";
+	color:		[255, 255, 0];
+	specular:	1000;
+	reflective:	0;
+	refractive:	15;
+}
+
+material
+{
+	name:		"Light gray";
+	color:		[153, 153, 153];
+	specular:	50;
+	reflective:	0;
+}
+
+object
+{
+	type:		<hyperboloid>;
+	material:	"Super blue";
+	position:	[0, 0, 50];
+	orientation:[1, 0, 0];
+	radius:		10;
+}

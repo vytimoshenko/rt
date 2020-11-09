@@ -7,6 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
 /*   Updated: 2020/11/09 19:59:29 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/08 17:49:03 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +34,7 @@ typedef struct			s_texture
 {
 	void				*data;
 	char				*name;
-	int					*addr;
+	Uint32 			*addr;
 	int					t_w;
 	int					t_h;
 
@@ -45,9 +46,10 @@ typedef struct			s_texture
 	t_clr				clr;
 }						t_texture;
 
+//TODO Нужна ли эта структура?
 typedef struct			s_textures
 {
-	int					quantity;
+	int					  quantity;
 	t_texture			*tex;
 }						t_textures;
 
@@ -110,6 +112,8 @@ typedef struct			s_obj
 	int					type;
 	int					mat;
 	int					pattern;
+	int					rec;
+	int					neg;
 	t_clr				color;
 	double				spec;
 	double				refl;
@@ -151,7 +155,10 @@ typedef struct			s_mat
 	double				refr;
 	double				transp;
 	double				angle;
+	double				scale;
+	t_vec				shift;
 	t_texture			*t;
+	int					alpha;
 }						t_mat;
 
 typedef struct			s_cams

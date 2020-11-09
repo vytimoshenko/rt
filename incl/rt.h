@@ -7,6 +7,7 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:05 by mperseus          #+#    #+#             */
 /*   Updated: 2020/11/09 20:03:25 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/08 00:03:53 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +25,8 @@
 
 # include "../mlx/mlx.h"
 # include <time.h>
+# include "../SDL2/headers/SDL.h"
+# include "../SDL2/headers/SDL_image.h"
 
 # include <math.h>
 # include <stdbool.h>

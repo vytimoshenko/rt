@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 22:23:57 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:20:17 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->t = identify_texture(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_PATTERN)))
 		scene->mats.arr[i]->pattern = identify_pattern(value);
+	else if (!(ft_strcmp(property, FILE_MATERIAL_SCALE)))
+		scene->mats.arr[i]->scale = ft_atoi(value);
+	else if (!(ft_strcmp(property, FILE_MATERIAL_SHIFT)))
+		scene->mats.arr[i]->shift = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_REFRACTIVE)))
 		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
 	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
@@ -54,11 +58,13 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	else if (!(ft_strcmp(property, FILE_OBJECT_POSITION)))
 		scene->objs.arr[i]->pos = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_ORIENTATION)))
-		scene->objs.arr[i]->dir = parse_vector(value);
+		scene->objs.arr[i]->dir = nrm(parse_vector(value));
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_LENGTH)))
-		scene->objs.arr[i]->len = (double)ft_atoi(value);
+		scene->objs.arr[i]->len = (double)ft_atoi(value) / 10;
+	else if (!(ft_strcmp(property, FILE_OBJECT_NEGATIVE)))
+		scene->objs.arr[i]->neg = (ft_atoi(value) > 0) ? 1 : 0;
 	else
 		put_error_wrong_scene_data(property, "wrong object property name");
 }
@@ -73,6 +79,10 @@ int		find_object_type(char *value)
 		return (OBJECT_TYPE_CYLINDER);
 	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_CONE)))
 		return (OBJECT_TYPE_CONE);
+	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_PARABOLOID)))
+		return (OBJECT_TYPE_PARABOLOID);
+	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_HYPERBOLOID)))
+		return (OBJECT_TYPE_HYPERBOLOID);
 	put_error_wrong_scene_data(value, "wrong object type");
 	return (-1);
 }

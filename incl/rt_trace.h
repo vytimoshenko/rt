@@ -28,6 +28,8 @@
 # define OBJECT_TYPE_SPHERE				1
 # define OBJECT_TYPE_CYLINDER			2
 # define OBJECT_TYPE_CONE				3
+# define OBJECT_TYPE_PARABOLOID			4
+# define OBJECT_TYPE_HYPERBOLOID		5
 
 # define REFLECTION_DEPTH				3
 # define MIN							0.0001
@@ -49,16 +51,23 @@ void		get_normal(t_pnt *point, t_vec pix, t_obj *obj, t_vec cam);
 t_obj		intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
 t_obj		check_closest_obj(t_obj closest_obj, double closest);
 t_obj		select_obj_intersect(t_obj obj, t_vec cam, t_vec pix);
+t_obj		check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam);
+t_obj		nearest_obj(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max);
+void		check_inter(t_obj tmp, t_obj *clst, t_mn_mx *t_min_max, double t);
 
 t_obj		plane(t_obj obj, t_vec cam, t_vec pix);
 t_obj		sphere(t_obj obj, t_vec cam, t_vec pix);
 t_obj		cylinder(t_obj obj, t_vec cam, t_vec pix);
 t_obj		cone(t_obj obj, t_vec cam, t_vec pix);
+t_obj		paraboloid(t_obj obj, t_vec cam, t_vec pix);
+t_obj		hyperboloid(t_obj obj, t_vec cam, t_vec pix);
 
 void		plane_n(t_pnt *pnt, t_vec pix, t_obj *obj);
 void		sphere_n(t_pnt *pnt, t_vec pix, t_obj *obj);
 void		cylinder_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam);
 void		cone_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam);
+void		paraboloid_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam);
+void		hyperboloid_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam);
 
 double		get_light(t_scene *scene, t_pnt point, t_vec pix);
 double		diffuse_and_specular(t_scene *scene, t_pnt point, t_vec pix, int i);

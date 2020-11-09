@@ -6,7 +6,7 @@
 /*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 20:57:16 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/28 22:25:08 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 21:45:04 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,31 @@ void	init_noise(void)
 	}
 }
 
-double	noise(t_double2 uv, double	result)
+double	noise(t_double2 uv, double result)
 {
-	int		cell_x;
-	int		cell_y;
+	int	cell_x;
+	int	cell_y;
+	int grid_y;
+	int grid_x;
+	int hash;
 
-	result = 0.0f;
 	cell_x = floor(uv.u);
 	cell_y = floor(uv.v);
-	for (int grid_y = cell_y; grid_y  <= cell_y + 1; grid_y++)
+	grid_y = cell_y;
+	while (grid_y <= cell_y + 1)
 	{
-		for (int grid_x = cell_x; grid_x <= cell_x + 1; grid_x++)
+		grid_x = cell_x;
+		while (grid_x <= cell_x + 1)
 		{
-			int hash = p_perm("get", (p_perm(
+			hash = p_perm("get", (p_perm(
 					"get", grid_x & 255, 0) + grid_y) & 255, 0);
 			result += surflet(
 					(t_double2){uv.u - grid_x, uv.v - grid_y}
 					, p_grads_xy('x', "get", hash, 0)
 					, p_grads_xy('y', "get", hash, 0));
+			grid_x++;
 		}
+		grid_y++;
 	}
-	return result;
+	return (result);
 }

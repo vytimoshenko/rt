@@ -12,30 +12,10 @@
 
 #include "../incl/rt.h"
 
-void	peaces(t_scene *scene)
-{
-	int i;
-	t_peace peace[PEACES];
-
-	i = -1;
-	clean_pix_buffer(scene);
-	prepare_pixs(scene);
-	while (++i < PEACES)
-	{
-		peace[i].i = i;
-		peace[i].scene = scene;
-		pthread_create(&(peace[i].p), NULL, trace_rays, &(peace[i]));
-	}
-	i = -1;
-	while (++i < PEACES)
-		pthread_join(peace[i].p, NULL);
-	fill_aliasing_buffer(scene);
-}
-
 void	*trace_rays(void *peace)
 {
-	int	i;
-	t_peace *p;
+	int		i;
+	t_peace	*p;
 
 	p = (t_peace *)peace;
 	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;

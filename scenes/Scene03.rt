@@ -7,7 +7,7 @@ scene
 
 camera
 {
-	position:	[0, 0, -10];
+	position:	[0, 0, -20]
 	direction:	[0, 0, 0];
 }
 
@@ -115,7 +115,7 @@ object
 	type:		<sphere>;
 	material:	"Super blue";
 	position:	[-11, 1, 40];
-	orientation:	[0, 0, 0];
+	orientation:[0, 0, 0];
 	radius:		10;
 }
 
@@ -124,7 +124,7 @@ object
 	type:		<sphere>;
 	material:	"Shiny red";
 	position:	[11, 1, 40];
-	orientation:	[0, 0, 0];
+	orientation:[0, 0, 0];
 	radius:		10;
 }
 
@@ -153,5 +153,5 @@ object
 	type:		<plane>;
 	material:	"Glossy white";
 	position:	[0, -10, 0];
-	orientation:	[0, 0, 0];
+	orientation:	[0, 1, 0];
 }
