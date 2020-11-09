@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 21:40:14 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 22:46:28 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,6 +224,7 @@ typedef struct			s_scene
 	int					k_depth_map;
 
 	bool				ready_for_motion;
+	int					move_direction;
 	bool				in_motion;
 	bool				finished_motion;
 	t_clr				**motion_blur_buffs;

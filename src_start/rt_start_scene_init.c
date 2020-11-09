@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:35 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 21:41:38 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 22:25:02 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	set_initial_status(t_scene *scene)
 	scene->act_obj = 0;
 	scene->mat_source = NOTHING_SELECTED;
 	scene->ready_for_motion = false;
+	scene->move_direction = 0;
 	scene->in_motion = false;
 	scene->finished_motion = false;
 }
