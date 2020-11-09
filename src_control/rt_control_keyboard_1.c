@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:05:40 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 19:50:12 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:59:00 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,9 @@ void	change_mode_2(t_global *global, int key)
 	}
 	if (key == B)
 	{
+		global->scene->show_help = FALSE;
+		global->scene->show_info = FALSE;
+		update_interface_only(global);
 		global->scene->act_mod = MODE_OBJECT;
 		info_message_box(global->mlx, MOTION_BLUR_TITLE,
 		"For motion blur select object and move it");

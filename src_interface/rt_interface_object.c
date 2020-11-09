@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:32 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/04 21:22:18 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:20:18 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,22 @@ void	info_object_1(t_scene *scene, t_mlx *mlx, int x, int y)
 		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR, "Plane");
 	else if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_SPHERE)
 		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR, "Sphere");
-	else if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_CONE)
-		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR, "Cone");
 	else if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_CYLINDER)
 		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR, "Cylinder");
+	else if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_CONE)
+		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR, "Cone");
 }
 
 void	info_object_2(t_scene *scene, t_mlx *mlx, int x, int y)
 {
 	char	*str;
 
+	if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_PARABOLOID)
+		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR,
+		"Paraboloid");
+	else if (scene->objs.arr[scene->act_obj]->type == OBJECT_TYPE_HYPERBOLOID)
+		mlx_string_put(mlx->mlx, mlx->win, x + 230, y, TEXT_COLOR,
+		"Hyperboloid");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 30, TEXT_COLOR,
 	"- position (XYZ):");
 	mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 30, TEXT_COLOR,

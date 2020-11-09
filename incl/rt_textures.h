@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rt_textures.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/08 20:08:11 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:21:03 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define P_SIZE 256
 # define P_MASK 255
 
-# include "rt_structures.h"
+# include "rt.h"
 
 //TODO Переделать текстуры под SDL2
 //TODO SDL2 компиляцию

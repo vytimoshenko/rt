@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:35 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 14:04:30 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:41:38 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ void	get_objects_statistics(t_scene *scene)
 			scene->objs.quant_cylinders++;
 		if (scene->objs.arr[i]->type == OBJECT_TYPE_CONE)
 			scene->objs.quant_cones++;
+		if (scene->objs.arr[i]->type == OBJECT_TYPE_PARABOLOID)
+			scene->objs.quant_paraboloids++;
+		if (scene->objs.arr[i]->type == OBJECT_TYPE_HYPERBOLOID)
+			scene->objs.quant_hyperboloids++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:12 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 19:49:04 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:57:48 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	info_material_3(t_scene *scene, t_mlx *mlx, int x, int y)
 	else
 	{
 		color = unite_color_channels(scene->mats.arr[i]->color);
-		color_sample(mlx, color, x + 160, y + 67);
+		color_sample(mlx, color, x + 160, y + 84);
 		mlx_string_put(mlx->mlx, mlx->win, x + 190, y + 80, TEXT_COLOR,
 		str = ft_itoa(scene->mats.arr[i]->color.r));
 		free(str);

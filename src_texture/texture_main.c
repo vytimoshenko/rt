@@ -6,8 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/09 19:47:45 by mperseus         ###   ########.fr       */
-/*   Updated: 2020/11/08 20:09:37 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:38:08 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +53,8 @@ int		get_image_texel(double *trns, t_mat *mat, t_obj *obj)
 	if (weight >= mat->t->t_w)
 		weight = mat->t->t_w - 1;
 //	texel = height * mat->t->size_line / 4 + weight;
-
 	texel = height * mat->t->t_w + weight;
+	(void)trns;
 //	*trns = 1 - ((double)(mat->t->addr[texel] & (0xFF << 24))) / 255;
 
 //	return ((mat->t->addr[texel] & 16) | (mat->t->addr[texel] & 8)
@@ -80,27 +79,16 @@ int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double 
 		return (get_patt_color(pnt, obj, uv, mat));
 }
 
-void	init_texture(t_texture *texture, t_mlx *mlx)
+void	init_texture(t_texture *texture)
 {
 //	 if (SDL_Init(SDL_INIT_EVERYTHING))
 //	  put_error_pn("SDL_Init");
 	SDL_Surface *surface = IMG_Load(texture->name);
 	if (surface == NULL)
 		ft_put_errno("SDL2 Unable to load image");
-	printf("loaded image: %dx%d\n", surface->w, surface->h);
-	// texture->data = mlx_new_image(mlx->mlx, surface->w, surface->h);
 	texture->t_w = surface->w;
 	texture->t_h = surface->h;
-//	 SDL_PixelFormat *format = SDL_AllocFormat(SDL_PIXELFORMAT_ARGB32);
-//	 SDL_Surface *surface1 = SDL_ConvertSurface(surface, format, 0);
-//	 SDL_FreeFormat(format);
-//	 SDL_FreeSurface(surface);
-//	texture->data = mlx_png_file_to_image(mlx->mlx, texture->name
-//			, &texture->t_w, &texture->t_h);
-//	texture->addr = (int *)mlx_get_data_addr(texture->data
-//			, &texture->bits_per_pixel, &texture->size_line, &texture->endian);
-	 texture->addr = (Uint32 *)surface->pixels;
-	// SDL_FreeSurface(surface);
+	texture->addr = (Uint32 *)surface->pixels;
 }
 
 int		get_textures(t_global *g)
@@ -111,8 +99,7 @@ int		get_textures(t_global *g)
 	while (++i < g->scene->objs.quant)
 	{
 		if (g->scene->mats.arr[g->scene->objs.arr[i]->mat]->t)
-			init_texture(
-					g->scene->mats.arr[g->scene->objs.arr[i]->mat]->t, g->mlx);
+			init_texture(g->scene->mats.arr[g->scene->objs.arr[i]->mat]->t);
 	}
 	return (0);
 }

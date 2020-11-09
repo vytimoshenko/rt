@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   texture_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:26:24 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/07 19:49:50 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:38:31 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "../incl/rt.h"
 
 int	ft_clamp(int i, int a, int b)
 {

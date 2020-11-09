@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 19:30:15 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:53:11 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	show_help(t_mlx *mlx)
 	int y;
 
 	x = (WIN_SIZE_W - HELP_BOX_W) / 2 + INFO_BOX_INDENTATION;
-	y = (WIN_SIZE_H - HELP_BOX_H) / 2 + INFO_BOX_INDENTATION + 10;
+	y = (WIN_SIZE_H - HELP_BOX_H) / 2 + INFO_BOX_INDENTATION - 5;
 	info_draw_box(mlx, HELP_BOX_W, HELP_BOX_H);
 	info_header_and_author(mlx, x + 400, y);
 	info_help_general(mlx, x + 10, y + 50);

@@ -6,7 +6,7 @@
 #    By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/11/04 21:01:47 by mperseus         ###   ########.fr        #
+#    Updated: 2020/11/09 21:24:27 by mperseus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,15 +44,13 @@ ADD_LIB =	-L ./libft	-l ft	\
 			-L ./mlx	-l mlx	\
 			-L ./SDL2/SDL2 			-l SDL2			\
 			-L ./SDL2/SDL2_image	-l SDL2_image
-#			-L ./minilibx_mms_20200219	-l mlx
 
-MLX				= libmlx.dylib
+MLX		=	libmlx.dylib
 
 ADD_FMW =	-Lmlx -lmlx -framework OpenGL -framework AppKit -lm
-#ADD_FMW =	-lmlx -framework OpenGL -framework AppKit
 
-OBJDIR	= ./obj/
-OBJ = $(addprefix $(OBJDIR), $(SRC:.c=.o))
+OBJDIR	=	./obj/
+OBJ		=	$(addprefix $(OBJDIR), $(SRC:.c=.o))
 
 all:		$(NAME)
 
@@ -63,8 +61,8 @@ $(NAME):	obj $(OBJ)
 			@$(MK_DIR)
 
 obj:
-	@mkdir -p $(OBJDIR)
-	@mkdir -p $(dir $(OBJ))
+			@mkdir -p $(OBJDIR)
+			@mkdir -p $(dir $(OBJ))
 
 $(OBJDIR)%.o:		%.c
 			$(CMPLR) $< -c -o $@

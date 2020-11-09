@@ -6,10 +6,10 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 19:59:29 by mperseus         ###   ########.fr       */
-/*   Updated: 2020/11/08 17:49:03 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:40:14 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef RT_STRUCTURES_H
 
@@ -189,6 +189,11 @@ typedef struct			s_objs
 	int					quant_spheres;
 	int					quant_cylinders;
 	int					quant_cones;
+	int					quant_paraboloids;
+	int					quant_hyperboloids;
+
+	int					quant_groups;
+
 	t_obj				**arr;
 }						t_objs;
 

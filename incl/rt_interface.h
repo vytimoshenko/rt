@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 20:02:21 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:35:25 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ void		info_scene_1(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_scene_2(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_scene_3(t_scene *scene, t_mlx *mlx, int x, int y);
 void		info_scene_4(t_scene *scene, t_mlx *mlx, int x, int y);
+
+void		info_scene_5(t_scene *scene, t_mlx *mlx, int x, int y);
 
 void		show_help(t_mlx *mlx);
 void		info_header_and_author(t_mlx *mlx, int x, int y);
