@@ -6,6 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
+/*   Updated: 2020/11/09 20:02:01 by mperseus         ###   ########.fr       */
 /*   Updated: 2020/11/07 22:19:44 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -17,9 +18,14 @@
 # include "rt.h"
 
 # define SAVE_PATH						"./saves/"
+# define SCREENSHOT_PATH				"./screenshots/"
+
+# define SAVE_PATH						"./saves/"
 # define TEXTURES_PATH					"textures/"
 # define SCENE_FILE_EXTENSION			".rt"
+# define SCREENSHOT_FILE_EXTENSION		".png"
 # define SAVE_MESSAGE_TITLE				"SCENE SAVED AS"
+# define SCREENSHOT_MESSAGE_TITLE		"SCREENSHOT SAVED"
 # define CURRENT_TIME_STR_LENGTH		24
 
 # define READ_BUFF_SIZE					8192

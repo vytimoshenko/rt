@@ -6,23 +6,21 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:13 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:07:16 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 13:31:12 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
 
-void		final_processing(t_mlx *mlx, t_scene *scene)
+void	final_processing(t_mlx *mlx, t_scene *scene)
 {
 	int	i;
 
 	if (scene->antialiasing == TRUE && scene->act_mod != MODE_EFFECT)
 		run_antialiasing(scene);
-	if (scene->act_mod == MODE_EFFECT &&
-	scene->act_eff == EFFECT_PIXELATION)
+	if (scene->act_mod == MODE_EFFECT && scene->act_eff == EFFECT_PIXELATION)
 		effect_pixelation(scene);
-	else if (scene->act_mod == MODE_EFFECT &&
-	scene->act_eff == EFFECT_ANAGLYPH)
+	else if (scene->act_mod == MODE_EFFECT && scene->act_eff == EFFECT_ANAGLYPH)
 		effect_anaglyph(scene);
 	else
 	{
@@ -36,7 +34,7 @@ void		final_processing(t_mlx *mlx, t_scene *scene)
 		mlx->data[i] = unite_color_channels(scene->pix_buff[i].frame);
 }
 
-t_clr		pixel_post_processing(t_scene *scene, int i, t_clr color)
+t_clr	pixel_post_processing(t_scene *scene, int i, t_clr color)
 {
 	if (scene->act_mod == MODE_OBJECT)
 		color = shade_unselesected(scene, i, color);

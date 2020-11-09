@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:35 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:10:37 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 14:04:30 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ t_scene	*init_scene(int argc, char **argv)
 	set_initial_status(scene);
 	get_lights_statistics(scene);
 	get_objects_statistics(scene);
-	if (!(scene->pix_buff = (t_pix *)ft_memalloc(sizeof(t_pix) *
-	(IMG_SIZE_W * IMG_SIZE_H))))
-		ft_put_errno(PROGRAM_NAME);
+	prepare_buffers(scene);
 	set_initial_angles(scene);
 	scene->file_name_with_path = ft_strdup(argv[1]);
 	return (scene);
@@ -47,6 +45,9 @@ void	set_initial_status(t_scene *scene)
 	scene->act_mat = 0;
 	scene->act_obj = 0;
 	scene->mat_source = NOTHING_SELECTED;
+	scene->ready_for_motion = false;
+	scene->in_motion = false;
+	scene->finished_motion = false;
 }
 
 void	get_lights_statistics(t_scene *scene)

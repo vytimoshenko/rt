@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:38 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:01:47 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ double		diffuse(t_vec normal, t_vec light);
 double		specular(t_vec normal, t_vec light, t_vec pix, double specular);
 t_vec		reflect_ray(t_vec ray, t_vec normal);
 t_vec		refract_ray(t_vec ray, t_vec normal, double angl, int d);
+
 double		deg_to_rad(int degrees);
 double		dot(t_vec v1, t_vec v2);
 double		len(t_vec v1);
@@ -84,7 +85,6 @@ t_vec		add(t_vec v1, t_vec v2);
 t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
 t_vec		cross_product(t_vec a, t_vec b);
-
 
 void		peaces(t_scene *scene);
 

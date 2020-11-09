@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 20:20:48 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 14:30:59 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:53:10 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	make_motion_blur(t_global *global)
 {
-	int		n;
-	int 	i;
-	
+	int	n;
+	int	i;
+
 	global->scene->ready_for_motion = false;
 	n = -1;
 	while (++n < MOTION_BLUR_BUFFERS)
@@ -46,7 +46,7 @@ void	merge_buffers(t_pix *pix_buff, t_clr **motion_blur_buffs)
 	int sum_r;
 	int sum_g;
 	int sum_b;
-	
+
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 	{
@@ -66,7 +66,7 @@ void	merge_buffers(t_pix *pix_buff, t_clr **motion_blur_buffs)
 	}
 }
 
-void overlay_final_object_position(t_scene *scene)
+void	overlay_final_object_position(t_scene *scene)
 {
 	int i;
 	int group;
@@ -75,7 +75,6 @@ void overlay_final_object_position(t_scene *scene)
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 	{
-
 		if ((group == NO_GROUP && scene->pix_buff[i].obj_id == scene->act_obj)
 		|| (scene->pix_buff[i].obj_id != NOTHING_SELECTED &&
 		scene->objs.arr[scene->pix_buff[i].obj_id]->group == group))
@@ -84,14 +83,14 @@ void overlay_final_object_position(t_scene *scene)
 	}
 }
 
-void show_last_frame(t_scene *scene)
+void	show_last_frame(t_scene *scene)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
-			scene->pix_buff[i].color =
-			scene->motion_blur_buffs[MOTION_BLUR_BUFFERS - 1][i];
+		scene->pix_buff[i].color =
+		scene->motion_blur_buffs[MOTION_BLUR_BUFFERS - 1][i];
 }
 
 void	show_progress_bar(t_mlx *mlx, int n)

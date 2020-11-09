@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/07 13:06:08 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ void	draw(t_global *global)
 	struct timeval	end;
 
 	gettimeofday(&start, NULL);
-	mlx_clear_window(global->mlx->mlx, global->mlx->win);
 	peaces(global->scene);
-	final_processing(global->mlx, global->scene);
-	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
-	global->mlx->img, IMG_INDT_W, IMG_INDT_H);
+	if (global->scene->in_motion == false)
+	{
+		final_processing(global->mlx, global->scene);
+		mlx_clear_window(global->mlx->mlx, global->mlx->win);
+		mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,
+		global->mlx->img, IMG_INDT_W, IMG_INDT_H);
+	}
 	gettimeofday(&end, NULL);
 	count_frames(global->mlx, start, end);
-	show_interface(global);
+	if (global->scene->in_motion == false)
+		show_interface(global);
 }
 
 void	count_frames(t_mlx *mlx, struct timeval start, struct timeval end)

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:22 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:04:24 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:02:46 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_scene		*init_scene(int argc, char **argv);
 void		set_initial_status(t_scene *scene);
 void		get_lights_statistics(t_scene *scene);
 void		get_objects_statistics(t_scene *scene);
+void		prepare_buffers(t_scene *scene);
 void		set_initial_angles(t_scene *scene);
 
 t_mlx		*init_mlx(void);

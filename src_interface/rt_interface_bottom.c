@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:34 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 14:15:19 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/04 12:44:30 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	info_coordinates(t_scene *scene, t_mlx *mlx)
 	char	*str;
 
 	x = 20;
-	y = WIN_SIZE_H - 30;
+	y = WIN_SIZE_H - 10;
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR, "X:      Y:");
 	mlx_string_put(mlx->mlx, mlx->win, x + 20, y, TEXT_COLOR,
 	str = ft_itoa(scene->x_mouse_pos));
@@ -37,7 +37,7 @@ void	info_color(t_scene *scene, t_mlx *mlx)
 	int		color;
 
 	x = 230;
-	y = WIN_SIZE_H - 30;
+	y = WIN_SIZE_H - 10;
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR, "R:     G:     B:");
 	mlx_string_put(mlx->mlx, mlx->win, x + 20, y, TEXT_COLOR,
 	str = ft_itoa((int)scene->picked_color.r));
@@ -58,7 +58,7 @@ void	info_scene_file_name(t_scene *scene, t_mlx *mlx)
 	int	y;
 
 	x = 80;
-	y = WIN_SIZE_H - 30;
+	y = WIN_SIZE_H - 10;
 	mlx_string_put(mlx->mlx, mlx->win, x + 370, y, TEXT_COLOR,
 	scene->file_name_with_path);
 }

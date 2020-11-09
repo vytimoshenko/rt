@@ -6,6 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
+/*   Updated: 2020/11/09 19:59:29 by mperseus         ###   ########.fr       */
 /*   Updated: 2020/11/08 17:49:03 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -18,8 +19,8 @@
 
 typedef struct			s_double2
 {
-	double u;
-	double v;
+	double				u;
+	double				v;
 }						t_double2;
 
 typedef struct			s_clr
@@ -33,7 +34,7 @@ typedef struct			s_texture
 {
 	void				*data;
 	char				*name;
-	Uint32 				*addr;
+	Uint32 			*addr;
 	int					t_w;
 	int					t_h;
 
@@ -44,10 +45,11 @@ typedef struct			s_texture
 	float				t_y;
 	t_clr				clr;
 }						t_texture;
+
 //TODO Нужна ли эта структура?
 typedef struct			s_textures
 {
-	int					quantity;
+	int					  quantity;
 	t_texture			*tex;
 }						t_textures;
 
@@ -215,6 +217,11 @@ typedef struct			s_scene
 	int					k_cartoon;
 	int					k_pixelation;
 	int					k_depth_map;
+
+	bool				ready_for_motion;
+	bool				in_motion;
+	bool				finished_motion;
+	t_clr				**motion_blur_buffs;
 
 	int					got_color;
 	t_clr				picked_color;

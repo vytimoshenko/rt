@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:13 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 22:49:21 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 13:53:08 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,38 +51,49 @@ void	change_object(t_scene *scene, int key)
 		scene->act_obj = scene->objs.quant - 1;
 }
 
-void	move_object(t_scene *scene, int key)
+void	move_object(t_global *global, int key)
 {
 	int i;
 	int group;
 
-	i = scene->act_obj;
-	if (scene->objs.arr[i]->group != NO_GROUP)
+	i = global->scene->act_obj;
+	if (global->scene->objs.arr[i]->group != NO_GROUP)
 	{
-		group = scene->objs.arr[i]->group;
+		group = global->scene->objs.arr[i]->group;
 		i = -1;
-		while (++i < scene->objs.quant)
+		while (++i < global->scene->objs.quant)
 		{
-			if (scene->objs.arr[i]->group == group)
-				make_move(scene, key, i);
+			if (global->scene->objs.arr[i]->group == group)
+				make_move(global, key, i);
 		}
 	}
 	else
-		make_move(scene, key, i);
+		make_move(global, key, i);
 }
 
-void	make_move(t_scene *scene, int key, int i)
+void	make_move(t_global *global, int key, int i)
 {
+	int	mov;
+
+	if (global->scene->ready_for_motion == true)
+	{
+		make_motion_blur(global);
+		return ;
+	}
+	if (global->scene->in_motion == true)
+		mov = OBJECT_MOVEMENT_INCREMENT / MOTION_BLUR_BUFFERS;
+	else
+		mov = OBJECT_MOVEMENT_INCREMENT;
 	if (key == ARROW_DOWN)
-		scene->objs.arr[i]->pos.y -= OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.y -= mov;
 	else if (key == ARROW_UP)
-		scene->objs.arr[i]->pos.y += OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.y += mov;
 	else if (key == ARROW_RIGHT)
-		scene->objs.arr[i]->pos.x += OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.x += mov;
 	else if (key == ARROW_LEFT)
-		scene->objs.arr[i]->pos.x -= OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.x -= mov;
 	else if (key == BRACKET_RIGHT)
-		scene->objs.arr[i]->pos.z += OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.z += mov;
 	else if (key == BRACKET_LEFT)
-		scene->objs.arr[i]->pos.z -= OBJECT_MOVEMENT_INCREMENT;
+		global->scene->objs.arr[i]->pos.z -= mov;
 }

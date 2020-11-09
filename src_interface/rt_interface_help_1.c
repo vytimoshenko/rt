@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 18:04:50 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/07 19:30:15 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	show_help(t_mlx *mlx)
 	int y;
 
 	x = (WIN_SIZE_W - HELP_BOX_W) / 2 + INFO_BOX_INDENTATION;
-	y = (WIN_SIZE_H - HELP_BOX_H) / 2 + INFO_BOX_INDENTATION;
+	y = (WIN_SIZE_H - HELP_BOX_H) / 2 + INFO_BOX_INDENTATION + 10;
 	info_draw_box(mlx, HELP_BOX_W, HELP_BOX_H);
 	info_header_and_author(mlx, x + 400, y);
 	info_help_general(mlx, x + 10, y + 50);
@@ -32,7 +32,7 @@ void	show_help(t_mlx *mlx)
 void	info_header_and_author(t_mlx *mlx, int x, int y)
 {
 	mlx_string_put(mlx->mlx, mlx->win, x, y - 10, TEXT_COLOR,
-	"-= rt =-");
+	"-= RT =-");
 	mlx_string_put(mlx->mlx, mlx->win, x - 60, y + 10, TEXT_COLOR,
 	"basic raytracing render");
 	mlx_string_put(mlx->mlx, mlx->win, x - 200, y + 540, TEXT_COLOR,
@@ -48,14 +48,16 @@ void	info_help_general(t_mlx *mlx, int x, int y)
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 30, TEXT_COLOR,
 	"Save as:                    U");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
-	"Pick color:                 right mouse button");
+	"Save screenshot:            P");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 70, TEXT_COLOR,
-	"Reset:                      R");
+	"Pick color:                 right mouse button");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 90, TEXT_COLOR,
-	"Help:                       H");
+	"Reset:                      R");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 110, TEXT_COLOR,
-	"Scene summary info:         I");
+	"Help:                       H");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 130, TEXT_COLOR,
+	"Scene summary info:         I");
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 150, TEXT_COLOR,
 	"Exit:                       Q");
 }
 
@@ -70,6 +72,8 @@ void	info_help_effect(t_mlx *mlx, int x, int y)
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 70, TEXT_COLOR,
 	"Change effect grade:        +/-");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 90, TEXT_COLOR,
+	"Motion blur:                B");
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 110, TEXT_COLOR,
 	"Antialiasing on/off:        T");
 }
 
