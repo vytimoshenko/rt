@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:39 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 22:45:34 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:05:10 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	info_message_box(t_mlx *mlx, char *title, char *message)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	x = (WIN_SIZE_W - MESSAGE_BOX_W) / 2;
 	y = (WIN_SIZE_H - MESSAGE_BOX_H) / 2;
@@ -28,8 +28,8 @@ void	info_message_box(t_mlx *mlx, char *title, char *message)
 
 void	info_message_box_bar(t_mlx *mlx, char *title, char *message, double i)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	x = (WIN_SIZE_W - MESSAGE_BOX_W) / 2;
 	y = (WIN_SIZE_H - MESSAGE_BOX_H) / 2;
@@ -43,10 +43,10 @@ void	info_message_box_bar(t_mlx *mlx, char *title, char *message, double i)
 
 void	info_draw_box(t_mlx *mlx, int size_w, int size_h)
 {
-	int		x;
-	int		y;
-	int		x_rect;
-	int		y_rect;
+	int	x;
+	int	y;
+	int	x_rect;
+	int	y_rect;
 
 	x = (WIN_SIZE_W - size_w) / 2;
 	y = (WIN_SIZE_H - size_h) / 2;
@@ -62,10 +62,10 @@ void	info_draw_box(t_mlx *mlx, int size_w, int size_h)
 
 void	info_draw_bar(t_mlx *mlx, double i)
 {
-	int		x;
-	int		y;
-	int		x_rect;
-	int		y_rect;
+	int	x;
+	int	y;
+	int	x_rect;
+	int	y_rect;
 
 	x = (WIN_SIZE_W - PROGRESS_BAR_W) / 2;
 	y = (WIN_SIZE_H - PROGRESS_BAR_H) / 2 + PROGRESS_BAR_INDENTATION;
