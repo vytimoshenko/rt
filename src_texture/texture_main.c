@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/09 20:38:08 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 	return (0);
 }
 
-int		get_image_texel(double *trns, t_mat *mat, t_obj *obj)
+int get_image_texel(t_mat *mat, t_obj *obj)
 {
 	t_double2	uv;
 	int			height;
@@ -52,14 +52,7 @@ int		get_image_texel(double *trns, t_mat *mat, t_obj *obj)
 		height = mat->t->t_h - 1;
 	if (weight >= mat->t->t_w)
 		weight = mat->t->t_w - 1;
-//	texel = height * mat->t->size_line / 4 + weight;
 	texel = height * mat->t->t_w + weight;
-	(void)trns;
-//	*trns = 1 - ((double)(mat->t->addr[texel] & (0xFF << 24))) / 255;
-
-//	return ((mat->t->addr[texel] & 16) | (mat->t->addr[texel] & 8)
-//	| mat->t->addr[texel]);
-//	return ((mat->t->addr[texel] << 24) & 255 | (mat->t->addr[texel + 2] << 16) & 255 | (mat->t->addr[texel + 1] << 8) & 255 | mat->t->addr[texel]);
 	return texel;
 }
 
@@ -70,8 +63,9 @@ int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double 
 	texel = 0;
 	if (mat->t)
 	{
-		texel = get_image_texel(&mat->transp, mat, obj);
-		*trns = 1 - ((double)(mat->t->addr[texel] & (0xFF << 24))) / 255;
+		texel = get_image_texel(mat, obj);
+		if (mat->transp == 0)
+			*trns = 1.f - (double)(mat->t->addr[texel] >> 24 & 0xFF) / 255;
 		return ((mat->t->addr[texel] & 16) | (mat->t->addr[texel] & 8)
 		| mat->t->addr[texel]);
 	}

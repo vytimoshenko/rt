@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/08 20:26:06 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	trace_pixel(t_scene *scene, t_vec cam, t_pix *pix, int k)
 
 void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 {
-	double tmp;
 	if (obj->type == OBJECT_TYPE_PLANE)
 		plane_n(pnt, pix->pos, obj);
 	else if (obj->type == OBJECT_TYPE_SPHERE)
@@ -55,12 +54,11 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 		hyperboloid_n(pnt, pix->pos, obj, scene->cams.arr[scene->act_cam]->pos);
 	pnt->color = scene->mats.arr[obj->mat]->color;
 	get_uv(pnt, obj, &obj->uv, scene->mats.arr[obj->mat]);
+	pnt->trns = scene->mats.arr[obj->mat]->transp;
 	if (scene->mats.arr[obj->mat]->pattern || scene->mats.arr[obj->mat]->t)
 		pnt->color = integer_to_rgb(
 				identify_patt_tex(pnt, obj, obj->uv, scene->mats.arr[obj->mat],
-								  &tmp));
-	pnt->trns = scene->mats.arr[obj->mat]->transp;
-//	pnt->trns = 0.9;
+								  &pnt->trns));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 22:46:28 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ typedef struct			s_texture
 {
 	void				*data;
 	char				*name;
-	Uint32 			*addr;
+	Uint32				*addr;
 	int					t_w;
 	int					t_h;
 
-	int					bits_per_pixel;
 	int					size_line;
 	int					endian;
 	float				t_x;

@@ -4,7 +4,7 @@ project(RT C)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_BUILD_TYPE Debug)
-#set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
+set(CMAKE_C_FLAGS "-Wextra -Wall -Werror")
 #set(CMAKE_C_FLAGS "-framework OpenGL  -framework AppKit -I frameworks/SDL2.framework/Headers -framework SDL2 -framework SDL2_image")
 
 #set(CMAKE_SKIP_RPATH TRUE)
@@ -123,7 +123,6 @@ add_executable(RT
         src_interface/rt_interface_object.c
         src_interface/rt_interface_other.c
         src_interface/rt_interface_render.c
-        src_interface/rt_interface_scene.c
         src_read_save/rt_read_scene_1.c
         src_read_save/rt_read_scene_2.c
         src_read_save/rt_read_scene_3.c
@@ -134,7 +133,6 @@ add_executable(RT
         src_read_save/rt_save_scene_1.c
         src_read_save/rt_save_scene_2.c
         src_read_save/rt_save_scene_3.c
-        src_start/rt_clean_pix_buffer.c
         src_start/rt_main.c
         src_start/rt_start_draw.c
         src_start/rt_start_mlx_init.c
@@ -142,20 +140,29 @@ add_executable(RT
         src_trace/rt_trace_core.c
         src_trace/rt_trace_intersect_1.c
         src_trace/rt_trace_intersect_2.c
-        src_trace/rt_trace_light.c
+        src_trace/rt_trace_intersect_3.c
         src_trace/rt_trace_main.c
-        src_trace/rt_trace_normals.c
         src_trace/rt_trace_vector_1.c
         src_trace/rt_trace_vector_2.c
         src_texture/texture_main.c src_texture/texture_procedural.c src_texture/uv_mapping1.c src_texture/texture_utils1.c src_texture/texture_noises.c src_read_save/rt_read_scene_8_texture.c src_texture/uv_mapping2.c src_texture/rt_texture_noise.c
-        src_trace/rt_trace_added.c src_texture/texture_utils2.c
+        src_texture/texture_utils2.c
         src_interface/rt_interface_material_1.c
-        src_interface/rt_interface_material_2.c)
+        src_interface/rt_interface_material_2.c
+        src_trace/rt_trace_light_1.c
+        src_trace/rt_trace_light_2.c
+        src_trace/rt_trace_normals_1.c
+        src_trace/rt_trace_normals_2.c
+        src_trace/rt_trace_pthreads.c
+        src_interface/rt_interface_scene_1.c
+        src_interface/rt_interface_scene_2.c
+        src_start/rt_prepare_buffers.c
+        src_effect/rt_motion_blur.c
+        src_read_save/rt_save_screenshot.c)
 
-target_link_libraries(RT ${PROJECT_SOURCE_DIR}/mlx/libmlx.a)
-target_link_libraries(RT  "-framework AppKit" "-framework OpenGL")
-#target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
-#target_link_libraries(RT "-framework OpenGL -framework AppKit")
+#target_link_libraries(RT ${PROJECT_SOURCE_DIR}/mlx/libmlx.a)
+#target_link_libraries(RT  "-framework AppKit" "-framework OpenGL")
+target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
+target_link_libraries(RT "-framework OpenGL -framework AppKit")
 #target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/mlx/libmlx.dylib)
 #target_link_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/mlx)
 

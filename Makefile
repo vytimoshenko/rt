@@ -6,13 +6,18 @@
 #    By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/11/09 21:24:27 by mperseus         ###   ########.fr        #
+#    Updated: 2020/11/11 22:03:31 by wquirrel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	RT
 
-HDR		= 	./incl
+HDR		= 	./incl 	\
+			-I./frameworks/SDL2.framework/Versions/A/Headers \
+            -I./frameworks/SDL2_ttf.framework/Versions/A/Headers \
+            -I./frameworks/SDL2_image.framework/Versions/A/Headers \
+            -I./frameworks/SDL2_mixer.framework/Headers \
+            -F./frameworks/
 
 SRC		= 	$(wildcard src_start/*.c)		\
 			$(wildcard src_read_save/*.c)	\
@@ -42,12 +47,15 @@ ADD_OPT =	-Ofast
 
 ADD_LIB =	-L ./libft	-l ft	\
 			-L ./mlx	-l mlx	\
-			-L ./SDL2/SDL2 			-l SDL2			\
-			-L ./SDL2/SDL2_image	-l SDL2_image
+#			-L ./SDL2/SDL2 			-l SDL2			\
+#			-L ./SDL2/SDL2_image	-l SDL2_image
 
 MLX		=	libmlx.dylib
 
-ADD_FMW =	-Lmlx -lmlx -framework OpenGL -framework AppKit -lm
+ADD_FMW =	-Lmlx -lmlx -framework OpenGL -framework AppKit -lm \
+			-framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer \
+			-framework SDL2 -rpath ./frameworks \
+
 
 OBJDIR	=	./obj/
 OBJ		=	$(addprefix $(OBJDIR), $(SRC:.c=.o))

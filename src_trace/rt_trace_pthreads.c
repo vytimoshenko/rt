@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:10:44 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:10:28 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ t_obj	check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam)
 		point = add(mult(plane.t1, pix), cam);
 		while (++i < objs.quant)
 		{
-			if (objs.arr[i]->type == OBJECT_TYPE_PLANE)
+			if (objs.arr[i]->type == OBJECT_TYPE_PLANE
+			&& objs.arr[i]->group == plane.group)
 			{
 				vec = nrm(sub(point, objs.arr[i]->pos));
 				tmp = dot(objs.arr[i]->dir, vec);
@@ -60,7 +61,7 @@ void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 	}
 	else if (pnt.trns > 0)
 	{
-		trace_pixel(scene, pnt.xyz, pix, obj.k - 1);
+		trace_pixel(scene, pnt.xyz, pix, obj.rec - 1);
 		pix->color = add_color(pnt.final_clr, pix->color);
 	}
 }

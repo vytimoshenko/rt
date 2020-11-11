@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:05 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 20:46:18 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 22:36:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "../libft/libft.h"
 
+//# include "../mlx_old/mlx.h"
 # include "../mlx/mlx.h"
 # include "../SDL2/headers/SDL.h"
 # include "../SDL2/headers/SDL_image.h"
@@ -23,7 +24,6 @@
 # include <math.h>
 # include <stdbool.h>
 # include <sys/time.h>
-# include <time.h>
 # include <pthread.h>
 
 # include "rt_structures.h"

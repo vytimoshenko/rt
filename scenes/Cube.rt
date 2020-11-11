@@ -7,8 +7,8 @@ scene
 
 camera
 {
-	position:	[0, 0, -100]
-	direction:	[0, 0, 0];
+	position:	[-10, 100, -400]
+	direction:	[-10, 0, 0];
 }
 
 light
@@ -21,14 +21,14 @@ light
 {
 	type:		<point>;
 	intensity:	5;
-	position:	[-20, 20, -50];
+	position:	[-200, 200, -500];
 }
 
 light
 {
 	type:		<point>;
 	intensity:	4;
-	position:	[20, 9, -50];
+	position:	[-200, 90, -500];
 }
 
 light
@@ -40,16 +40,17 @@ light
 
 material
 {
-	name:		"Shiny red";
-	color:		[255, 0, 0];
-	specular:	5;
+	name:			"Shiny red";
+	color:			[255, 0, 0];
+	specular:		5;
+	transparency:	6;
 }
 
 material
 {
 	name:		"Matte green";
 	color:		[0, 255, 0];
-	specular:	100;
+	specular:	0;
 	reflective:	0;
 }
 
@@ -69,6 +70,7 @@ material
 	color:		[255, 255, 255];
 	specular:	1000;
 	reflective: 0;
+	transparency: 8;
 }
 
 material
@@ -76,80 +78,343 @@ material
 	name:		"Deep magenta";
 	color:		[255, 0, 255];
 	specular:	0;
-	reflective:	0;
-	refractive: 5;
+	reflective:	5;
+	refractive: 0;
 }
 
 material
 {
-	name:		"Sunny yellow";
-	color:		[255, 255, 0];
-	specular:	1000;
-	reflective:	0;
-	refractive:	15;
+	name:			"Sunny yellow";
+	color:			[255, 255, 0];
+	specular:		1000;
+	reflective:		0;
+	refractive:		15;
 }
 
 material
 {
-	name:		"Light gray";
-	color:		[153, 153, 153];
-	specular:	50;
-	reflective:	0;
+	name:			"Light gray";
+	color:			[153, 153, 153];
+	specular:		50;
+	reflective:		0;
 }
 
 object
 {
-	type:		<sphere>;
-	material:	"Shiny red";
-	position:	[-10, 0, 5];
-	orientation:[0, 0, 0];
-	radius:		10;
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[50, 0, 0];
+	orientation:	[1, 0, 0];
+	group:			1;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[50, 0, 50];
-	orientation:[1, 0, -1];
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[-50, 0, 0];
+	orientation:	[-1, 0, 0];
+	group:			1;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[-50, 0, 50];
-	orientation:[-1, 0, -1];
-}
-
-object
-{
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[0, 50, 50];
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[0, 50, 0];
 	orientation:	[0, 1, 0];
+	group:			1;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[0, -50, 50];
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[0, -50, 0];
 	orientation:	[0, -1, 0];
+	group:			1;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[-50, 0, 100];
-	orientation:	[-1, 0, 1];
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[0, 0, 50];
+	orientation:	[0, 0, 1];
+	group:			1;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Glossy white";
-	position:	[50, 0, 100];
-	orientation:	[1, 0, 1];
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[0, 0, -50];
+	orientation:	[0, 0, -1];
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[0, 0, -50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[50, 25, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[50, -25, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, 0, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, 0, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, 25, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, 25, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, -25, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, -25, 50];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-50, 0, 0];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-50, -25, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-50, 25, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-50, -25, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-50, 25, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[0, 50, 0];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, 50, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, 50, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, -50, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, -50, 25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[25, -50, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Matte green";
+	position:		[-25, -50, -25];
+	orientation:	[0, 0, 0];
+	radius:			10;
+	negative:		1;
+	group:			1;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Deep magenta";
+	position:		[0, 0, 500];
+	orientation:	[0, 0, 0];
+	radius:			50;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Deep magenta";
+	position:		[200, 0, 200];
+	orientation:	[0, 0, 0];
+	radius:			70;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Deep magenta";
+	position:		[-200, 0, 200];
+	orientation:	[0, 0, 0];
+	radius:			40;
+}
+
+object
+{
+	type:			<plane>;
+	material:		"Glossy white";
+	position:		[0, -100, 0];
+	orientation:	[0, 1, 0];
 }

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	reset(t_global *global, int key)
 	if (key == R)
 	{
 		clean_scene(global->scene);
+//		TODO добавили это
+		allocate_memory(global->scene);
+
 		read_scene(global->scene, global->scene->file_name_with_path);
 		set_initial_status(global->scene);
 		get_lights_statistics(global->scene);
