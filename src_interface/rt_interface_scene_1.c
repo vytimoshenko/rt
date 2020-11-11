@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 21:49:52 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 19:51:22 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	info_scene(t_scene *scene, t_mlx *mlx)
 	int	y;
 
 	x = (WIN_SIZE_W - INFO_BOX_W) / 2 + INFO_BOX_INDENTATION;
-	y = (WIN_SIZE_H - INFO_BOX_H) / 2 + INFO_BOX_INDENTATION + 5;
+	y = (WIN_SIZE_H - INFO_BOX_H) / 2 + INFO_BOX_INDENTATION + 20;
 	info_draw_box(mlx, INFO_BOX_W, INFO_BOX_H);
 	info_scene_1(scene, mlx, x, y);
 	info_scene_2(scene, mlx, x, y);

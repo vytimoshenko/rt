@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:39 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 20:05:10 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/11 19:49:57 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	info_message_box(t_mlx *mlx, char *title, char *message)
 	int	y;
 
 	x = (WIN_SIZE_W - MESSAGE_BOX_W) / 2;
-	y = (WIN_SIZE_H - MESSAGE_BOX_H) / 2;
+	y = (WIN_SIZE_H - MESSAGE_BOX_H) / 2 + 20;
 	info_draw_box(mlx, MESSAGE_BOX_W, MESSAGE_BOX_H);
 	mlx_string_put(mlx->mlx, mlx->win, x + MESSAGE_BOX_W / 2 -
 	10 * ft_strlen(title) / 2, y + MESSAGE_BOX_INDENTATION, TEXT_COLOR, title);
