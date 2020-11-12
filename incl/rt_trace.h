@@ -6,13 +6,15 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:38 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 20:01:47 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:48:26 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_TRACE_H
 
 # define RT_TRACE_H
+
+# define THREADS_NUM                    8
 
 # define VIEWPORT_SIZE_W				1.25
 # define VIEWPORT_SIZE_H				1
@@ -86,6 +88,6 @@ t_vec		sub(t_vec v1, t_vec v2);
 t_vec		mult(double k, t_vec v);
 t_vec		cross_product(t_vec a, t_vec b);
 
-void		peaces(t_scene *scene);
+void		run_pthreads(t_scene *scene);
 
 #endif

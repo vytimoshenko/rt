@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 21:21:55 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:49:49 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	draw(t_global *global)
 	struct timeval	end;
 
 	gettimeofday(&start, NULL);
-	peaces(global->scene);
+	run_pthreads(global->scene);
 	final_processing(global->mlx, global->scene);
 	mlx_clear_window(global->mlx->mlx, global->mlx->win);
 	mlx_put_image_to_window(global->mlx->mlx, global->mlx->win,

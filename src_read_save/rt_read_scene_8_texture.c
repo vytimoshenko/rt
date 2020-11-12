@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rt_read_scene_8_texture.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wquirrel <wquirrel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 21:11:08 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/10/30 20:49:05 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:57:00 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
 
-int 		check_png(char *file)
+int			check_png(char *file)
 {
 	char *string;
 
@@ -22,10 +22,10 @@ int 		check_png(char *file)
 	return (0);
 }
 
-t_texture 	*identify_texture(char *tex)
+t_texture	*identify_texture(char *tex)
 {
-	t_texture *t;
-	char *path;
+	t_texture	*t;
+	char		*path;
 
 	path = "textures/";
 	path = ft_strjoin(path, tex);
@@ -36,15 +36,14 @@ t_texture 	*identify_texture(char *tex)
 	}
 	t = malloc(sizeof(t_texture));
 	t->name = path;
-	return t;
+	return (t);
 }
 
-int 	identify_pattern(const char *pattern)
+int			identify_pattern(const char *pattern)
 {
-	int pat;
-	static int perlin_status = 0;
+	int			pat;
+	static int	perlin_status = 0;
 
-//	TODO Проверка всего паттерна на то, что он состоиз из цифр
 	if (!ft_isdigit(*pattern))
 		return (0);
 //	TODO Что будет, если в атои попадёт не цифра?

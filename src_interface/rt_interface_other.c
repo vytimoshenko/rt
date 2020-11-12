@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:39 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 19:49:57 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:57:53 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	info_draw_box(t_mlx *mlx, int size_w, int size_h)
 		x_rect = -1;
 		while (++x_rect < size_w)
 			mlx_pixel_put(mlx->mlx, mlx->win, x_rect + x, y_rect + y,
-			BOX_COLOR);
+			DEEPBLACK_BOX_COLOR);
 	}
 }
 

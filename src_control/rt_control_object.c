@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:13 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 20:12:23 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:53:00 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	make_move(t_global *global, int key, int i)
 	if (global->scene->ready_for_motion == true)
 	{
 		global->scene->move_direction = key;
+		update_interface_only(global);
 		make_motion_blur(global);
 		global->scene->move_direction = 0;
 	}

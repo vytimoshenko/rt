@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:21 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:53:45 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	parse_item_by_property(t_scene *scene, int type_id, char *property,
 	else if (type_id == FILE_PARSE_LIGHT)
 		parse_light_description(scene, property, value);
 	else if (type_id == FILE_PARSE_MATERIAL)
-		parse_material_description(scene, property, value);
+		parse_material_descript_1(scene, property, value);
 	else if (type_id == FILE_PARSE_OBJECT)
 		parse_object_description(scene, property, value);
 	else

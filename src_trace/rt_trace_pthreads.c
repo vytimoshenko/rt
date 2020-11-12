@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_trace_added.c                                   :+:      :+:    :+:   */
+/*   rt_trace_pthreads.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 21:10:28 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:47:37 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,22 +66,22 @@ void	recursion(t_scene *scene, t_pnt pnt, t_pix *pix, t_obj obj)
 	}
 }
 
-void	peaces(t_scene *scene)
+void	run_pthreads(t_scene *scene)
 {
 	int		i;
-	t_peace	peace[PEACES];
+	t_thrd	thrds[THREADS_NUM];
 
 	i = -1;
 	clean_pix_buffer(scene);
 	prepare_pixs(scene);
-	while (++i < PEACES)
+	while (++i < THREADS_NUM)
 	{
-		peace[i].i = i;
-		peace[i].scene = scene;
-		pthread_create(&(peace[i].p), NULL, trace_rays, &(peace[i]));
+		thrds[i].i = i;
+		thrds[i].scene = scene;
+		pthread_create(&(thrds[i].p), NULL, trace_rays, &(thrds[i]));
 	}
 	i = -1;
-	while (++i < PEACES)
-		pthread_join(peace[i].p, NULL);
+	while (++i < THREADS_NUM)
+		pthread_join(thrds[i].p, NULL);
 	fill_aliasing_buffer(scene);
 }

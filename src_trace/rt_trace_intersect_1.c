@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:49 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/08 14:33:35 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:03:17 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ t_obj	intersect(t_objs objs, t_vec cam, t_vec pix, t_mn_mx t_min_max)
 	}
 	return (obj);
 }
-
 
 t_obj	check_closest_obj(t_obj closest_obj, double t)
 {

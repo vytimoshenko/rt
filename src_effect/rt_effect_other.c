@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:20 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/04 12:31:37 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:49:20 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	effect_anaglyph(t_scene *scene)
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 		scene->pix_buff[i].anaglyph = scene->pix_buff[i].color;
 	scene->cams.arr[scene->act_cam]->pos.x += 1;
-	peaces(scene);
+	run_pthreads(scene);
 	i = -1;
 	while (++i < IMG_SIZE_W * IMG_SIZE_H)
 	{

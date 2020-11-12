@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:05:26 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:05:28 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:30:53 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	mouse_move(int x, int y, t_global *global)
 {
+	if (global->scene->show_help || global->scene->show_info ||
+	global->scene->act_mod != MODE_CAMERA)
+		return (0);
 	get_mouse_position(global->scene, x, y);
 	update_interface_only(global);
 	return (0);

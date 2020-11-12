@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 19:55:18 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:45:31 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ void	get_mouse_position(t_scene *scene, int x, int y);
 void	pick_color(t_scene *scene, int x, int y);
 
 void	reset(t_global *global, int key);
-void	clean_scene(t_scene *scene);
+void	clean_scene_1(t_scene *scene);
+void	clean_scene_2(t_scene *scene);
 
 #endif

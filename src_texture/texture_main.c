@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:06:17 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		get_patt_color(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat)
 	return (0);
 }
 
-int get_image_texel(t_mat *mat, t_obj *obj)
+int		get_image_texel(t_mat *mat, t_obj *obj)
 {
 	t_double2	uv;
 	int			height;
@@ -53,10 +53,10 @@ int get_image_texel(t_mat *mat, t_obj *obj)
 	if (weight >= mat->t->t_w)
 		weight = mat->t->t_w - 1;
 	texel = height * mat->t->t_w + weight;
-	return texel;
+	return (texel);
 }
 
-int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double *trns)
+int		get_patt(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double *trns)
 {
 	int texel;
 
@@ -75,11 +75,12 @@ int		identify_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat, double 
 
 void	init_texture(t_texture *texture)
 {
-//	 if (SDL_Init(SDL_INIT_EVERYTHING))
-//	  put_error_pn("SDL_Init");
-	SDL_Surface *surface = IMG_Load(texture->name);
-	if (surface == NULL)
-		ft_put_errno("SDL2 Unable to load image");
+	SDL_Surface *surface;
+
+	if (SDL_Init(SDL_INIT_EVERYTHING))
+		put_error_pn("SDL_Init");
+	if (!(surface = IMG_Load(texture->name)))
+		put_error_pn("SDL2 Unable to load image");
 	texture->t_w = surface->w;
 	texture->t_h = surface->h;
 	texture->addr = (Uint32 *)surface->pixels;

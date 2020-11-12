@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:11:06 by mperseus          #+#    #+#             */
-/*   Updated: 2020/10/31 14:20:12 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 18:20:23 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	*trace_rays(void *peace)
 {
 	int		i;
-	t_peace	*p;
+	t_thrd	*p;
 
-	p = (t_peace *)peace;
-	i = IMG_SIZE_W * IMG_SIZE_H / PEACES * p->i - 1;
-	while (++i < IMG_SIZE_W * IMG_SIZE_H / PEACES * (p->i + 1))
+	p = (t_thrd *)peace;
+	i = IMG_SIZE_W * IMG_SIZE_H / THREADS_NUM * p->i - 1;
+	while (++i < IMG_SIZE_W * IMG_SIZE_H / THREADS_NUM * (p->i + 1))
 		trace_pixel(p->scene, p->scene->cams.arr[p->scene->act_cam]->
 		pos, &p->scene->pix_buff[i], REFLECTION_DEPTH);
 	return (0);

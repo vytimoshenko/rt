@@ -6,8 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 20:02:01 by mperseus         ###   ########.fr       */
-/*   Updated: 2020/11/07 22:19:44 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:14:53 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +104,9 @@ void		parse_light_description(t_scene *scene, char *property,
 			char *value);
 int			find_light_type(char *value);
 
-void		parse_material_description(t_scene *scene, char *property,
+void		parse_material_descript_1(t_scene *scene, char *property,
+			char *value);
+void		parse_material_descript_2(t_scene *scene, char *property,
 			char *value);
 void		parse_object_description(t_scene *scene, char *property,
 			char *value);

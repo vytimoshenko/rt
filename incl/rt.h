@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:05 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 22:36:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:13:48 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 # include "../libft/libft.h"
 
-//# include "../mlx_old/mlx.h"
 # include "../mlx/mlx.h"
 # include "../SDL2/headers/SDL.h"
 # include "../SDL2/headers/SDL_image.h"

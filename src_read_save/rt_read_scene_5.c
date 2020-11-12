@@ -6,13 +6,13 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/07 22:20:17 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:53:10 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/rt.h"
 
-void	parse_material_description(t_scene *scene, char *property, char *value)
+void	parse_material_descript_1(t_scene *scene, char *property, char *value)
 {
 	int i;
 
@@ -25,6 +25,19 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->spec = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_REFLECTIVE)))
 		scene->mats.arr[i]->refl = (double)ft_atoi(value) / 10.0;
+	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
+		scene->mats.arr[i]->transp = (double)ft_atoi(value) / 10.0;
+	else
+		parse_material_descript_2(scene, property, value);
+}
+
+void	parse_material_descript_2(t_scene *scene, char *property, char *value)
+{
+	int i;
+
+	i = scene->act_mat;
+	if (!(ft_strcmp(property, FILE_MATERIAL_REFRACTIVE)))
+		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
 	else if (!(ft_strcmp(property, FILE_MATERIAL_TEXTURE)))
 		scene->mats.arr[i]->t = identify_texture(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_PATTERN)))
@@ -33,10 +46,6 @@ void	parse_material_description(t_scene *scene, char *property, char *value)
 		scene->mats.arr[i]->scale = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_MATERIAL_SHIFT)))
 		scene->mats.arr[i]->shift = parse_vector(value);
-	else if (!(ft_strcmp(property, FILE_MATERIAL_REFRACTIVE)))
-		scene->mats.arr[i]->refr = (double)ft_atoi(value) / 10.0;
-	else if (!(ft_strcmp(property, FILE_MATERIAL_TRANSPARENCY)))
-		scene->mats.arr[i]->transp = (double)ft_atoi(value) / 10.0;
 	else if (!(ft_strcmp(property, FILE_MATERIAL_ANGLE)))
 		scene->mats.arr[i]->angle = 1 - (double)ft_atoi(value) / 10.0;
 	else

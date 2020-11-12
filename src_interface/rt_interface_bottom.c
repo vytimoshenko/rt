@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:34 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 19:53:14 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 00:24:02 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	info_coordinates(t_scene *scene, t_mlx *mlx)
 
 	x = 20;
 	y = WIN_SIZE_H - 10;
+	if (scene->show_help || scene->show_info || scene->act_mod != MODE_CAMERA)
+		return ;
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR, "X:      Y:");
 	mlx_string_put(mlx->mlx, mlx->win, x + 20, y, TEXT_COLOR,
 	str = ft_itoa(scene->x_mouse_pos));

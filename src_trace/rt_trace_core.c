@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:43 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:05:44 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	get_prop(t_scene *scene, t_pix *pix, t_pnt *pnt, t_obj *obj)
 	pnt->trns = scene->mats.arr[obj->mat]->transp;
 	if (scene->mats.arr[obj->mat]->pattern || scene->mats.arr[obj->mat]->t)
 		pnt->color = integer_to_rgb(
-				identify_patt_tex(pnt, obj, obj->uv, scene->mats.arr[obj->mat],
-								  &pnt->trns));
+				get_patt(pnt, obj, obj->uv, scene->mats.arr[obj->mat],
+									&pnt->trns));
 	pnt->spec = scene->mats.arr[obj->mat]->spec;
 	pnt->refl = scene->mats.arr[obj->mat]->refl;
 	pnt->refr = scene->mats.arr[obj->mat]->refr;

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 21:35:25 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:02:32 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 # define IMG_INDT_W						10
 # define IMG_INDT_H						10
 
-# define TEXT_COLOR 					0xFFFFFF
-# define BOX_COLOR						0x000000
-# define PROGRESS_BAR_FILLED_COLOR		0xFFFFFF
-# define PROGRESS_BAR_UNFILLED_COLOR	0x222222
+# define SHOW_RENDERING_PROGRESS_BAR	1
+
+# define TEXT_COLOR 					0xFFFFFFFF
+# define DEEPBLACK_BOX_COLOR			0x00000000
+# define PROGRESS_BAR_FILLED_COLOR		0x00FFFFFF
+# define PROGRESS_BAR_UNFILLED_COLOR	0x00222222
 
 # define HELP_BOX_W						1070
 # define HELP_BOX_H						600
@@ -47,8 +49,6 @@
 # define NO_TEXTURE						0
 # define IMAGE_TEXTURE					1
 # define PROCEDURAL_TEXTURE				2
-
-# define PEACES                         8
 
 void		show_interface(t_global *global);
 

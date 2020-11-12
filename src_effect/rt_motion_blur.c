@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 20:20:48 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 21:28:38 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:55:36 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	make_motion_blur(t_global *global)
 		show_progress_bar(global->mlx, n + 1);
 		global->scene->in_motion = true;
 		move_object(global, global->scene->move_direction);
-		peaces(global->scene);
+		run_pthreads(global->scene);
 		i = -1;
 		while (++i < IMG_SIZE_W * IMG_SIZE_H)
 			global->scene->motion_blur_buffs[n][i] =

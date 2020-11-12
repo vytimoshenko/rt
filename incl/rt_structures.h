@@ -6,10 +6,9 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:13:24 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef RT_STRUCTURES_H
 
@@ -44,13 +43,6 @@ typedef struct			s_texture
 	float				t_y;
 	t_clr				clr;
 }						t_texture;
-
-//TODO Нужна ли эта структура?
-typedef struct			s_textures
-{
-	int					  quantity;
-	t_texture			*tex;
-}						t_textures;
 
 typedef struct			s_vec
 {
@@ -268,6 +260,6 @@ typedef struct			s_peace
 	t_scene				*scene;
 	pthread_t			p;
 	int					i;
-}						t_peace;
+}						t_thrd;
 
 #endif

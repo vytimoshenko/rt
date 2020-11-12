@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:58 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:00 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:47:47 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	divide_to_items(t_scene *scene, char *line)
 
 	if ((items_count = count_items(line)) == -1)
 		put_error_wrong_scene_data(line, "missing '{'");
-	items_array = (char **)(ft_memalloc(sizeof(char *) * (items_count + 2)));
+	if (!(items_array = (char **)(ft_memalloc(sizeof(char *) *
+	(items_count + 2)))))
+		ft_put_errno(PROGRAM_NAME);
 	i = -1;
 	while (++i < items_count)
 	{

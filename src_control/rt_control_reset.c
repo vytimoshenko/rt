@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 21:02:34 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/12 20:45:53 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,20 @@ void	reset(t_global *global, int key)
 {
 	if (key == R)
 	{
-		clean_scene(global->scene);
-//		TODO добавили это
-		allocate_memory(global->scene);
-
+		clean_scene_1(global->scene);
+		clean_scene_2(global->scene);
 		read_scene(global->scene, global->scene->file_name_with_path);
+		allocate_memory(global->scene);
 		set_initial_status(global->scene);
 		get_lights_statistics(global->scene);
 		get_objects_statistics(global->scene);
 		set_initial_angles(global->scene);
-//		TODO Добавил считывание тесктуры при нажатии R
 		get_textures(global);
 		draw(global);
 	}
 }
 
-void	clean_scene(t_scene *scene)
+void	clean_scene_1(t_scene *scene)
 {
 	int	i;
 
@@ -45,8 +43,13 @@ void	clean_scene(t_scene *scene)
 	while (++i < scene->lights.quant)
 		free(scene->lights.arr[i]);
 	free(scene->lights.arr);
+}
+
+void	clean_scene_2(t_scene *scene)
+{
+	int	i;
+
 	i = -1;
-//	TODO добавить очистку текстур
 	while (++i < scene->mats.quant)
 	{
 		if (scene->mats.arr[i]->t)
