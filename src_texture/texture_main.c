@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 16:32:58 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/12 21:06:17 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:18:35 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,9 @@ void	init_texture(t_texture *texture)
 	texture->t_w = surface->w;
 	texture->t_h = surface->h;
 	texture->addr = (Uint32 *)surface->pixels;
+	SDL_FreeSurface(surface);
+	IMG_Quit();
+	SDL_Quit();
 }
 
 int		get_textures(t_global *g)

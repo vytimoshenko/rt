@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:41 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:43 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 00:36:24 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ t_vec	parse_vector(char *value)
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	vector.x = ft_atoi(tmp);
+	vector.x = parse_number(tmp);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	vector.y = ft_atoi(tmp);
+	vector.y = parse_number(tmp);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
-	vector.z = ft_atoi(value);
+	vector.z = parse_number(value);
 	ft_strdel(&tmp);
 	return (vector);
 }
@@ -52,18 +52,18 @@ t_clr	parse_color(char *value)
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	color.x = check_and_get_int_value(tmp);
+	color.x = parse_number(tmp);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	color.y = check_and_get_int_value(tmp);
+	color.y = parse_number(tmp);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
-	color.z = check_and_get_int_value(value);
+	color.z = parse_number(value);
 	ft_strdel(&tmp);
 	validate_color(value_start, color);
 	return ((t_clr){color.x, color.y, color.z});
@@ -76,15 +76,26 @@ void	validate_color(char *value, t_vec color)
 		put_error_wrong_scene_data(value, "wrong color in scene");
 }
 
-int		check_and_get_int_value(char *value)
+int		parse_number(char *str)
 {
-	int	i;
+	char	*value;
+	int		i;
+	int		num;
 
-	i = -1;
-	while (value[++i] != '\0')
+	value = delete_whitespaces(str);
+	if (ft_strlen(value) == 0)
+		put_error_wrong_scene_data(str, "no value");
+	i = 0;
+	while (value[i] != '\0')
 	{
-		if (!(ft_isdigit(value[i])))
-			return (-1);
+		if (ft_isdigit(value[i]) || value[i] == '-')
+			i++;
+		else
+			put_error_wrong_scene_data(str, "invalid value");
 	}
-	return (ft_atoi(value));
+	num = ft_atoi(value);
+	if (num == 0 && value[0] != '0')
+		put_error_wrong_scene_data(str, "invalid value");
+	free(value);
+	return (num);
 }

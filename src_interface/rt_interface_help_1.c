@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/13 21:07:31 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:14:53 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	show_help(t_mlx *mlx)
 	info_draw_box(mlx, HELP_BOX_W, HELP_BOX_H);
 	info_header_and_author(mlx, x + 400, y);
 	info_help_general(mlx, x + 10, y + 50);
-	info_help_effect(mlx, x + 10, y + 240);
+	info_help_effect(mlx, x + 10, y + 210);
 	info_help_camera(mlx, x + 10, y + 390);
 	info_help_light(mlx, x + 520, y + 50);
-	info_help_material(mlx, x + 520, y + 240);
+	info_help_material(mlx, x + 520, y + 210);
 	info_help_object(mlx, x + 520, y + 350);
 }
 
@@ -46,18 +46,12 @@ void	info_help_general(t_mlx *mlx, int x, int y)
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR,
 	"                 GENERAL");
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 30, TEXT_COLOR,
-	"Save as:                    U");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
 	"Save screenshot:            P");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 70, TEXT_COLOR,
-	"Pick color:                 right mouse button");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 90, TEXT_COLOR,
-	"Reset:                      R");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 110, TEXT_COLOR,
-	"Help:                       H");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 130, TEXT_COLOR,
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 50, TEXT_COLOR,
 	"Scene summary info:         I");
-	mlx_string_put(mlx->mlx, mlx->win, x, y + 150, TEXT_COLOR,
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 70, TEXT_COLOR,
+	"Help:                       H");
+	mlx_string_put(mlx->mlx, mlx->win, x, y + 90, TEXT_COLOR,
 	"Exit:                       Q");
 }
 

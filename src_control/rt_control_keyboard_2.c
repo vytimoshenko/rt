@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:05:47 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 20:02:31 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:28:28 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	interface_actions(t_global *global, int key)
 
 void	save_actions(t_global *global, int key)
 {
-	if (key == U)
+	if (key == U && SAVING_AVAILABLE)
 	{
 		global->scene->show_help = FALSE;
 		global->scene->show_info = FALSE;

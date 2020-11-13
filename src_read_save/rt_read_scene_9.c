@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_read_scene_8_texture.c                          :+:      :+:    :+:   */
+/*   rt_read_scene_9.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 21:11:08 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/12 20:57:00 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 00:37:10 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ int			identify_pattern(const char *pattern)
 
 	if (!ft_isdigit(*pattern))
 		return (0);
-//	TODO Что будет, если в атои попадёт не цифра?
-	pat = ft_atoi(pattern);
+	pat = parse_number((char *)pattern);
 	if (pat >= PERLIN_N && pat <= MARBLE && perlin_status++ == 0)
 		init_noise();
 	return (pat);

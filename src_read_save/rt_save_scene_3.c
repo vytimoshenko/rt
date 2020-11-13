@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:02 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/13 22:21:24 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:08:34 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,10 @@ void	write_objects_info(t_scene *scene, int fd)
 			ft_putstr_fd(FILE_OBJECT_TYPE_CYLINDER, fd);
 		else if (scene->objs.arr[i]->type == OBJECT_TYPE_CONE)
 			ft_putstr_fd(FILE_OBJECT_TYPE_CONE, fd);
-		ft_putstr_fd(">", fd);
-		ft_putstr_fd(";\n\t", fd);
+		else if (scene->objs.arr[i]->type == OBJECT_TYPE_PARABOLOID)
+			ft_putstr_fd(FILE_OBJECT_TYPE_PARABOLOID, fd);
+		else if (scene->objs.arr[i]->type == OBJECT_TYPE_HYPERBOLOID)
+			ft_putstr_fd(FILE_OBJECT_TYPE_HYPERBOLOID, fd);
 		write_objects_info_extra_1(scene, fd, i);
 		write_objects_info_extra_2(scene, fd, i);
 	}
@@ -87,6 +89,8 @@ void	write_objects_info(t_scene *scene, int fd)
 
 void	write_objects_info_extra_1(t_scene *scene, int fd, int i)
 {
+	ft_putstr_fd(">", fd);
+	ft_putstr_fd(";\n\t", fd);
 	ft_putstr_fd(FILE_OBJECT_MATERIAL, fd);
 	ft_putstr_fd(":\t\"", fd);
 	ft_putstr_fd(scene->mats.arr

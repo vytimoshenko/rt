@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:38 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/10 21:00:47 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:26:47 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@
 # define ANTIALIASING_OUTLINE_WIDTH		6
 # define MULTI_SAMPLING_RATE			16
 
-# define MOTION_BLUR_BUFFERS			3
+# define MOTION_BLUR_BUFFERS			10
 
 # define MOTION_BLUR_TITLE				"MOTION BLUR"
 # define MOTION_BLUR_OVERLAY_FINAL_POS	0

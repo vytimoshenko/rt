@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 12:54:47 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/09 19:44:25 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:18:47 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	save_screenshot(t_scene *scene, t_mlx *mlx)
 	if (IMG_SavePNG(surface, file_name))
 		put_error_pn("IMG_SavePNG");
 	SDL_FreeSurface(surface);
+	IMG_Quit();
+	SDL_Quit();
 	info_message_box(mlx, SCREENSHOT_MESSAGE_TITLE, file_name);
 	free(file_name);
 }

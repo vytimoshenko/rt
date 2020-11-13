@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/13 20:25:39 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 00:30:07 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@
 # define FILE_OBJECT_LENGTH				"length"
 # define FILE_OBJECT_NEGATIVE			"negative"
 
+# define SAVING_AVAILABLE				0
+
 void		read_scene(t_scene *scene, char *file_name);
 void		set_initials_values(t_scene *scene);
 void		divide_to_items(t_scene *scene, char *line);
@@ -114,8 +116,8 @@ int			find_object_type(char *value);
 
 t_vec		parse_vector(char *value);
 t_clr		parse_color(char *value);
-int			check_and_get_int_value(char *value);
 void		validate_color(char *value, t_vec color);
+int			parse_number(char *str);
 
 char		*delete_whitespaces(char *line);
 int			count_whitespaces(char *line);

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:24 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 20:45:31 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 23:34:15 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@
 # define ARROW_DOWN						125
 # define ARROW_UP						126
 
+# define RESET_AVAILABLE				0
+
 void	loop(t_global *global);
 
 int		mouse_move(int x, int y, t_global *global);
@@ -122,5 +124,6 @@ void	pick_color(t_scene *scene, int x, int y);
 void	reset(t_global *global, int key);
 void	clean_scene_1(t_scene *scene);
 void	clean_scene_2(t_scene *scene);
+void	clean_scene_3(t_scene *scene);
 
 #endif

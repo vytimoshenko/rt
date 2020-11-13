@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/13 19:18:09 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 00:38:40 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	reset(t_global *global, int key)
 {
-	if (key == R)
+	if (key == R && RESET_AVAILABLE)
 	{
 		clean_scene_1(global->scene);
 		clean_scene_2(global->scene);
+		clean_scene_3(global->scene);
 		read_scene(global->scene, global->scene->file_name_with_path);
-		allocate_memory(global->scene);
 		set_initial_status(global->scene);
 		get_lights_statistics(global->scene);
 		get_objects_statistics(global->scene);
@@ -55,10 +55,7 @@ void	clean_scene_2(t_scene *scene)
 	while (++i < scene->mats.quant)
 	{
 		if (scene->mats.arr[i]->t)
-		{
-			free_texture(scene->mats.arr[i]->t);
 			free(scene->mats.arr[i]->t);
-		}
 		if (scene->mats.arr[i]->name)
 			free(scene->mats.arr[i]->name);
 		free(scene->mats.arr[i]);
@@ -72,4 +69,16 @@ void	clean_scene_2(t_scene *scene)
 		free(scene->objs.arr[i]);
 	}
 	free(scene->objs.arr);
+}
+
+void	clean_scene_3(t_scene *scene)
+{
+	int	i;
+
+	if (scene->pix_buff)
+		free(scene->pix_buff);
+	i = -1;
+	while (++i < MOTION_BLUR_BUFFERS)
+		free(scene->motion_blur_buffs[i]);
+	free(scene->motion_blur_buffs);
 }
