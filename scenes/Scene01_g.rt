@@ -159,9 +159,9 @@ object
 
 object
 {
-	type:		<plane>;
+	type:		<paraboloid>;
 	group:		2;
-	material:	"Glossy white";
+	material:	"Shiny red";
 	position:	[0, -10, 0];
 	orientation:	[0, 0, 0];
 	radius:     50;

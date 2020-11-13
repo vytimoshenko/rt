@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:50 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 19:51:39 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:07:31 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	show_help(t_mlx *mlx)
 	info_help_camera(mlx, x + 10, y + 390);
 	info_help_light(mlx, x + 520, y + 50);
 	info_help_material(mlx, x + 520, y + 240);
-	info_help_object(mlx, x + 520, y + 370);
+	info_help_object(mlx, x + 520, y + 350);
 }
 
 void	info_header_and_author(t_mlx *mlx, int x, int y)

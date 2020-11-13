@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:10:02 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:10:04 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 22:21:24 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,15 @@ void	write_materials_info_extra(t_scene *scene, int fd, int i)
 	ft_putstr_fd(FILE_MATERIAL_REFLECTIVE, fd);
 	ft_putstr_fd(":\t", fd);
 	ft_putnbr_fd((int)(10 * scene->mats.arr[i]->refl), fd);
+	ft_putstr_fd(";\n\t", fd);
+	ft_putstr_fd(FILE_MATERIAL_REFRACTIVE, fd);
+	ft_putstr_fd(":\t", fd);
+	ft_putnbr_fd((int)(10 * scene->mats.arr[i]->refr), fd);
+	ft_putstr_fd(";\n\t", fd);
+	ft_putstr_fd(FILE_MATERIAL_ANGLE, fd);
+	ft_putstr_fd(":\t", fd);
+	ft_putnbr_fd((int)(10 * scene->mats.arr[i]->angle), fd);
+	ft_putstr_fd(";\n\t", fd);
 	ft_putendl_fd(";\n}\n", fd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 21:14:53 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 20:25:39 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@
 # define FILE_OBJECT_NEGATIVE			"negative"
 
 void		read_scene(t_scene *scene, char *file_name);
+void		set_initials_values(t_scene *scene);
 void		divide_to_items(t_scene *scene, char *line);
 int			count_items(char *line);
 int			parse_each_item(t_scene *scene, char **items_array);
@@ -88,8 +89,7 @@ void		save_quantities(t_scene *scene);
 void		allocate_memory(t_scene *scene);
 
 int			parse_item_line(t_scene *scene, char *item_line);
-int			parse_item_description(t_scene *scene, int type_id,
-			char *description);
+int			parse_item_description(t_scene *scene, int type_id, char *str);
 char		*prepare_value_to_write(char *value);
 char		*any_whitespace_to_space(char *value);
 void		str_free(char **property, char **value, char **prepared_value);
@@ -111,7 +111,6 @@ void		parse_material_descript_2(t_scene *scene, char *property,
 void		parse_object_description(t_scene *scene, char *property,
 			char *value);
 int			find_object_type(char *value);
-int			find_object_material(t_scene *scene, char *value);
 
 t_vec		parse_vector(char *value);
 t_clr		parse_color(char *value);
@@ -122,6 +121,9 @@ char		*delete_whitespaces(char *line);
 int			count_whitespaces(char *line);
 int			is_whitespace(char c);
 void		copy_without_whitespaces(char *line, char *clean_line);
+
+void		check_material_names_unique(t_scene *scene);
+void		find_objects_materials(t_scene *scene);
 
 void		save_scene(t_scene *scene, t_mlx *mlx);
 void		create_save_file_name(t_scene *scene, char **file_name);

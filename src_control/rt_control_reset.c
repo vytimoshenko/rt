@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 20:45:53 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 19:18:09 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void	clean_scene_1(t_scene *scene)
 {
 	int	i;
 
-	free(scene->name);
-	free(scene->author);
+	if (scene->name)
+		free(scene->name);
+	if (scene->author)
+		free(scene->author);
 	i = -1;
 	while (++i < scene->cams.quant)
 		free(scene->cams.arr[i]);
@@ -57,11 +59,17 @@ void	clean_scene_2(t_scene *scene)
 			free_texture(scene->mats.arr[i]->t);
 			free(scene->mats.arr[i]->t);
 		}
+		if (scene->mats.arr[i]->name)
+			free(scene->mats.arr[i]->name);
 		free(scene->mats.arr[i]);
 	}
 	free(scene->mats.arr);
 	i = -1;
 	while (++i < scene->objs.quant)
+	{
+		if (scene->objs.arr[i]->mat_name)
+			free(scene->objs.arr[i]->mat_name);
 		free(scene->objs.arr[i]);
+	}
 	free(scene->objs.arr);
 }

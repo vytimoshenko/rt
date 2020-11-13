@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:13 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:09:15 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 20:24:49 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,32 +36,32 @@ int		parse_item_line(t_scene *scene, char *item_line)
 	return (0);
 }
 
-int		parse_item_description(t_scene *scene, int type_id, char *description)
+int		parse_item_description(t_scene *scene, int type_id, char *str)
 {
 	int		i;
 	char	*property;
 	char	*value;
 	char	*prepared_value;
 
-	if (!(*description))
+	if (!(*str))
 		return (0);
-	if ((i = ft_strindex(':', description)) < 0)
-		put_error_wrong_scene_data(description, "missing ':'");
+	if ((i = ft_strindex(':', str)) < 0)
+		put_error_wrong_scene_data(str, "missing ':'");
 	property = ft_strnew(i);
-	ft_strncpy(property, description, i);
+	ft_strncpy(property, str, i);
 	while (--i >= -1)
-		description++;
-	i = ft_strindex(';', description);
+		str++;
+	i = ft_strindex(';', str);
+	if (i == -1 || (ft_strindex(':', str) != -1 && ft_strindex(':', str) < i))
+		put_error_wrong_scene_data(str, "missing ';'");
 	value = ft_strnew(i);
-	ft_strncpy(value, description, i);
+	ft_strncpy(value, str, i);
 	prepared_value = prepare_value_to_write(value);
 	parse_item_by_property(scene, type_id, property, prepared_value);
 	str_free(&property, &value, &prepared_value);
 	while (--i >= -1)
-		description++;
-	if (parse_item_description(scene, type_id, description) == -1)
-		return (-1);
-	return (0);
+		str++;
+	return (parse_item_description(scene, type_id, str) == -1 ? -1 : 0);
 }
 
 char	*prepare_value_to_write(char *value)

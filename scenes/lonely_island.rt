@@ -1,0 +1,96 @@
+scene
+{
+	name:		"Lonely island";
+	author:		"Wedge Wquirell";
+}
+
+camera
+{
+	position:	[0, 15, -10];
+	direction:	[-30, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	3;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	6;
+	position:	[-20, 20, 30];
+}
+
+material
+{
+	name:		"Palm_tree";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "ripped_tree.png";
+}
+
+material
+{
+	name:		"Sand";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "smooth_sand_dunes.png";
+}
+
+material
+{
+	name:		"Banana";
+	color:		[0, 255, 0];
+	specular:	100;
+	reflective:	0;
+	texture:    "yellow_bananas.png";
+}
+
+material
+{
+	name:		"Sea";
+	color:		[0, 0, 255];
+	specular:	0;
+	texture:    "rough_sea.png";
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Banana";
+	position:	[20, 0, 40];
+	orientation:	[0, 0, 0];
+	radius:		12;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Sand";
+	position:	[-20, 0, 40];
+	orientation:	[0, 0, 0];
+	radius:		30;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Sand";
+	position:	[-40, 0, 40];
+	orientation:	[0, 0, 0];
+	radius:		30;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Sea";
+	position:	[0, -10, 50];
+	orientation:	[0, -1, 0];
+}

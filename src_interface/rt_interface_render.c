@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:08:47 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:04:12 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	info_render(t_mlx *mlx)
 	int		x;
 	int		y;
 
-	x = WIN_SIZE_W - 350;
+	x = WIN_SIZE_W - 380;
 	y = WIN_SIZE_H - 200;
 	info_render_1(mlx, x, y);
 	info_render_2(mlx, x, y);
@@ -54,7 +54,7 @@ void	info_render_2(t_mlx *mlx, int x, int y)
 	str = ft_itoa(mlx->frames));
 	free(str);
 	mlx_string_put(mlx->mlx, mlx->win, x, y + 100, TEXT_COLOR,
-	"Frame time:          ms");
+	"Frame time:           ms");
 	mlx_string_put(mlx->mlx, mlx->win, x + 160, y + 100, TEXT_COLOR,
 	str = ft_itoa(mlx->frame_time));
 	free(str);

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:07:47 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:03:46 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	info_effect(t_scene *scene, t_mlx *mlx)
 	int		x;
 	int		y;
 
-	x = WIN_SIZE_W - 350;
+	x = WIN_SIZE_W - 380;
 	y = 150;
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR, "Effect:");
 	if (scene->act_mod != MODE_EFFECT)

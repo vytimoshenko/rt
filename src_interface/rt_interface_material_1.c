@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:12 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/11 23:25:44 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:03:24 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	info_material(t_scene *scene, t_mlx *mlx)
 	int		x;
 	int		y;
 
-	x = WIN_SIZE_W - 350;
+	x = WIN_SIZE_W - 380;
 	y = 250;
 	if (scene->act_mod == MODE_OBJECT)
 		y = 350;

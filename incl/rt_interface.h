@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:03:45 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 20:02:32 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 20:41:17 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include "rt.h"
 
-# define WIN_SIZE_W						1340
+# define WIN_SIZE_W						1370
 # define WIN_SIZE_H						808
 # define IMG_SIZE_W						960.0
 # define IMG_SIZE_H						768.0

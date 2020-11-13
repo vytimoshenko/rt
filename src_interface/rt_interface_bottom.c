@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:34 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 00:24:02 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:04:58 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	info_scene_file_name(t_scene *scene, t_mlx *mlx)
 
 	x = 80;
 	y = WIN_SIZE_H - 10;
-	mlx_string_put(mlx->mlx, mlx->win, x + 370, y, TEXT_COLOR,
+	mlx_string_put(mlx->mlx, mlx->win, x + 380, y, TEXT_COLOR,
 	scene->file_name_with_path);
 }
 

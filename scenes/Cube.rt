@@ -7,7 +7,7 @@ scene
 
 camera
 {
-	position:	[-10, 100, -400]
+	position:	[-10, 100, -400];
 	direction:	[-10, 0, 0];
 }
 

@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:36 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 20:53:10 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 19:49:55 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	else if (!(ft_strcmp(property, FILE_OBJECT_GROUP)))
 		scene->objs.arr[i]->group = ft_atoi(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_MATERIAL)))
-		scene->objs.arr[i]->mat = find_object_material(scene, value);
+		scene->objs.arr[i]->mat_name = ft_strdup(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_POSITION)))
 		scene->objs.arr[i]->pos = parse_vector(value);
 	else if (!(ft_strcmp(property, FILE_OBJECT_ORIENTATION)))
@@ -93,19 +93,5 @@ int		find_object_type(char *value)
 	else if (!(ft_strcmp(value, FILE_OBJECT_TYPE_HYPERBOLOID)))
 		return (OBJECT_TYPE_HYPERBOLOID);
 	put_error_wrong_scene_data(value, "wrong object type");
-	return (-1);
-}
-
-int		find_object_material(t_scene *scene, char *value)
-{
-	int	i;
-
-	i = -1;
-	while (++i < scene->mats.quant - 1)
-	{
-		if (!(ft_strcmp(scene->mats.arr[i]->name, value)))
-			return (i);
-	}
-	put_error_wrong_scene_data(value, "wrong object material name");
 	return (-1);
 }

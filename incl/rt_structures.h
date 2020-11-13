@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:28 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 21:13:24 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 18:53:31 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,35 +96,6 @@ typedef struct			s_cam
 	t_vec				cos;
 }						t_cam;
 
-typedef struct			s_obj
-{
-	int					id;
-	int					group;
-	int					type;
-	int					mat;
-	int					pattern;
-	int					rec;
-	int					neg;
-	t_clr				color;
-	double				spec;
-	double				refl;
-	double				refr;
-	double				transp;
-	double				radius;
-	t_vec				pos;
-	t_vec				dir;
-	t_vec				sin;
-	t_vec				cos;
-	double				k;
-	double				len;
-	t_double2			uv;
-
-	double				t1;
-	double				t2;
-	double				closest;
-	int					null;
-}						t_obj;
-
 typedef struct			s_light
 {
 	int					id;
@@ -151,6 +122,36 @@ typedef struct			s_mat
 	t_texture			*t;
 	int					alpha;
 }						t_mat;
+
+typedef struct			s_obj
+{
+	int					id;
+	int					group;
+	int					type;
+	int					mat;
+	char				*mat_name;
+	int					pattern;
+	int					rec;
+	int					neg;
+	t_clr				color;
+	double				spec;
+	double				refl;
+	double				refr;
+	double				transp;
+	double				radius;
+	t_vec				pos;
+	t_vec				dir;
+	t_vec				sin;
+	t_vec				cos;
+	double				k;
+	double				len;
+	t_double2			uv;
+
+	double				t1;
+	double				t2;
+	double				closest;
+	int					null;
+}						t_obj;
 
 typedef struct			s_cams
 {

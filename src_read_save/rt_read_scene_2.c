@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:03 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/01 22:49:37 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 18:22:31 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	save_quantities(t_scene *scene)
 		put_error_pn("scene file must contain at least one camera");
 	scene->lights.quant = scene->act_light;
 	if (scene->lights.quant == 0)
-		put_error_pn("scene file must contain at least one light");
+		put_error_pn("scene file must contain at least one light source");
 	scene->mats.quant = scene->act_mat;
 	if (scene->mats.quant == 0)
 		put_error_pn("scene file must contain at least one material");

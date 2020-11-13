@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:58 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/12 20:47:47 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 20:10:18 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,21 @@ void	read_scene(t_scene *scene, char *file_name)
 		put_error_pn("scene file is too big");
 	close(fd);
 	buff[ret] = '\0';
+	set_initials_values(scene);
 	line = NULL;
 	line = delete_whitespaces(buff);
 	divide_to_items(scene, line);
+	check_material_names_unique(scene);
+	find_objects_materials(scene);
 	free(line);
+}
+
+void	set_initials_values(t_scene *scene)
+{
+	scene->cams.quant = 0;
+	scene->lights.quant = 0;
+	scene->mats.quant = 0;
+	scene->objs.quant = 0;
 }
 
 void	divide_to_items(t_scene *scene, char *line)
@@ -60,7 +71,8 @@ void	divide_to_items(t_scene *scene, char *line)
 		while (--item_size >= 0)
 			line++;
 	}
-	parse_each_item(scene, items_array);
+	if (parse_each_item(scene, items_array) == -1)
+		put_error_wrong_scene_data(items_array[i], "scene data is invalid");
 }
 
 int		count_items(char *line)

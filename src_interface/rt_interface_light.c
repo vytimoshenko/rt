@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:01 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:08:03 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/13 21:03:54 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	info_light(t_scene *scene, t_mlx *mlx)
 	int	x;
 	int	y;
 
-	x = WIN_SIZE_W - 350;
+	x = WIN_SIZE_W - 380;
 	y = 250;
 	info_light_1(scene, mlx, x, y);
 	info_light_2(scene, mlx, x, y);
