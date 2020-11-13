@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 21:11:08 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/14 00:37:10 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 01:56:30 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ int			identify_pattern(const char *pattern)
 	int			pat;
 	static int	perlin_status = 0;
 
-	if (!ft_isdigit(*pattern))
-		return (0);
-	pat = parse_number((char *)pattern);
+	pat = validate((char *)pattern, STRIPE_X, MARBLE);
 	if (pat >= PERLIN_N && pat <= MARBLE && perlin_status++ == 0)
 		init_noise();
 	return (pat);

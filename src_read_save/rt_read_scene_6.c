@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:41 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 00:36:24 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 02:51:02 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ t_vec	parse_vector(char *value)
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	vector.x = parse_number(tmp);
+	vector.x = validate(tmp, -1024, 1024);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	vector.y = parse_number(tmp);
+	vector.y = validate(tmp, -1024, 1024);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
-	vector.z = parse_number(value);
+	vector.z = validate(value, -1024, 1024);
 	ft_strdel(&tmp);
 	return (vector);
 }
@@ -52,50 +52,64 @@ t_clr	parse_color(char *value)
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	color.x = parse_number(tmp);
+	color.x = validate(tmp, 0, 255);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
 	if ((i = ft_strindex(',', value)) < 0)
 		put_error_wrong_scene_data(value_start, "missing ','");
 	tmp = ft_strncat(tmp, value, i);
-	color.y = parse_number(tmp);
+	color.y = validate(tmp, 0, 255);
 	ft_bzero(tmp, 10);
 	while (i-- >= 0)
 		value++;
-	color.z = parse_number(value);
+	color.z = validate(value, 0, 255);
 	ft_strdel(&tmp);
-	validate_color(value_start, color);
 	return ((t_clr){color.x, color.y, color.z});
-}
-
-void	validate_color(char *value, t_vec color)
-{
-	if (color.x > 255 || color.y > 255 || color.z > 255 ||
-	color.x < 0 || color.y < 0 || color.z < 0)
-		put_error_wrong_scene_data(value, "wrong color in scene");
 }
 
 int		parse_number(char *str)
 {
-	char	*value;
 	int		i;
 	int		num;
 
-	value = delete_whitespaces(str);
-	if (ft_strlen(value) == 0)
+	if (ft_strlen(str) == 0)
 		put_error_wrong_scene_data(str, "no value");
 	i = 0;
-	while (value[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (ft_isdigit(value[i]) || value[i] == '-')
+		if (ft_isdigit(str[i]) || str[i] == '-')
 			i++;
 		else
 			put_error_wrong_scene_data(str, "invalid value");
 	}
-	num = ft_atoi(value);
-	if (num == 0 && value[0] != '0')
+	num = ft_atoi(str);
+	if (num == 0 && str[0] != '0')
 		put_error_wrong_scene_data(str, "invalid value");
-	free(value);
+	return (num);
+}
+
+int		validate(char *str, int min, int max)
+{
+	int		num;
+	char	*limit;
+	char	*message;
+
+	num = parse_number(str);
+	if (num < min)
+	{
+		limit = ft_itoa(min);
+		message = ft_strjoin("value is too small, must be bigger than: ",
+		limit);
+		free(limit);
+		put_error_wrong_scene_data(str, message);
+	}
+	if (num > max)
+	{
+		limit = ft_itoa(max);
+		message = ft_strjoin("value is too big, must be less than: ", limit);
+		free(limit);
+		put_error_wrong_scene_data(str, message);
+	}
 	return (num);
 }

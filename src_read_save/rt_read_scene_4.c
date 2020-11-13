@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:09:19 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 00:19:30 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 02:34:04 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	parse_light_description(t_scene *scene, char *property, char *value)
 	if (!(ft_strcmp(property, FILE_LIGHT_TYPE)))
 		scene->lights.arr[i]->type = find_light_type(value);
 	else if (!(ft_strcmp(property, FILE_LIGHT_INTENSITY)))
-		scene->lights.arr[i]->intens = (double)parse_number(value) / 10.0;
+		scene->lights.arr[i]->intens = (double)validate(value, 0, 10000) / 10.0;
 	else if (!(ft_strcmp(property, FILE_LIGHT_POSITION)))
 		scene->lights.arr[i]->pos = parse_vector(value);
 	else

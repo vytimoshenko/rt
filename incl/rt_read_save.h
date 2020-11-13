@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:04:15 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 00:30:07 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 01:45:35 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ int			find_object_type(char *value);
 
 t_vec		parse_vector(char *value);
 t_clr		parse_color(char *value);
-void		validate_color(char *value, t_vec color);
 int			parse_number(char *str);
+int			validate(char *str, int min, int max);
 
 char		*delete_whitespaces(char *line);
 int			count_whitespaces(char *line);
