@@ -1,0 +1,93 @@
+scene
+{
+	name:		"Cosmos";
+	author:		"Wedge Quirrell";
+}
+
+camera
+{
+	position:	[0, 20, -50];
+	direction:	[0, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	7;
+}
+
+material
+{
+	name:		"Earth";
+	color:		[0, 0, 255];
+	texture:    "earthmap.png";
+	scale: 100;
+	shift: [0, 63, 0];
+}
+
+material
+{
+	name:		"Pepe";
+	color:		[0, 0, 255];
+	texture:    "ljagushonok-pepe.png";
+	transparency: 0;
+	scale: 13;
+}
+
+material
+{
+	name:		"Pepex2";
+	color:		[0, 0, 255];
+	texture:    "ljagushonok-pepe.png";
+	transparency: 0;
+	scale: 30;
+	shift: [14, 15, 0];
+}
+
+material
+{
+	name:		"Pepe_cone";
+	color:		[0, 0, 255];
+	texture:    "ljagushonok-pepe.png";
+	transparency: 0;
+	shift: [1, 0, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Pepe";
+	position:	[0, 20, 68];
+	orientation:	[0, 0, 1];
+	radius:		15;
+	group: 2;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Pepex2";
+	position:	[-61, 20, 75];
+	orientation:[0, 0, 1];
+	radius:		15;
+	group: 1;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Earth";
+	position:	[0, 0, 50];
+	orientation:	[0, -1, 0];
+	radius: 65;
+	group: 3;
+}
+
+object
+{
+	type:		<cone>;
+	material:	"Pepe_cone";
+	position:	[60, -50, 70];
+	orientation:[0, -1, 0];
+	radius:		20;
+}

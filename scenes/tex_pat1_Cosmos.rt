@@ -13,7 +13,7 @@ camera
 light
 {
 	type:		<ambient>;
-	intensity:	6;
+	intensity:	7;
 }
 
 material

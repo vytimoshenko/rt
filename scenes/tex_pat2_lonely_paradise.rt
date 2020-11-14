@@ -60,6 +60,7 @@ material
 	specular:	50;
 	texture:    "rough_sea.png";
 	scale:      90;
+	reflective: 3;
 }
 
 material
@@ -125,13 +126,14 @@ object
 	position:	[0, 20, 50];
 	orientation:	[0, 0, 1];
 	radius: 10;
+	group: 1;
 }
 
 object
 {
 	type:		<cone>;
 	material:	"Volcano";
-	position:	[0, 30, 70];
+	position:	[-30, 120, 70];
 	orientation:[0, -1, 0];
 	radius:		20;
 }

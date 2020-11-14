@@ -19,13 +19,79 @@ HDR		= 	./incl 	\
             -I./frameworks/SDL2_mixer.framework/Headers \
             -F./frameworks/
 
-SRC		= 	$(wildcard src/src_start/*.c)		\
-			$(wildcard src/src_read_save/*.c)	\
-			$(wildcard src/src_trace/*.c)		\
-			$(wildcard src/src_effect/*.c)		\
-			$(wildcard src/src_control/*.c)		\
-			$(wildcard src/src_interface/*.c)	\
-			$(wildcard src/src_texture/*.c)
+
+SRC		=	src/src_control/rt_control_camera.c         \
+            src/src_control/rt_control_effect.c         \
+            src/src_control/rt_control_hooks.c          \
+            src/src_control/rt_control_interface.c      \
+            src/src_control/rt_control_keyboard_1.c     \
+            src/src_control/rt_control_keyboard_2.c     \
+            src/src_control/rt_control_light.c          \
+            src/src_control/rt_control_main.c           \
+            src/src_control/rt_control_material.c       \
+            src/src_control/rt_control_object.c         \
+            src/src_control/rt_control_reset.c          \
+            src/src_effect/rt_effect_antialias_1.c      \
+            src/src_effect/rt_effect_antialias_2.c      \
+            src/src_effect/rt_effect_color_1.c          \
+            src/src_effect/rt_effect_color_2.c          \
+            src/src_effect/rt_effect_color_3.c          \
+            src/src_effect/rt_effect_main.c             \
+            src/src_effect/rt_effect_other.c            \
+            src/src_effect/rt_effect_pixelation.c       \
+            src/src_effect/rt_motion_blur.c             \
+            src/src_interface/rt_interface_bottom.c     \
+            src/src_interface/rt_interface_camera.c     \
+            src/src_interface/rt_interface_effect.c     \
+            src/src_interface/rt_interface_help_1.c     \
+            src/src_interface/rt_interface_help_2.c     \
+            src/src_interface/rt_interface_light.c      \
+            src/src_interface/rt_interface_main.c       \
+            src/src_interface/rt_interface_material_1.c \
+            src/src_interface/rt_interface_material_2.c \
+            src/src_interface/rt_interface_object.c     \
+            src/src_interface/rt_interface_other.c      \
+            src/src_interface/rt_interface_render.c     \
+            src/src_interface/rt_interface_scene_1.c    \
+            src/src_interface/rt_interface_scene_2.c    \
+            src/src_read_save/rt_read_scene_1.c         \
+            src/src_read_save/rt_read_scene_2.c         \
+            src/src_read_save/rt_read_scene_3.c         \
+            src/src_read_save/rt_read_scene_4.c         \
+            src/src_read_save/rt_read_scene_5.c         \
+            src/src_read_save/rt_read_scene_6.c         \
+            src/src_read_save/rt_read_scene_7.c         \
+            src/src_read_save/rt_read_scene_8.c         \
+            src/src_read_save/rt_read_scene_9.c         \
+            src/src_read_save/rt_save_scene_1.c         \
+            src/src_read_save/rt_save_scene_2.c         \
+            src/src_read_save/rt_save_scene_3.c         \
+            src/src_read_save/rt_save_screenshot.c      \
+            src/src_start/rt_main.c                     \
+            src/src_start/rt_prepare_buffers.c          \
+            src/src_start/rt_start_draw.c               \
+            src/src_start/rt_start_mlx_init.c           \
+            src/src_start/rt_start_scene_init.c         \
+            src/src_texture/rt_texture_noise.c          \
+            src/src_texture/texture_main.c              \
+            src/src_texture/texture_noises.c            \
+            src/src_texture/texture_procedural.c        \
+            src/src_texture/texture_utils1.c            \
+            src/src_texture/texture_utils2.c            \
+            src/src_texture/uv_mapping1.c               \
+            src/src_texture/uv_mapping2.c               \
+            src/src_trace/rt_trace_core.c               \
+            src/src_trace/rt_trace_intersect_1.c        \
+            src/src_trace/rt_trace_intersect_2.c        \
+            src/src_trace/rt_trace_intersect_3.c        \
+            src/src_trace/rt_trace_light_1.c            \
+            src/src_trace/rt_trace_light_2.c            \
+            src/src_trace/rt_trace_main.c               \
+            src/src_trace/rt_trace_normals_1.c          \
+            src/src_trace/rt_trace_normals_2.c          \
+            src/src_trace/rt_trace_pthreads.c           \
+            src/src_trace/rt_trace_vector_1.c           \
+            src/src_trace/rt_trace_vector_2.c
 
 OBJ		= 	$(SRC:.c=.o)
 
