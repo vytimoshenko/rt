@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 19:49:40 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 14:56:29 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/14 16:50:45 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_material_names_unique(t_scene *scene)
 		j = -1;
 		if (scene->mats.arr[i]->name == NULL)
 			put_error_wrong_scene_data(scene->objs.arr[i]->mat_name,
-									   "material name is not defined");
+							"material name is not defined");
 		while (++j < scene->mats.quant)
 		{
 			if (!(ft_strcmp(scene->mats.arr[i]->name,
@@ -51,7 +51,7 @@ void	find_objects_materials(t_scene *scene)
 		flag = 0;
 		if (scene->objs.arr[i]->mat_name == NULL)
 			put_error_wrong_scene_data(scene->objs.arr[i]->mat_name,
-								   "object material isn't defined");
+							"object material isn't defined");
 		while (++j < scene->mats.quant)
 		{
 			if (!(ft_strcmp(scene->objs.arr[i]->mat_name,
