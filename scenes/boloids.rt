@@ -104,15 +104,6 @@ material
 
 object
 {
-	type:		<sphere>;
-	material:	"Glossy white";
-	position:	[0, 0, 50];
-	orientation:[1, 0, 0];
-	radius:		10;
-}
-
-object
-{
 	type:		<paraboloid>;
 	material:	"Light gray";
 	position:	[-25, 0, 100];
