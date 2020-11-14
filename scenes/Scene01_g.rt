@@ -153,7 +153,7 @@ object
 	group:		1;
 	material:	"Deep magenta";
 	position:	[-20, -30, 70];
-	orientation:[0, -1, 0.5];
+	orientation:[0, -1, 5];
 	radius:		10;
 }
 

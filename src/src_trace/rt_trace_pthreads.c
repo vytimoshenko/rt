@@ -20,7 +20,7 @@ t_obj	check_planes(t_objs objs, t_obj plane, t_vec pix, t_vec cam)
 	t_vec	point;
 
 	i = -1;
-	if (plane.type == OBJECT_TYPE_PLANE && plane.t1 > 0)
+	if (plane.type == OBJECT_TYPE_PLANE && plane.t1 > 0 && plane.group > 0)
 	{
 		point = add(mult(plane.t1, pix), cam);
 		while (++i < objs.quant)

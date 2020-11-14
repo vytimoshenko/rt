@@ -17,8 +17,8 @@
 # include "../libft/libft.h"
 
 # include "../mlx/mlx.h"
-# include "../SDL2/headers/SDL.h"
-# include "../SDL2/headers/SDL_image.h"
+# include "../frameworks/SDL2/SDL.h"
+# include "../frameworks/SDL2/SDL_image.h"
 
 # include <math.h>
 # include <stdbool.h>

@@ -11,6 +11,18 @@ camera
 	direction:	[0, 0, 0];
 }
 
+camera
+{
+	position:	[0, 180, -10];
+	direction:	[-30, 0, 0];
+}
+
+camera
+{
+	position:	[300, 80, -10];
+	direction:	[0, -45, 0];
+}
+
 light
 {
 	type:		<ambient>;
@@ -43,8 +55,7 @@ material
 	name:		"Shiny red";
 	color:		[255, 0, 0];
 	specular:	5;
-	refractive:	5;
-	angle:		4;
+	reflective:	3;
 }
 
 material
@@ -68,9 +79,7 @@ material
 	name:		"Glossy white";
 	color:		[255, 255, 255];
 	specular:	1000;
-	reflective: 0;
-	refractive:	4;
-	transparency: 4;
+	refractive:	7;
 }
 
 material
@@ -88,7 +97,7 @@ material
 	color:		[255, 255, 0];
 	specular:	1000;
 	reflective:	0;
-	refractive:	15;
+	refractive:	0;
 }
 
 material
@@ -101,9 +110,39 @@ material
 
 object
 {
-	type:		<hyperboloid>;
-	material:	"Super blue";
-	position:	[0, 0, 50];
+	type:		<sphere>;
+	material:	"Light gray";
+	position:	[0, 0, 350];
 	orientation:[1, 0, 0];
+	radius:		100;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Glossy white";
+	position:	[0, -55, 290];
+	orientation:[0, 1, 1];
+	radius:		35;
+	negative:	1;
+}
+
+object
+{
+	type:		<paraboloid>;
+	material:	"Glossy white";
+	position:	[50, 0, 250];
+	orientation:[-1, 0, 5];
 	radius:		10;
+	length:		5;
+}
+
+object
+{
+	type:		<paraboloid>;
+	material:	"Glossy white";
+	position:	[-50, 0, 250];
+	orientation:[1, 0, 5];
+	radius:		10;
+	length:		5;
 }

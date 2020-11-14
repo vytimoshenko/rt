@@ -56,7 +56,7 @@ material
 	name:		"Matte green";
 	color:		[0, 255, 0];
 	specular:	100;
-	reflective:	0.1;
+	reflective:	1;
 }
 
 material

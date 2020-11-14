@@ -60,8 +60,8 @@ t_obj	paraboloid(t_obj obj, t_vec cam, t_vec pix)
 		obj.t2 = (-k2 - sqrt(d)) / k1;
 		k1 = dot(x, obj.dir) + dot(mult(obj.t1, obj.dir), pix);
 		k2 = dot(x, obj.dir) + dot(mult(obj.t2, obj.dir), pix);
-		if ((k1 < obj.len && k1 > -obj.len) ||
-		(k2 < obj.len && k2 > -obj.len) || obj.len == 0)
+		if ((k1 < obj.len * obj.len && k1 > -obj.len * obj.len) ||
+		(k2 < obj.len * obj.len && k2 > -obj.len * obj.len) || obj.len == 0)
 			return (obj);
 	}
 	obj.t1 = -1;

@@ -11,6 +11,18 @@ camera
 	direction:	[-10, 0, 0];
 }
 
+camera
+{
+	position:	[300, 50, -400];
+	direction:	[0, -45, 0];
+}
+
+camera
+{
+	position:	[-300, -50, 400];
+	direction:	[0, 135, 0];
+}
+
 light
 {
 	type:		<ambient>;
@@ -88,7 +100,7 @@ material
 	color:			[255, 255, 0];
 	specular:		1000;
 	reflective:		0;
-	refractive:		15;
+	refractive:		0;
 }
 
 material
@@ -414,7 +426,7 @@ object
 object
 {
 	type:			<plane>;
-	material:		"Glossy white";
+	material:		"Light gray";
 	position:		[0, -100, 0];
 	orientation:	[0, 1, 0];
 }

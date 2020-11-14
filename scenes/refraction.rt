@@ -7,8 +7,20 @@ scene
 
 camera
 {
-	position:	[0, 0, -100];
+	position:	[0, 0, -10];
 	direction:	[0, 0, 0];
+}
+
+camera
+{
+	position:	[200, 0, 150];
+	direction:	[0, -90, 0];
+}
+
+camera
+{
+	position:	[-40, 0, 0];
+	direction:	[0, 30, 0];
 }
 
 light
@@ -21,14 +33,14 @@ light
 {
 	type:		<point>;
 	intensity:	5;
-	position:	[-20, 20, -50];
+	position:	[-20, 20, 30];
 }
 
 light
 {
 	type:		<point>;
 	intensity:	4;
-	position:	[-20, 9, -50];
+	position:	[0, 9, 0];
 }
 
 light
@@ -40,19 +52,18 @@ light
 
 material
 {
-	name:			"Shiny red";
-	color:			[255, 0, 0];
-	specular:		5;
-	transparency:	5;
-	refractive:		3;
+	name:		"Shiny red";
+	color:		[255, 0, 0];
+	specular:	5;
+	reflective:	3;
 }
 
 material
 {
 	name:		"Matte green";
 	color:		[0, 255, 0];
-	specular:	0;
-	reflective:	0;
+	specular:	100;
+	reflective:	5;
 }
 
 material
@@ -60,9 +71,7 @@ material
 	name:		"Super blue";
 	color:		[0, 0, 255];
 	specular:	1000;
-	reflective: 4;
-	refractive:	1;
-	transparency: 0;
+	reflective: 0;
 }
 
 material
@@ -70,7 +79,7 @@ material
 	name:		"Glossy white";
 	color:		[255, 255, 255];
 	specular:	1000;
-	reflective: 0;
+	refractive:	10;
 }
 
 material
@@ -88,7 +97,7 @@ material
 	color:		[255, 255, 0];
 	specular:	1000;
 	reflective:	0;
-	refractive:	15;
+	refractive:	0;
 }
 
 material
@@ -102,57 +111,52 @@ material
 object
 {
 	type:		<sphere>;
-	material:	"Shiny red";
-	position:	[10, 10, 0];
-	orientation:[0, 0, 0];
+	material:	"Glossy white";
+	position:	[0, 0, 50];
+	orientation:[1, 0, 0];
 	radius:		10;
-	negative:	0;
 }
 
 object
 {
 	type:		<plane>;
-	material:	"Matte green";
-	position:	[50, 0, 50];
-	orientation:[1, 0, -1];
+	material:	"Sunny yellow";
+	position:	[0, 100, 0];
+	orientation:[0, -1, 0];
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Matte green";
-	position:	[-50, 0, 50];
-	orientation:[-1, 0, -1];
+	type:		<sphere>;
+	material:	"Super blue";
+	position:	[-50, 70, 250];
+	orientation:[1, 0, 0];
+	radius:		20;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Matte green";
-	position:	[0, 50, 50];
-	orientation:	[0, 1, 0];
+	type:		<sphere>;
+	material:	"Super blue";
+	position:	[0, 70, 350];
+	orientation:[1, 0, 0];
+	radius:		20;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Matte green";
-	position:	[0, -50, 50];
-	orientation:	[0, -1, 0];
+	type:		<cylinder>;
+	material:	"Shiny red";
+	position:	[75, -25, 120];
+	orientation:[1, -1, 0];
+	radius:		10;
 }
 
 object
 {
-	type:		<plane>;
-	material:	"Matte green";
-	position:	[-50, 0, 100];
-	orientation:	[-1, 0, 1];
+	type:		<paraboloid>;
+	material:	"Light gray";
+	position:	[0, 0, 320];
+	orientation:[-1, -1, 0];
+	radius:		10;
 }
-
-object
-{
-	type:		<plane>;
-	material:	"Matte green";
-	position:	[50, 0, 100];
-	orientation:	[1, 0, 1];
-}	

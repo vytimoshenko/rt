@@ -32,7 +32,7 @@ void	paraboloid_n(t_pnt *pnt, t_vec pix, t_obj *obj, t_vec cam)
 	t_vec	p;
 
 	p = add(cam, mult(obj->closest, pix));
-	m = dot(sub(p, obj->pos), obj->dir) * obj->radius;
+	m = dot(sub(p, obj->pos), obj->dir) + obj->radius;
 	pnt->n = nrm(sub(sub(p, obj->pos), mult(m, obj->dir)));
 	pnt->n = dot(pix, pnt->n) < MIN ? pnt->n : mult(-1, pnt->n);
 }

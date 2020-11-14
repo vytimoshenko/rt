@@ -106,7 +106,7 @@ CL_MLX	=	make clean		-C mlx
 CP_MLX  =	cp ./mlx/libmlx.dylib ./
 RM_MLX  =	rm -rf ./libmlx.dylib
 
-MK_DIR	=	@/bin/mkdir saves screenshots
+MK_DIR	=	@/bin/mkdir -p saves screenshots
 
 ADD_ERR =	-Wall -Wextra -Werror
 ADD_DEP =	-Wno-deprecated-declarations
@@ -135,27 +135,29 @@ $(NAME):	obj $(OBJ)
 			@$(MK_MLX)
 			@$(CP_MLX)
 			@$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_FMW) $(ADD_DEP)
+			@echo "\033[32m- RT compiled\033[0m"
 			@$(MK_DIR)
 
 obj:
 			@mkdir -p $(OBJDIR)
 			@mkdir -p $(dir $(OBJ))
 
-$(OBJDIR)%.o:		%.c
+$(OBJDIR)%.o:		%.c	./incl/*.h
 			$(CMPLR) $< -c -o $@
 
 clean:
 			@/bin/rm -f $(OBJ)
-			@rm -rf obj
+			@/bin/rm -rf obj
 			$(CL_FT)
 			$(CL_MLX)
 			@/bin/rm -rf saves screenshots
+			@echo "\033[31m- RT object files removed\033[0m"
 
 fclean: 	clean
 			@/bin/rm -f $(NAME)
 			$(FCL_FT)
 			$(RM_MLX)
-
+			@echo "\033[31m- RT removed\033[0m"
 
 re: 		fclean all
 
