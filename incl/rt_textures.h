@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 19:13:05 by wquirrel          #+#    #+#             */
-/*   Updated: 2020/11/14 00:38:29 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 04:34:34 by wquirrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@
 # define P_MASK			255
 
 # include "rt.h"
-
-//TODO Переделать текстуры под SDL2
-//TODO SDL2 компиляцию
-//TODO Semitransparent texture
-
-//TODO Texture, Skysphere, Desert, Water, зеркальные фигуры
-//TODO Normal map, Bitmap
 
 enum		e_coord
 {
@@ -63,8 +56,7 @@ t_double2	get_plane_texel_g(t_obj *obj, t_pnt *p);
 void		init_noise();
 int			get_textures(t_global *g);
 int			get_image_texel(t_mat *mat, t_obj *obj);
-int			get_patt(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat,
-			double *trns);
+int			get_patt_tex(t_pnt *pnt, t_obj *obj, t_double2 uv, t_mat *mat);
 int			checker_pattern(t_double2 uv, t_pnt *pnt, t_obj *obj);
 int			stripe_pattern(t_obj *obj, t_double2 uv, t_mat *mat);
 int			wave_pattern(t_double2 uv, t_mat *mat);

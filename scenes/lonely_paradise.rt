@@ -1,0 +1,137 @@
+scene
+{
+	name:		"Lonely island";
+	author:		"Wedge Quirrell";
+}
+
+camera
+{
+	position:	[0, 1, -50];
+	direction:	[15, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	3;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	6;
+	position:	[-20, 40, 30];
+}
+
+material
+{
+	name:		"Palm_tree";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "palm.png";
+	shift:      [0, 0, 0];
+}
+
+material
+{
+	name:		"Sand";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "smooth_sand_dunes.png";
+}
+
+material
+{
+	name:		"Banana";
+	color:		[0, 255, 0];
+	specular:	0;
+	reflective:	0;
+	texture:    "yellow_bananas.png";
+}
+
+material
+{
+	name:		"Sea";
+	color:		[0, 0, 255];
+	specular:	50;
+	texture:    "rough_sea.png";
+	scale:      90;
+}
+
+material
+{
+	name:		"Person";
+	color:		[0, 0, 255];
+	specular:	0;
+	transparency: 0;
+	texture:    "Sbprimitive.png";
+	scale: 20;
+	shift: [10, 10, 0];
+}
+
+material
+{
+	name:		"Volcano";
+	color:		[0, 0, 255];
+	specular:	0;
+	transparency: 0;
+	texture:    "burning_hot_lava.png";
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Banana";
+	position:	[21, 50, 68];
+	orientation:	[0, 0, 0];
+	radius:		3;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Sand";
+	position:	[0, -20, 90];
+	orientation:	[0, 0, 0];
+	radius:		50;
+}
+
+object
+{
+	type:		<cylinder>;
+	material:	"Palm_tree";
+	position:	[19, 20, 75];
+	orientation:[1, 5, 0];
+	radius:		9;
+	length:     700;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Sea";
+	position:	[0, -10, 50];
+	orientation:	[0, -1, 0];
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Person";
+	position:	[0, 20, 50];
+	orientation:	[0, 0, 1];
+	radius: 10;
+}
+
+object
+{
+	type:		<cone>;
+	material:	"Volcano";
+	position:	[0, 30, 70];
+	orientation:[0, -1, 0];
+	radius:		20;
+}

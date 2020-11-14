@@ -1,0 +1,200 @@
+scene
+{
+	name:		"Cosmos";
+	author:		"Wedge Quirrell";
+}
+
+camera
+{
+	position:	[0, 1, -50];
+	direction:	[15, 0, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	6;
+}
+
+material
+{
+	name:		"PBog";
+	color:		[0, 0, 255];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "planet_Bog.png";
+}
+
+material
+{
+	name:		"Earth";
+	color:		[0, 0, 255];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "earthmap.png";
+}
+
+material
+{
+	name:		"Cosmos";
+	color:		[0, 0, 255];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "cosmos2.jpg";
+}
+
+material
+{
+	name:		"Stripe1";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 1;
+}
+
+material
+{
+	name:		"Stripe2";
+	color:		[0, 255, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 2;
+}
+
+material
+{
+	name:		"Checker";
+	color:		[255, 0, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 3;
+}
+
+material
+{
+	name:		"Waves";
+	color:		[255, 255, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 4;
+}
+
+material
+{
+	name:		"PNoise";
+	color:		[255, 255, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 5;
+}
+
+material
+{
+	name:		"Wood";
+	color:		[255, 255, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 6;
+}
+
+material
+{
+	name:		"Marble";
+	color:		[255, 255, 0];
+	specular:	0;
+	refractive:	0;
+	pattern: 7;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Cosmos";
+	position:	[0, 0, 0];
+	orientation:	[0, 0, 0];
+	radius:		500;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Stripe1";
+	position:	[11, 0, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Stripe2";
+	position:	[-11, 0, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Checker";
+	position:	[-31, 0, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Waves";
+	position:	[31, 0, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"PNoise";
+	position:	[0, 20, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Wood";
+	position:	[21, 20, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Marble";
+	position:	[-21, 20, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"Earth";
+	position:	[-10, 40, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"PBog";
+	position:	[10, 40, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}

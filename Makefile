@@ -19,13 +19,13 @@ HDR		= 	./incl 	\
             -I./frameworks/SDL2_mixer.framework/Headers \
             -F./frameworks/
 
-SRC		= 	$(wildcard src_start/*.c)		\
-			$(wildcard src_read_save/*.c)	\
-			$(wildcard src_trace/*.c)		\
-			$(wildcard src_effect/*.c)		\
-			$(wildcard src_control/*.c)		\
-			$(wildcard src_interface/*.c)	\
-			$(wildcard src_texture/*.c)
+SRC		= 	$(wildcard src/src_start/*.c)		\
+			$(wildcard src/src_read_save/*.c)	\
+			$(wildcard src/src_trace/*.c)		\
+			$(wildcard src/src_effect/*.c)		\
+			$(wildcard src/src_control/*.c)		\
+			$(wildcard src/src_interface/*.c)	\
+			$(wildcard src/src_texture/*.c)
 
 OBJ		= 	$(SRC:.c=.o)
 
