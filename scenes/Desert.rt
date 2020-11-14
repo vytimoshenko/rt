@@ -1,0 +1,78 @@
+scene
+{
+	name:		"Desert";
+	author:		"Meowth Perseus";
+}
+
+camera
+{
+	position:	[0, 0, -50];
+	direction:	[0, 0, 0];
+}
+
+camera
+{
+	position:	[0, 20, 50];
+	direction:	[-15, 195, 0];
+}
+
+light
+{
+	type:		<ambient>;
+	intensity:	2;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	8;
+	position:	[0, 150, -100];
+}
+
+material
+{
+	name:			"Mirror";
+	color:			[0, 0, 0];
+	reflective:		10;
+}
+
+material
+{
+	name:			"Glass";
+	color:			[0, 0, 0];
+	refractive:		7;
+}
+
+material
+{
+	name:			"Desert";
+	color:			[0, 0, 255];
+	texture:    	"desert.jpg";
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Mirror";
+	position:		[0, 0, 0];
+	orientation:	[0, 0, 0];
+	radius:			10;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Glass";
+	position:		[-40, 10, -20];
+	orientation:	[0, 0, 0];
+	radius:			10;
+}
+
+object
+{
+	type:			<sphere>;
+	material:		"Desert";
+	position:		[0, 0, 0];
+	orientation:	[0, 0, 0];
+	radius:			300;
+}

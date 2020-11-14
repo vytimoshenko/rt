@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:06:06 by mperseus          #+#    #+#             */
-/*   Updated: 2020/08/26 12:06:08 by mperseus         ###   ########.fr       */
+/*   Updated: 2020/11/14 16:20:57 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,17 @@ void	get_material(int x, int y, t_global *global)
 {
 	int	i;
 
-	if (global->scene->act_mod == MODE_MATERIAL && x >= WIN_SIZE_W - 200 &&
-	x < WIN_SIZE_W - 182 && y >= 283 && y < 301)
+	if (global->scene->act_mod == MODE_MATERIAL && x >= WIN_SIZE_W - 227 &&
+	x < WIN_SIZE_W - 209 && y >= 237 && y < 255)
 	{
 		global->scene->mat_source = global->scene->act_mat;
+		return ;
+	}
+	if (global->scene->act_mod == MODE_OBJECT && x >= WIN_SIZE_W - 227 &&
+	x < WIN_SIZE_W - 209 && y >= 337 && y < 355)
+	{
+		global->scene->mat_source =
+		global->scene->objs.arr[global->scene->act_obj]->mat;
 		return ;
 	}
 	x = x - IMG_INDT_W;

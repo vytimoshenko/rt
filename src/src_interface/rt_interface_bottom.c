@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:07:34 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 05:58:01 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/14 16:17:56 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	info_color(t_scene *scene, t_mlx *mlx)
 	str = ft_itoa((int)scene->picked_color.b));
 	free(str);
 	color = unite_color_channels(scene->picked_color);
-	color_sample(mlx, color, 200, WIN_SIZE_H - 27);
+	color_sample(mlx, color, 200, WIN_SIZE_H - 22);
 }
 
 void	info_scene_file_name(t_scene *scene, t_mlx *mlx)

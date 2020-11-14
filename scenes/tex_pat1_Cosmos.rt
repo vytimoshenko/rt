@@ -13,7 +13,14 @@ camera
 light
 {
 	type:		<ambient>;
-	intensity:	7;
+	intensity:	1;
+}
+
+light
+{
+	type:		<point>;
+	intensity:	10;
+	position:	[60, 40, -20];
 }
 
 material

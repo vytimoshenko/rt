@@ -6,7 +6,7 @@
 /*   By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 12:08:12 by mperseus          #+#    #+#             */
-/*   Updated: 2020/11/14 05:55:28 by wquirrel         ###   ########.fr       */
+/*   Updated: 2020/11/14 16:19:02 by mperseus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	info_material_1(t_scene *scene, t_mlx *mlx, int x, int y)
 	if (scene->act_mod == MODE_MATERIAL)
 		mlx_string_put(mlx->mlx, mlx->win, x + 80, y - 30, TEXT_COLOR,
 	"MATERIAL CONTROL");
+	color_sample(mlx, 0xFFFFFF, x + 153, y - 13);
 	mlx_string_put(mlx->mlx, mlx->win, x, y, TEXT_COLOR,
 	"Material:         #");
 	mlx_string_put(mlx->mlx, mlx->win, x + 190, y, TEXT_COLOR,
