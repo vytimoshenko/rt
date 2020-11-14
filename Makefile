@@ -6,7 +6,7 @@
 #    By: mperseus <mperseus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 19:45:56 by hlorrine          #+#    #+#              #
-#    Updated: 2020/11/11 22:03:31 by wquirrel         ###   ########.fr        #
+#    Updated: 2020/11/14 12:46:03 by wquirrel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,8 @@ FCL_FT	=	make fclean		-C libft
 
 MK_MLX	=	make			-C mlx
 CL_MLX	=	make clean		-C mlx
+CP_MLX  =	cp ./mlx/libmlx.dylib ./
+RM_MLX  =	rm -rf ./libmlx.dylib
 
 MK_DIR	=	@/bin/mkdir saves screenshots
 
@@ -131,6 +133,7 @@ all:		$(NAME)
 $(NAME):	obj $(OBJ)
 			@$(MK_FT)
 			@$(MK_MLX)
+			@$(CP_MLX)
 			@$(CMPLR) -o $(NAME) -I $(HDR) $(SRC) $(ADD_ERR) $(ADD_OPT) $(ADD_LIB) $(ADD_FMW) $(ADD_DEP)
 			@$(MK_DIR)
 
@@ -143,6 +146,7 @@ $(OBJDIR)%.o:		%.c
 
 clean:
 			@/bin/rm -f $(OBJ)
+			@rm -rf obj
 			$(CL_FT)
 			$(CL_MLX)
 			@/bin/rm -rf saves screenshots
@@ -150,6 +154,8 @@ clean:
 fclean: 	clean
 			@/bin/rm -f $(NAME)
 			$(FCL_FT)
+			$(RM_MLX)
+
 
 re: 		fclean all
 

@@ -6,14 +6,24 @@ scene
 
 camera
 {
-	position:	[0, 1, -50];
-	direction:	[15, 0, 0];
+	position:	[0, 1, -60];
+	direction:	[16, 0, 0];
 }
 
 light
 {
 	type:		<ambient>;
 	intensity:	7;
+}
+
+material
+{
+	name:		"World_map";
+	color:		[0, 0, 255];
+	specular:	0;
+	refractive:	0;
+	angle:      0;
+	texture:    "world-map.png";
 }
 
 material
@@ -195,6 +205,15 @@ object
 	type:		<sphere>;
 	material:	"PBog";
 	position:	[10, 40, 20];
+	orientation:	[0, 0, 0];
+	radius:		10;
+}
+
+object
+{
+	type:		<sphere>;
+	material:	"World_map";
+	position:	[0, 60, 20];
 	orientation:	[0, 0, 0];
 	radius:		10;
 }

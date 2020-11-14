@@ -71,7 +71,7 @@ void	parse_object_description(t_scene *scene, char *property, char *value)
 	else if (!(ft_strcmp(property, FILE_OBJECT_RADIUS)))
 		scene->objs.arr[i]->radius = validate(value, 1, 1000);
 	else if (!(ft_strcmp(property, FILE_OBJECT_LENGTH)))
-		scene->objs.arr[i]->len = (double)validate(value, 1, 1000) / 10;
+		scene->objs.arr[i]->len = (double)validate(value, 1, 1000);
 	else if (!(ft_strcmp(property, FILE_OBJECT_NEGATIVE)))
 		scene->objs.arr[i]->neg = (validate(value, -1, 1) > 0) ? 1 : 0;
 	else

@@ -10,6 +10,12 @@ camera
 	direction:	[15, 0, 0];
 }
 
+camera
+{
+	position:	[0, 5, 190];
+	direction:	[0, 180, 0];
+}
+
 light
 {
 	type:		<ambient>;
@@ -21,6 +27,15 @@ light
 	type:		<point>;
 	intensity:	6;
 	position:	[-20, 40, 30];
+}
+
+material
+{
+	name:		"Milos";
+	color:		[255, 0, 0];
+	texture:    "Milos.png";
+	scale: 20;
+	shift: [10, 10, 0];
 }
 
 material
@@ -108,7 +123,7 @@ object
 	position:	[19, 20, 75];
 	orientation:[1, 5, 0];
 	radius:		9;
-	length:     700;
+	length:     70;
 }
 
 object
@@ -136,4 +151,15 @@ object
 	position:	[-30, 120, 70];
 	orientation:[0, -1, 0];
 	radius:		20;
+	length:     300;
+}
+
+object
+{
+	type:		<plane>;
+	material:	"Milos";
+	position:	[0, -4, 140];
+	orientation:	[0, 0, 1];
+	radius: 10;
+	group: 2;
 }
